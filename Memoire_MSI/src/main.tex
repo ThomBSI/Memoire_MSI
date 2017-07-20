@@ -1,4 +1,4 @@
-\documentclass[a4papper, 12pt]{article}
+\documentclass[a4paper, 12pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -12,20 +12,27 @@
 
 \newcommand{\comment}[1]{}
 
-\title{M�moire}
+\title{Mémoire d'ingénieur}
 \renewcommand\thesection{\roman{section}.}
 \renewcommand\thesubsection{\alpha{subsection}.}
 
 \begin{document}
-
-\maketitle
-
-\section*{Introduction}
-
-\input{p1.tex}
-\input{p2.tex}
-\input{p3.tex}
-
-\section*{Conclusion}
+	
+	\maketitle
+	  
+	\section*{Introduction}
+		\paragraph{}
+		Paragraphe d'introduction.
+	
+	\comment{
+	Corps du mémoire
+	}
+	\input{p1.tex}
+	\input{p2.tex}
+	\input{p3.tex}
+	
+	\section*{Conclusion}
+		\paragraph{}
+		Paragraphe de conclusion.
 
 \end{document}
