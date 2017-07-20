@@ -1,19 +1,31 @@
-%%This is a very basic article template.
-%%There is just one section and two subsections.
-\documentclass{article}
+\documentclass[a4papper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=2cm, bottom=2cm, right=2cm, left=2cm]{geometry}
+\usepackage[round,authoryear]{natbib}
+
+\usepackage{graphicx}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\newcommand{\comment}[1]{}
+
+\title{Mémoire}
+\renewcommand\thesection{\roman{section}.}
+\renewcommand\thesubsection{\alpha{subsection}.}
 
 \begin{document}
 
+\maketitle
 
-\section{Title}
+\section*{Introduction}
 
-\subsection{Subtitle}
+\input{p1.tex}
+\input{p2.tex}
+\input{p3.tex}
 
-Plain text.
-
-\subsection{Another subtitle}
-
-More plain text.
-
+\section*{Conclusion}
 
 \end{document}
