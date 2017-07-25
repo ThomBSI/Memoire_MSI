@@ -1,38 +1,20 @@
 \documentclass[a4paper, 12pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
-\usepackage[top=2cm, bottom=2cm, right=2cm, left=2cm]{geometry}
-\usepackage[round,authoryear]{natbib}
-
-\usepackage{graphicx}
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
-
-\newcommand{\comment}[1]{}
-
-\title{Mémoire d'ingénieur}
-\renewcommand\thesection{\roman{section}.}
-\renewcommand\thesubsection{\alpha{subsection}.}
+% Préambule du document
+\input{preambule.tex}
 
 \begin{document}
 	
+	% Page de garde
 	\maketitle
 	  
-	\section*{Introduction}
-		\paragraph{}
-		Paragraphe d'introduction.
+	\input{introduction.tex}
 	
-	\comment{
-	Corps du mémoire
-	}
+	% Corp du mémoire
 	\input{p1.tex}
 	\input{p2.tex}
 	\input{p3.tex}
 	
-	\section*{Conclusion}
-		\paragraph{}
-		Paragraphe de conclusion.
+	\input{conclusion.tex}
 
 \end{document}
