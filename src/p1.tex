@@ -29,6 +29,10 @@
 			ce secteur. La tableau ci-dessous offre un appercu des principaux logiciels
 			que l'on peut trouver dans un hôpital.\newline
 			
+			\begin{tableau} %Exemples des principaux logiciels métier avec leur fonction
+			
+			\end{tableau}
+			
 			Or ces différents outils ont bien souvant été développés par des sociétés
 			différentes. En outre, ces outils sont spécialisés dans quelques fonctions
 			biens précises : comptabilité, enregistrement des patients, gestion des
@@ -42,29 +46,48 @@
 			des données.
 		
 			\paragraph{}% L'EAI est la solution au problème de l'interopérabilité
-			C'est ici qu'entre en jeux l'EAI. L'EAI est un outil qui établi des liens
+			C'est ici qu'entre en jeux l'EAI. Il s'agit d'un outil qui établi des liens
 			entre les applications métier. Il va par exemple collecter certaines données
-			émises par le logiciel de gestion des arrivés pour les injecter dans l'outil
-			de gestion des dossiers patients. Plus généralement, il transfert des données
+			émises par le logiciel de gestion des entrées patients pour les injecter dans
+			l'outil de gestion des dossiers patients. Plus généralement, il transfert des données
 			émisent par un outil A pour les mettre à disposition d'un outil B.\newline
-			Mais l'EAI ne se résume pas seulement au transport des données.
+			Mais les fonctions de l'EAI ne se résume pas au seul transport des
+			données. Il est parfois utile de réaliser des actions sur ls informations
+			transmises d'une application à l'autre. Ces actions peuvent êtres par exemple
+			:\newline
+			\begin{itemize}
+			  \item de valider les informations transmises. Par exemple, l'EAI va
+			  s'assurer que dans chaque donnée émise par une application de gestion des
+			  prescription, le nom du patient est bien présent.
+			  \item d'effectuer des transformation. L'application de destination de
+			  gère pas forcément les mêmes frmats de donnée que l'application émétrice
+			  car, rappelons le, les applications ne sont pas forcéments conçues pour
+			  fonctionner ensemble. L'EAI est ainsi capable de faire des conversion de
+			  format de donnée.
+			\end{itemize}
 
-			\paragraph{}% Un pe de vocabulaire
+			\paragraph{}% Un peu de vocabulaire
  			Arrêtons nous un instant pour préciser le vocabulaire que nous utiliserons
  			par la suite.\newline
  			\begin{description}
- 				\item[Flux]
- 				\item[Message]
- 				\item[Connecteur]
+ 				\item[Flux] Les flux sont tout simlement les routes permettant de connecter
+ 				une application à une autre. Dans un système d'information hospitalier
+ 				(SIH), il y a donc autant de flux de de couple d'application. Il est
+ 				possible - et même courent - qu'une application soit reliée à plusieurs
+ 				autres.
+ 				\item[Message] Les données qui passent le long des flux, d'une application
+ 				à une autre, sont appelés message. Les messages se présente en général sous
+ 				la forme de text hautement standardisé. les messages sont émis par les
+ 				applicatifs métier dans un format donné. Il existe de nombreux formats
+ 				dont certains sont spécifiques au monde hospitalier. L'annexe N présente
+ 				quelques uns des principaux formats utilisés (HL7 et HPRIM).
  			\end{description}
  			
 		\subsubsection{Les flux de messages ont besoin d'être surveillés}
 			\paragraph{}
-			Les logiciels de santé sont de nature très diverses. Au sain d'un
- 			établissement hospitalier, l'on trouve par exemple :
- 			\begin{itemize}
- 			  \item{-} Des outils dit 
- 			\end{itemize}
+			
+			
+			
 		\subsubsection{TrackCIS est un outil qui permet la supervision des flux}
 			\paragraph{}
 			Texte de la sous sous partie
