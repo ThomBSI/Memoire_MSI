@@ -1,0 +1,177 @@
+\section{TrackCIS, un outil au service de l'interopérabilité des applications hospitalières}
+	\paragraph{}
+	Cette première partie vise à introduire le projet sur lequel porte ce mémoire.
+	Ce projet s'inscrit dans des enjeux propres à la société Xperis et porte sur
+	l'outil TrackCIS, conole de supervision de Cloverleaf. Nous nous attaderons
+	donc ici à présenter ces différents éléments protagonistes de notre étude de
+	façon à en cerner tous les enjeux et à mettre en place une méthodologie adapté.
+
+	\subsection{TrackCIS est une console de supervision de l'EAI cloverleaf}
+		\paragraph{} 
+		Commencons par définir quelques notions technique qui nous seront utiles,
+		sinon indispensables pour la suite : les EAI et leurs consoles de supervision.
+		 
+		\subsubsection{Qu'est-ce qu'un EAI ?}
+			\paragraph{}% Interopérabilité
+			EAI signifi Intégration d'Application d'Entreprise. Pour bien comprendre de
+			quoi il s'agit et quel rôle tient un tel outil, il faut comprendre la notion
+			d'intéropérabilité. Mais avant toute chose, il est important de préciser que
+			nous ne parlerons dans cette partie - et plus généralement tout au long de ce
+			mémoire - que des EAI dans le monde hospitalier. de nombreuses entreprises ou
+			organisme de tous les secteurs utilisent de tels outil. Dans notre cas nous nous
+			focaliserons uniquement sur les EAI du monde hospitalier et nous
+			chercherons à défnir les EAI au travers d'exemple de ce secteur.\newline
+			Selon la définition du dictionnaire Larousse, l'interopérabilité est la "<capacité dematériels, de logiciels ou de protocoles différents à
+			fonctionner ensemble et à partager des informations">. Si l'on transpose
+			cette définition au monde de l'hopital, l'interopérabilité correspond à la
+			capacité des différents logiciels (ou applicatifs) métier à fonctionner
+			ensemble. Il existe en effet une grande diversité d'applicatifs métier dans
+			ce secteur. La tableau ci-dessous offre un appercu des principaux logiciels
+			que l'on peut trouver dans un hôpital.\newline
+			
+			\begin{tableau} %Exemples des principaux logiciels métier avec leur fonction
+			% Mettre un tableau ici
+			\end{tableau}
+			
+			Or ces différents outils ont bien souvant été développés par des sociétés
+			différentes. En outre, ces outils sont spécialisés dans quelques fonctions
+			biens précises : comptabilité, enregistrement des patients, gestion des
+			stocks de pharmatie\ldots Dans la plupart des cas, leur conception ne leur
+			permet pas de fonctionner ensemble, ce qui pourtant peut s'avérer utile. Par
+			exemple, le logiciel gérant les stocks de la pharmacies peuvent avoir besoins
+			d'information sur les prescriptions faites par les medecins aux patients. De
+			même, les informations sur les patients saisie à l'arrivée de ces derniers
+			peuvent intéresser les médecin dans le logiciel gérant les dossiers passient.
+			En résumé, il est nécéssaire pour ces différentes applications de partager
+			des données.
+		
+			\paragraph{}% L'EAI est la solution au problème de l'interopérabilité
+			C'est ici qu'entre en jeux l'EAI. Il s'agit d'un outil qui établi des liens
+			entre les applications métier. Il va par exemple collecter certaines données
+			émises par le logiciel de gestion des entrées patients pour les injecter dans
+			l'outil de gestion des dossiers patients. Plus généralement, il transfert des données
+			émisent par un outil A pour les mettre à disposition d'un outil B.\newline
+			Mais les fonctions de l'EAI ne se résume pas au seul transport des
+			données. Il est parfois utile de réaliser des actions sur ls informations
+			transmises d'une application à l'autre. Ces actions peuvent êtres par exemple
+			:\newline
+			\begin{itemize}
+			  \item de valider les informations transmises. Par exemple, l'EAI va
+			  s'assurer que dans chaque donnée émise par une application de gestion des
+			  prescription, le nom du patient est bien présent.
+			  \item d'effectuer des transformation. L'application de destination de
+			  gère pas forcément les mêmes frmats de donnée que l'application émétrice
+			  car, rappelons le, les applications ne sont pas forcéments conçues pour
+			  fonctionner ensemble. L'EAI est ainsi capable de faire des conversion de
+			  format de donnée.
+			\end{itemize}
+
+			\paragraph{}% Un peu de vocabulaire
+ 			Arrêtons nous un instant pour préciser le vocabulaire que nous utiliserons
+ 			par la suite.\newline
+ 			\begin{description}
+ 				\item[Flux] Les flux sont tout simlement les routes permettant de connecter
+ 				une application à une autre. Dans un système d'information hospitalier
+ 				(SIH), il y a donc autant de flux de de couple d'application. Il est
+ 				possible - et même courent - qu'une application soit reliée à plusieurs
+ 				autres.
+ 				\item[Message] Les données qui passent le long des flux, d'une application
+ 				à une autre, sont appelés message. Les messages se présente en général sous
+ 				la forme de text hautement standardisé. les messages sont émis par les
+ 				applicatifs métier dans un format donné. Il existe de nombreux formats
+ 				dont certains sont spécifiques au monde hospitalier. L'annexe N présente
+ 				quelques uns des principaux formats utilisés (HL7 et HPRIM).
+ 			\end{description}
+ 			
+		\subsubsection{Les flux de messages doivent être surveillés}
+			\paragraph{}
+			
+			
+		\subsubsection{TrackCIS est un outil qui permet la supervision des flux}
+			\paragraph{}
+			Texte de la sous sous partie
+		
+		% Résumé de la partie 1.1
+		Nous avons vu dans cette première partie que l'EAI est une solution au
+		problème de l'onteropérabilité en établissant des flux de données entre
+		applications métier. Nous avons souligné le fait que la surveillance (la
+		supervision) continue des flux est indispensable au bon fonctionnement de
+		l'EAI et, par extention, de tout le SI. Enfin, TrackCIS est un outil qui permet de rendre la
+		supervision plus simple et plus rapide.\newline
+		Dans la suite nous découvrirons les prblématiques inhérentes à cet outil.
+		
+	\subsection{TrackCIS est au cœur d'une problématique commerciale pour Xperis}
+		\paragraph{}
+		Précédement nous avons établi les bases des problématiques d'interopérabilité
+		des établissements hospitalier. Xperis est une entreprise qui propose
+		d'accompagner ces dernier dans la mise en place et le maintien d'un EAI :
+		Cloverleaf.
+		
+		\subsubsection{Xperis est l'intermédiaire dans la distribution de Cloverleaf}
+			\paragraph{}% Présentation de Cloverleaf
+			Xperis est une entreprise Bordelaise spécialisée dans le
+			consulting autour d'un EAI du nom de Cloverleaf.
+			
+			\paragraph{}% Position d'Xperis sur le marché
+			
+			\paragraph{}% Rapide historique d'Xperis
+			
+			
+		\subsubsection{Xperis cherche à établir des liens directs avec les hôpitaux}
+			\paragraph{}% panorama du monde hospitalier
+			
+			\paragraph{}% regroupement des hôpitaux en GHT
+			
+			\paragraph{}% Maincaire va peut-être se séparer d'Xperis un jour
+			
+			\paragraph{}% La stratégie d'Xperis face à ces challenges
+			
+		\subsubsection{Un outil qui se vend mal et qui est peu utilisé}
+			\paragraph{}% 
+			
+			% Résumé de la partie 1.2
+			\paragraph{}
+			Nous avons vu qu'Xperis est confronté à un certain nombre de problématiques
+			commerciales. L'entreprise à une vrais volonté de traiter en direct avec les
+			hôpitaux pour gagner en indpendance vis à vis des éditeurs. TrackCIS entre
+			dans cette stratégie mais a du mal à se faire une place parmi les
+			clients.\newline
+			L'ensemble de ces problématiques constituent le socle du présent travail.
+	
+	\subsection{Vers une nouvelle version de TrackCIS}
+		\paragraph{}% problème => solution commerciale ou solution fonctionnelle
+		Le poblème que pose TrackCIS soulève une question : pourquoi cet outil ne se
+		vend t-il pas ? La réponse à cette question, loin d'être triviale, pourrait
+		être de deux type : une solution commerciale et une solution fonctionnelle.
+		\begin{description}
+			\item[La solution commerciale] Nous faisons ici l'hypothèse que la cause au
+			fait que TrackCIS ne se vende pas est commerciale. Ceci pouvant impliquer
+			plusieurs chose comme le fait que :
+			\begin{itemize}
+			  \item les clients n'ont pas réellemen besoins d'un outil tel que TrackCIS.
+			  Il esxiste en effet d'autres outils de supervision pour Cloverleaf, comme
+			  par exemple l'outil Global Monitore, dont nous reparlerons un peu plus
+			  loin, ou encore EAI Supervision.
+			  \item les utilisateur de TrackCIS n'existent pas. Cet outil a été développé
+			  pour des personnes non initiées à Cloverleaf mais qui pour qui il serait
+			  intéressant de superviser quelques flux.
+			  Or il est tout à fait possible que ce type de personne n'existe pas ou pas
+			  encore dans les hôpitaux.
+			  \item la communication ou le démarchage autour de TrackCIS est insufisant
+			  ou non adapté.
+			\end{itemize}
+			\item[La solution fonctionnelle] Cette fois-ci notre hypothèse est que
+			TrackCIS ne se vend pas car il lui manque des fonctionnalité indispensables à
+			ses utilisateurs.
+		\end{description}
+		
+		\subsubsection{Comprendre les utilisateurs et leurs besoins}
+			\paragraph{}
+			Texte de la sous sous partie
+		\subsubsection{Un module statistique lié aux évolutions de Cloverleaf}
+			\paragraph{}
+			Texte de la sous sous partie
+		\subsubsection{Méthodologie générale du projet}
+			\paragraph{}
+			Texte de la sous sous partie
+			
