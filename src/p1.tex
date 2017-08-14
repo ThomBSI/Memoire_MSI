@@ -29,9 +29,18 @@
 			ce secteur. La tableau ci-dessous offre un appercu des principaux logiciels
 			que l'on peut trouver dans un hôpital.\newline
 			
-			\begin{tableau} %Exemples des principaux logiciels métier avec leur fonction
-			% Mettre un tableau ici
-			\end{tableau}
+			\begin{tabular}{| p{4cm} | p{12cm} |} %Exemples des principaux logiciels
+			% métier avec leur fonction
+				\hline
+					Dossier patient informatisé (DPI)
+					&
+					
+				\hline
+					Gestion administrative des malades (GAM)
+					&
+				
+				\hline
+			\end{tabular}
 			
 			Or ces différents outils ont bien souvant été développés par des sociétés
 			différentes. En outre, ces outils sont spécialisés dans quelques fonctions
@@ -46,7 +55,7 @@
 			des données.
 		
 			\paragraph{}% L'EAI est la solution au problème de l'interopérabilité
-			C'est ici qu'entre en jeux l'EAI. Il s'agit d'un outil qui établi des liens
+			C'est ici qu'entre en jeu l'EAI. Il s'agit d'un outil qui établi des liens
 			entre les applications métier. Il va par exemple collecter certaines données
 			émises par le logiciel de gestion des entrées patients pour les injecter dans
 			l'outil de gestion des dossiers patients. Plus généralement, il transfert des données
@@ -66,6 +75,12 @@
 			  format de donnée.
 			\end{itemize}
 
+			\begin{figure}
+				\begin{center} \includegraphics[scale=0.2]{../img/EAI_1.png} \end{center}
+				\caption{L'EAI permet aux applications métier d'échanger des données entre
+				elles.}
+			\end{figure}
+
 			\paragraph{}% Un peu de vocabulaire
  			Arrêtons nous un instant pour préciser le vocabulaire que nous utiliserons
  			par la suite.\newline
@@ -84,8 +99,45 @@
  			\end{description}
  			
 		\subsubsection{Les flux de messages doivent être surveillés}
-			\paragraph{}
+			\paragraph{}% pourquoi c'est important
+			Les échanges de données entre les applications du SI se font
+			princiaplement par le biais de messages. L'EAI permet également de transférer
+			des fichiers entiers, de tout format. Son rôle est central dans le SI. Sans
+			lui les application ne peuvent fonctionner qu'en autonomie. Or le bon
+			fonctionnement du service hospitalier dans son intégralité dépend de
+			l'intéropérabilité entre les différents services qui le compose. En effet, le
+			traitement d'un malade est souvant le ressort de plusieurs services :
+			aministratif (pour l'enregistrement du patient), dossier patients informatisé
+			(pour ces données médicale), gestion de la pharmacie, demandes d'analyse de
+			laboratoire, transfert dans un autre service de soin\ldots Toutes ces étapes
+			dans le traitement d'un patient dépend d'un outil différent. Il est donc
+			essentiel que tous fonctionnent de concert en permanance. C'est pour cela
+			qu'il est important d'effectuer une surveillance continue des flux de
+			messages dans l'EAI.
 			
+			\paragraph{}% Encore un peu de vocabuaire\ldots
+			La surveillance des flux est ce que l'on appel la supervision. Pour tenter de
+			comprendre en quoi cela consiste, quelques notions un petit peu plus
+			techniques nous sont nécessaires. Notament les notions de connecteur et
+			d'erreur. Rappelons que même si nous ne nous basons ici que sur l'exemple de
+			l'EAI Cloverleaf, il est cependant possible que ces concepts soient
+			applicables à d'autres EAI.
+			
+			\paragraph{}% La notion de thread
+			L'EAI établi des connexions avec les appications métier. Celles-ci
+			permettent à l'outil de récupérer les données émisent par le logiciel et d'en
+			injecter de nouvelles. Au niveau de l'EAI ces connexions s'appellent des
+			thread.
+			
+			\paragraph{}% Les causes d'erreurs
+			S'il est nécessaire de superviser les flux, c'est que de erreur peuvent
+			survenir. Différentes raisons peuvent expliquer qu'un flux tombe en erreur
+			:\newline
+			\begin{itemize}
+			  \item Un problème réseau empèche momentanément un ou plusieurs messages de
+			  passer.
+			  \item 
+			\end{itemize}
 			
 		\subsubsection{TrackCIS est un outil qui permet la supervision des flux}
 			\paragraph{}
@@ -201,6 +253,14 @@
 		\end{description}
 		
 		\subsubsection{Comprendre les utilisateurs et leurs besoins}
+			\paragraph{}% Nous ne traitons que de la solution fonctionnelle
+			De ces deux solutions à la problématique soulevée par TrackCIS (commerciale
+			ou fonctionnelle), nous prenons le partie de n'en traiter qu'une, la
+			seconde.\newline
+			L'objectif assumé de ce mémoire est de traiter de l'amélioration
+			fonctionnelle et technique d'un outil tel que TrackCIS. Notre objectif est de
+			chercher à connaitre
+			
 			\paragraph{}% Les anciennes specs ne permettent pas de bien comprendre le besoin des utilisaturs
 			
 			\paragraph{}% Ce qui soulève la question de qui sont les utilisateurs
@@ -217,7 +277,9 @@
 		\subsubsection{Méthodologie générale du projet}
 			\paragraph{}% Résumé des problèms soulevés
 			
+			
 			\paragraph{}% Cadrage de notre travail
+			
 			
 			\paragraph{}% Méthodologie générale
 			
