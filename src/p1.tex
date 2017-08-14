@@ -135,15 +135,54 @@
 			traitement des patients.
 			
 			\paragraph{}% Exemple de cas de disfonctionnement
+			Il existe différentes raisons pour lesquelles un flux peut tomber en erreur.
+			La Figure 3 \ref{Figure 3} expose les trois principales. La cause 1) évoquée
+			sur le schéma, correspond à une erreur qui survient entre l'application source et l'EAI,
+			c'est-à-dire lors du transfert du message de l'application à l'EAI. Une
+			erreur de ce type peut avoir des causes variées. Il peut s'agir d'un problème
+			au niveau du réseau qui transporte les message (par exemple une coupure
+			internet). Le cas 2) correspond à une erreur qui est levée
+			lors du traitement du message par l'EAI. Il se peut que le contenu du
+			message ne soit pas conforme à ce qu'attendait le script réalisant le
+			traitement. Ce peut être par exemple le cas lorsqu'un utilisateur de
+			logiciel métier fait un erreur de saisie et que cette erreur n'est pas
+			relevée par le logiciel en question. Enfin, dans le cas 3), les messages
+			s'accumulent à la sortie de l'EAI car la route entre l'EAI et l'application
+			destinataire est bloquée, par exemple par une coupure momentanée du réseau.
+			% Schéma des causes d'erreur
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=15cm]{../img/error_1.png}
+				\caption{\label{Figure 3} De multiples causes d'erreurs peuvent stoper
+				momentanément un flux de message.}
+			\end{figure}
 			
-			\paragraph{}
+			\paragraph{}% Surveiller un flux c'est pas facile
 			Ainsi, il est capital d'exercer une surveillance continue sur les différents
-			flux, pour s'assurer que l'EAI assure bien ses fonctions et que les messages
-			transitent correctement.
+			flux, pour être certain que l'EAI assure bien ses fonctions et que les
+			messages transitent correctement. Cette surveillance est ce que l'on appel la
+			supervision des flux. Cette tâche peut être assurée grâce à deux outils :
+			\begin{itemize}
+			  \item L'environnement de développement intégré (IDE) de Cloverleaf. Cet
+			  outil permet de controler tout l'EAI, c'est-à-dire aussi bien assurer la
+			  supervision que de mettre en place de nouveaux flux. L'IDE est un outil
+			  très complexe qui nécéssite une formation spécialisée, ce que les
+			  personnels des services informatiques des centres hospitaliers n'ont pas
+			  forcément.
+			  \item Les consoles de supervision.
+			\end{itemize}
 			
 		\subsubsection{TrackCIS est un outil qui permet la supervision des flux}
-			\paragraph{}%
-			Texte de la sous sous partie
+			\paragraph{}% C'est quoi une console de supervision ?
+			Une console de supervision permet d'assurer la surveillance
+			de tout ou partie des flux gérés par l'EAI. Ce type d'outil dispose d'un
+			nombre limté de fonctionnalité par rapport à l'IDE. Il est destiné à des
+			personnes ne maîtrisant pas totalement le fonctionnement de l'EAI. Cependant,
+			pour pouvoir utilisé correctement de tels outils, une formation minimum est
+			généralement requise.
+			
+			\paragraph{}% Exemple de global monitor
+			
 		
 		\paragraph{}% Résumé de la partie 1.1
 		Nous avons vu dans cette première partie que l'EAI est une solution au

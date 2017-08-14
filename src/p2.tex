@@ -81,14 +81,15 @@
 			classons ensuites toutes les informations collectées dans ces thèmes.\newline
 			Les thèmes qui sont ressortis sont les suivants :
 			\begin{itemize}
-			  \item L’organisation des services informatique dans les hôpitaux,
-			  \item Les types d’utilisateurs de TC,
-			  \item Les types d’utilisations de TC,
-			  \item Les attentes par rapport aux consoles de supervision et la réponse
-			  des outils actuels à ces attentes,
-			  \item Les fonctionnalités manquant aux consoles de supervisions
-			  actuelles,
-			  \item Les statistiques sur les flux.
+			  \item[- grand thème 1] L’organisation des services informatique dans les
+			  hôpitaux,
+			  \item[- grand thème 2] Les types d’utilisateurs de TC,
+			  \item[- grand thème 3] Les types d’utilisations de TC,
+			  \item[- grand thème 4] Les attentes par rapport aux consoles de supervision
+			  et la réponse des outils actuels à ces attentes,
+			  \item[- grand thème 5] Les fonctionnalités manquant aux consoles de
+			  supervisions actuelles,
+			  \item[- grand thème 6] Les statistiques sur les flux.
 			\end{itemize}
 			Dans la suite de cette partie nous entrerons dans le détail des informations
 			collectées pour chacun de ces grand thèmes.
@@ -96,14 +97,131 @@
 		\subsubsection{La supervision fait partie du processus de résolution des
 		anomalies}
 			\paragraph{}% Présentation
+			Nous analyserons ici l'organisation interne des services liées à
+			l'interopérabilité dans les hôpitaux. Nous verons ensuite quelles sont les
+			pratiques liées à la supervision (autrement dit, nous détaillerons les
+			grands thèmes 1 et 3).
 			
 			\paragraph{}% L'organisation des DSIO
+			Les services informatiques ont des structures variables selon les
+			établissements. Cependant, il existe dans tous les cas observés au moins un
+			département consacré à l’interopérabilité. Ce département peut se subdiviser
+			en deux pôles :
+			\begin{itemize}
+			  \item Un pôle intégration
+			  \item Un pôle exploitation
+			\end{itemize}
+			Le pôle intégration prend en charge la mise en place de nouveaux flux et du
+			bon fonctionnement de l’EAI. Son niveau de compétence sur Cloverleaf est
+			élevé. Ce type de pôle existe dans des établissements relativement autonomes
+			vis-à-vis des éditeurs. Le pôle intégration se compose généralement de 2 à 3
+			personnes. Les outils utilisés sont principalement l’IDE, EAI Supervision et
+			Global Monitor (GM).\\
+			Le pôle exploitation a en charge la supervision des flux. Le niveau de
+			maîtrise de Cloverleaf y est plus faible. Les outils utilisés sont en
+			général les consoles de supervision (GM, TC, EAI supervision), mais pas
+			l’IDE, trop complexe pour ce type d’utilisateur.\\
+			Les deux pôles peuvent cohabiter au sein d’un même établissement. Certains,
+			comme le CHU de Metz, n’ont qu’un pôle exploitation, la mise en place des
+			flux étant assuré par un autre département (en l’occurrence, le département
+			en charge de l’urbanisation). D’autres établissements, beaucoup plus
+			dépendants des éditeurs, ne s’occupent pas de la mise en place des flux ni
+			du fonctionnement de l’EAI, mais seulement de la supervision. C’est par
+			exemple le cas du CHU de Châtellerault.\\
+			La Figure 5 résume les différents niveaux de gestion de l’interopérabilité au
+			sein d’un hôpital. Un pôle exploitation se situe au niveau le plus bas
+			tandis qu’un pôle intégration peut se situer au niveau 2 ou 3. Le niveau le
+			plus haut est en général assuré par un département urbanisation, en charge
+			de la définition de la politique de tout le SI.
+			% Niveau de responsabilité pour l'interop dans le SI
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=8cm]{../img/si_1.png}
+				\caption{\label{Figure 4} Les différents niveaux de responsabilité autour
+				de la gestion de l'interopérabilité.}
+			\end{figure}
 			
 			\paragraph{}% Diversité des pratiques
+			L’ensemble des outils liés à Cloverleaf (IDE et consoles de supervision) sont
+			utilisés pour la supervision des flux. Les utilisateurs les plus aguerris
+			sur Cloverleaf utilisent l’IDE, notamment le bouton status qui donnes accès
+			à des données statistiques sur un thread ou un process. Pour détecter les
+			problèmes, l’utilisateur se fie principalement à l’heure de dernière
+			écriture d’un message. Si rien n’a été écrit depuis un certain temps, c’est
+			que le flux est bloqué et que les messages ne passent plus. Ce type
+			d’utilisateur est généralement en charge de la résolution des problèmes les
+			plus complexes. Pour cela, il a parfois recours à la consultation de l’error
+			database ou des SMAT pour comprendre l’origine de l’erreur.\\
+			Du côté des consoles de supervision, les usages qui sont ressortis sont :
+			\begin{itemize}
+			  \item Visualiser l’état des flux (si les threads et process sont bien en
+			  marche),
+			  \item Affichage sur écran géant,
+			  \item Rechercher un message en particulier, ou un certain type de
+			  messages. Par exemple, tous les messages concernant un patient donné,
+			  \item Visualiser les messages en erreur,
+			  \item Supervision en mode lecture seule : vérifier que les messages
+			  passent bien et connaître l’origine des erreurs,
+			  \item Explorer le contenu des messages pour diagnostiquer une erreur,
+			  \item Réaliser des tests lors de la mise en place de flux (usage repéré
+			  uniquement au CHU de Toulouse),
+			  \item Editer le contenu des messages en cas d’erreur,
+			  \item Rejouer des messages après les avoir édités,
+			  \item Pour les flux Maincare et EAI Supervision, s’assurer que les
+			  messages sont bien intégrés dans les applications de destination,
+			  \item Restreindre l’utilisation de certaines fonctionnalités pour par
+			  exemple confier les outils à des personnes d’astreintes ou des personnes
+			  métier,
+			  \item Comparer le contenu d’un message entre son entrée dans un flux et
+			  sa sortie. Cet usage n’a été référencé que pour EAI Supervision,
+			  \item Paramétrer l’outil : création de colonnes, attribution des droits…
+			\end{itemize}
+			\paragraph{}
+			Cette liste nous permet de connaître les principales utilisations des
+			consoles de supervision \ref{Figure x}. L’utilisation la plus simple est la
+			visualisation : voir les messages qui passent et pouvoir détecter rapidement
+			les erreurs. Une fois les erreurs détectées, l’utilisateur cherche à
+			comprendre ce qui les a causées. Pour cela, il peut être suffisant de
+			regarder le contenu du message pour en repérer les anomalies, ou bien aller
+			dans l’error database. Une fois la cause de l’erreur bien établie, vient une
+			phase de correction. Celle-ci peut se faire par édition du contenu du
+			message et par rejoue, dans les cas les plus simples. Comme c’est le cas
+			pour le CHU de Toulouse, la console peut être utilisée pour effectuer des
+			tests lors de la mise en place de nouveaux flux. C’est-à-dire vérifier que
+			les messages passent correctement d’une application à une autre. Enfin, les
+			utilisateurs les plus avertis ont en charge l’administration de la console,
+			c’est-à-dire son paramétrage (attribution des droits de consultation et
+			d’action aux utilisateurs, paramétrage des colonnes …). Ce rôle revient
+			généralement au pôle intégration ou à Xperis. On remarque que, dans le cas
+			de TC, le paramétrage de la console est un facteur limitant à son
+			utilisation en production.
+			% Niveau de responsabilité pour l'interop dans le SI
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=8cm]{../img/usage_1.png}
+				\caption{\label{Figure x} Les différents d'utilisation des consoles de
+				supervision.}
+			\end{figure}
+			
+			\paragraph{}
+			En bilan, la supervision d’un flux peut se définir comme :
+			\begin{itemize}
+			  \item Voire en un coup d’œil la présence d’anomalies telles que :
+			  	\begin{itemize}
+			  	  \item Des erreurs,
+			  	  \item Des ralentissements,
+			  	  \item Des blocages
+		  	    \end{itemize}
+			  \item Pouvoir expliquer, même partiellement ces anomalies,
+			  \item Et éventuellement pouvoir agir dessus, par exemple en rejouant un
+			  message qui n’est pas passé à cause d’un problème momentané de la connexion.
+			\end{itemize}
 			
 		\subsubsection{Une grande diversité des utilisateurs des consoles de
 		supervision}
 			\paragraph{}% Présentation
+			Nous présenterons ici la typologie d'utilisateur qui est ressortie de
+			l'étude, ce qui correspond au grand thème 2.
 			
 			\paragraph{}% Les utilisateurs
 			
