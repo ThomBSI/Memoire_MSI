@@ -1,19 +1,37 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
-\usepackage[top=2cm, bottom=2cm, right=2cm, left=2cm]{geometry}
+\usepackage[top=3cm, bottom=3cm, right=2cm, left=2cm]{geometry}
 \usepackage[round,authoryear]{natbib}
 
+% Figures et léégendes
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
 \usepackage{float}
 \floatplacement{figure}{!h}
-\usepackage{wrapfig}
-\usepackage{graphicx}
+
+% Police
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 
+% Tableaux
+\usepackage{array}
 \newcommand{\comment}[1]{}
+\newcommand*{\thead}[1]{\multicolumn{1}{|c|}{\bfseries #1}}
 
+% Page de garde
 \title{Mémoire d'ingénieur}
-\renewcommand{\thesection}{\Roman{section}}
-\renewcommand{\thesubsection}{\Alpha{subsection}}
-\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+
+% Titres des parties 
+\renewcommand{\thesection}{\Roman{section}-}
+\renewcommand{\thesubsection}{\Alph{subsection})}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection})}
+
+% Espacements
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parskip}{0.5cm}
+
+% Ajoute un niveau de détail de titre à la table des matières
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}

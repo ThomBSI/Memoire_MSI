@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt]{report}
  
 % Préambule du document
 \input{preambule.tex}
@@ -7,6 +7,11 @@
 	
 	% Page de garde
 	\maketitle
+	\newpage
+	\tableofcontents
+	\newpage
+	\listoftables
+	\newpage
 	  
 	\input{introduction.tex}
 	
@@ -16,5 +21,11 @@
 	\input{p3.tex}
 	
 	\input{conclusion.tex}
+
+	\appendix
+	\input{a1.tex}
+	
+\bibliographystyle{plain}
+\bibliography{../biblio/biblio}
 
 \end{document}

@@ -1,155 +1,196 @@
+\newpage
 \section{TrackCIS, un outil au service de l'interopérabilité des applications hospitalières}
 	\paragraph{}
-	Cette première partie vise à introduire le projet sur lequel porte ce mémoire.
-	Ce projet s'inscrit dans des enjeux propres à la société Xperis et porte sur
-	l'outil TrackCIS, conole de supervision de Cloverleaf. Nous nous attaderons
-	donc ici à présenter ces différents éléments protagonistes de notre étude de
-	façon à en cerner tous les enjeux et à mettre en place une méthodologie adapté.
+	Cette première grande partie est une introduction du projet sur lequel porte ce
+	mémoire. Ce projet s'inscrit dans des enjeux propres à la société Xperis et
+	porte sur l'outil TrackCIS, console de supervision de l'EAI Cloverleaf. Nous
+	nous attacherons donc ici à présenterles différents éléments importants de
+	notre étude de façon à en cerner tous les enjeux et à mettre en place une
+	méthodologie adapté.
 
-	\subsection{TrackCIS est une console de supervision de l'EAI cloverleaf}
-		\paragraph{} 
-		Commencons par définir quelques notions technique qui nous seront utiles,
+	\subsection{TrackCIS est une console de supervision de l'EAI Cloverleaf}
+		\paragraph{}
+		Commençons par définir quelques notions techniques qui nous seront utiles,
 		sinon indispensables pour la suite : les EAI et leurs consoles de supervision.
-		 
+		
 		\subsubsection{Qu'est-ce qu'un EAI ?}
 			\paragraph{}% Interopérabilité
-			EAI signifi Intégration d'Application d'Entreprise. Pour bien comprendre de
-			quoi il s'agit et quel rôle tient un tel outil, il faut comprendre la notion
-			d'intéropérabilité. Mais avant toute chose, il est important de préciser que
-			nous ne parlerons dans cette partie - et plus généralement tout au long de ce
-			mémoire - que des EAI dans le monde hospitalier. de nombreuses entreprises ou
-			organisme de tous les secteurs utilisent de tels outil. Dans notre cas nous nous
-			focaliserons uniquement sur les EAI du monde hospitalier et nous
-			chercherons à défnir les EAI au travers d'exemple de ce secteur.\newline
-			Selon la définition du dictionnaire Larousse, l'interopérabilité est la "<capacité dematériels, de logiciels ou de protocoles différents à
-			fonctionner ensemble et à partager des informations">. Si l'on transpose
-			cette définition au monde de l'hopital, l'interopérabilité correspond à la
-			capacité des différents logiciels (ou applicatifs) métier à fonctionner
-			ensemble. Il existe en effet une grande diversité d'applicatifs métier dans
-			ce secteur. La tableau ci-dessous offre un appercu des principaux logiciels
-			que l'on peut trouver dans un hôpital.\newline
-			
-			\begin{tabular}{| p{4cm} | p{12cm} |} %Exemples des principaux logiciels
-			% métier avec leur fonction
-				\hline
-					Dossier patient informatisé (DPI)
+			EAI signifie Intégration d'Application d'Entreprise. Pour bien comprendre de
+			quoi il s'agit et quel rôle tient un tel outil dans un SI, il nous faut
+			comprendre la notion d'interopérabilité. Il est important
+			de préciser que nous ne parlerons dans cette partie - et plus généralement
+			tout au long de ce document - que des EAI dans le monde hospitalier. En
+			effet, de nombreuses entreprises ou organismes de tous les secteurs utilisent
+			de tels outils. Dans notre cas nous nous focaliserons uniquement sur les EAI du
+			monde hospitalier et nous chercherons à comprendre ce que sont les EAI au
+			travers d'exemples de ce secteur.\newline
+			Selon la définition du dictionnaire Larousse, l'interopérabilité est la
+			"capacité de matériels, de logiciels ou de protocoles différents à
+			fonctionner ensemble et à partager des informations"
+			\citep{larousse_definitions_interop}. Si l'on transpose cette définition au
+			monde de l'hôpital, l'interopérabilité correspond à la capacité des
+			différents logiciels (ou applicatifs) métier à fonctionner ensemble. Il
+			existe une grande diversité d'applicatifs métier dans ce secteur. Le
+			\ref{tableau 1} offre un aperçu de quelques fonctions
+			remplies par les logiciels que l'on peut trouver dans un hôpital.
+			\begin{table}[!h]
+				\centering
+				\begin{tabular}{| p{4cm} | p{10cm} |} %Exemples des principaux logiciels
+				% métier
+					\hline
+					\thead{Type de fonctionnalité}&\thead{Description}
+					\\
+					\hline
+					La GAM (Gestion Administrative des Malades)
 					&
-					
-				\hline
-					Gestion administrative des malades (GAM)
+					Bla bla bla bla
+					\\
+					\hline
+					Le DPI (Dossier Patient Informatisé)
 					&
-				
-				\hline
-			\end{tabular}
-			
-			Or ces différents outils ont bien souvant été développés par des sociétés
+					Le DPI 
+					DPI et GAM sont les deux princpaux outils utilisés dans les centres
+					hospitéliers. De nombreux éditeurs proposent des logiciels permettant de
+					remplir ces fonctions.\\
+					\hline
+				\end{tabular}
+				\caption{\label{tableau 1}Quelques fonctions assurées par les
+				logiciels métier présents dans les hôpitaux \citep{interopsante_guide_2015}.}
+			\end{table}
+			Or ces différents outils ont bien souvent été développés par des sociétés
 			différentes. En outre, ces outils sont spécialisés dans quelques fonctions
-			biens précises : comptabilité, enregistrement des patients, gestion des
-			stocks de pharmatie\ldots Dans la plupart des cas, leur conception ne leur
+			bien précises : comptabilité, enregistrement des patients, gestion des
+			stocks de pharmacie\ldots Dans la plupart des cas, leur conception ne leur
 			permet pas de fonctionner ensemble, ce qui pourtant peut s'avérer utile. Par
-			exemple, le logiciel gérant les stocks de la pharmacies peuvent avoir besoins
-			d'information sur les prescriptions faites par les medecins aux patients. De
-			même, les informations sur les patients saisie à l'arrivée de ces derniers
-			peuvent intéresser les médecin dans le logiciel gérant les dossiers passient.
-			En résumé, il est nécéssaire pour ces différentes applications de partager
+			exemple, le logiciel gérant les stocks de la pharmacie peut avoir besoin
+			d'informations sur les prescriptions faites par les médecins aux patients. De
+			même, les données sur les patients saisies à l'arrivée de ces derniers
+			peuvent intéresser les médecins dans le logiciel gérant les dossiers
+			patients.
+			En résumé, il est nécessaire pour ces différentes applications de partager
 			des données.
-		
+			
 			\paragraph{}% L'EAI est la solution au problème de l'interopérabilité
-			C'est ici qu'entre en jeu l'EAI. Il s'agit d'un outil qui établi des liens
-			entre les applications métier. Il va par exemple collecter certaines données
-			émises par le logiciel de gestion des entrées patients pour les injecter dans
-			l'outil de gestion des dossiers patients. Plus généralement, il transfert des données
-			émisent par un outil A pour les mettre à disposition d'un outil B.\newline
-			Mais les fonctions de l'EAI ne se résume pas au seul transport des
-			données. Il est parfois utile de réaliser des actions sur ls informations
-			transmises d'une application à l'autre. Ces actions peuvent êtres par exemple
-			:\newline
+			C'est ici qu'entre en jeux l'EAI. Il s'agit d'un outil qui établit des
+			connexions entre les applications métier. Il va par exemple collecter
+			certaines données émises par le logiciel de gestion des entrées patients
+			pour les injecter dans l'outil de gestion des dossiers patients. Plus
+			généralement, il transfert des données émises par un outil A pour les
+			mettre à disposition d'un outil B \ref{Figure 1}.\newline
+			
+			% Schéma général d'un EAI
+			\begin{figure}
+				\centering
+				\includegraphics[width=10cm]{../img/eai_1.png}
+				\caption{\label{Figure 1} L'EAI est un outil qui permet d'établir des
+				routes entre applications métier.}
+			\end{figure}
+			
+			Et les fonctions de l'EAI ne se résume pas au seul transport des données. Il
+			est parfois utile de réaliser des actions sur les informations transmises
+			d'une application à l'autre \ref{Figure 2}. Ces actions peuvent êtres par
+			exemple :\newline
 			\begin{itemize}
 			  \item de valider les informations transmises. Par exemple, l'EAI va
-			  s'assurer que dans chaque donnée émise par une application de gestion des
-			  prescription, le nom du patient est bien présent.
-			  \item d'effectuer des transformation. L'application de destination de
-			  gère pas forcément les mêmes frmats de donnée que l'application émétrice
-			  car, rappelons le, les applications ne sont pas forcéments conçues pour
-			  fonctionner ensemble. L'EAI est ainsi capable de faire des conversion de
+			  s'assurer que pour chaque donnée émise par une application de gestion des
+			  prescriptions, le nom du patient est bien présent.
+			  \item d'effectuer des transformations. L'application destinataire ne
+			  gère pas forcément les mêmes formats de données que l'application émettrice
+			  car, rappelons-le, les applications ne sont pas forcément conçues pour
+			  fonctionner ensemble. L'EAI est ainsi capable de faire des conversions de
 			  format de donnée.
 			\end{itemize}
 
+			% Schéma détaillé EAI
 			\begin{figure}
-				\begin{center} \includegraphics[scale=0.2]{../img/EAI_1.png} \end{center}
-				\caption{L'EAI permet aux applications métier d'échanger des données entre
-				elles.}
+				\centering
+				\includegraphics[width=15cm]{../img/eai_2.png}
+				\caption{\label{Figure 2} Un EAI peut effectuer des opérations sur les
+				données qui transite par lui.}
 			\end{figure}
-
+			
 			\paragraph{}% Un peu de vocabulaire
- 			Arrêtons nous un instant pour préciser le vocabulaire que nous utiliserons
- 			par la suite.\newline
+ 			Il existe un vocabulaire pour désigner les transferts de données entre
+ 			applications. Dans la suite, nous parlerons de :
  			\begin{description}
- 				\item[Flux] Les flux sont tout simlement les routes permettant de connecter
- 				une application à une autre. Dans un système d'information hospitalier
+ 				\item[Flux] Les flux sont tout simplement les routes permettant de
+ 				connecter une application à une autre. Dans un système d'information hospitalier
  				(SIH), il y a donc autant de flux de de couple d'application. Il est
  				possible - et même courent - qu'une application soit reliée à plusieurs
  				autres.
  				\item[Message] Les données qui passent le long des flux, d'une application
  				à une autre, sont appelés message. Les messages se présente en général sous
- 				la forme de text hautement standardisé. les messages sont émis par les
+ 				la forme de texte hautement standardisé. Les messages sont émis par les
  				applicatifs métier dans un format donné. Il existe de nombreux formats
  				dont certains sont spécifiques au monde hospitalier. L'annexe N présente
- 				quelques uns des principaux formats utilisés (HL7 et HPRIM).
+ 				quelques-uns des principaux formats utilisés (HL7 et HPRIM).
  			\end{description}
  			
 		\subsubsection{Les flux de messages doivent être surveillés}
-			\paragraph{}% pourquoi c'est important
-			Les échanges de données entre les applications du SI se font
-			princiaplement par le biais de messages. L'EAI permet également de transférer
-			des fichiers entiers, de tout format. Son rôle est central dans le SI. Sans
-			lui les application ne peuvent fonctionner qu'en autonomie. Or le bon
-			fonctionnement du service hospitalier dans son intégralité dépend de
-			l'intéropérabilité entre les différents services qui le compose. En effet, le
-			traitement d'un malade est souvant le ressort de plusieurs services :
-			aministratif (pour l'enregistrement du patient), dossier patients informatisé
-			(pour ces données médicale), gestion de la pharmacie, demandes d'analyse de
-			laboratoire, transfert dans un autre service de soin\ldots Toutes ces étapes
-			dans le traitement d'un patient dépend d'un outil différent. Il est donc
-			essentiel que tous fonctionnent de concert en permanance. C'est pour cela
-			qu'il est important d'effectuer une surveillance continue des flux de
-			messages dans l'EAI.
+			\paragraph{}% Importance fonctionnelle de la supervision
+			L'EAI est un outil complexe mais dont le bon fonctionnement est essentiel. En
+			effet, c'est tout le SI de l'hôptial qui repose en permanance sur l'EAI. Si
+			un disfonctionnement intervien au niveau de se dernier, des pans entier du
+			service hospitalier risque d'en patir, ce qui aura des conséquences sur le
+			traitement des patients.
+
+			\paragraph{}% Exemple de cas de disfonctionnement
+			Il existe différentes raisons pour lesquelles un flux peut tomber en erreur.
+			La Figure 3 \ref{Figure 3} expose les trois principales. La cause 1) évoquée
+			sur le schéma, correspond à une erreur qui survient entre l'application source et l'EAI,
+			c'est-à-dire lors du transfert du message de l'application à l'EAI. Une
+			erreur de ce type peut avoir des causes variées. Il peut s'agir d'un problème
+			au niveau du réseau qui transporte les message (par exemple une coupure
+			internet). Le cas 2) correspond à une erreur qui est levée
+			lors du traitement du message par l'EAI. Il se peut que le contenu du
+			message ne soit pas conforme à ce qu'attendait le script réalisant le
+			traitement. Ce peut être par exemple le cas lorsqu'un utilisateur de
+			logiciel métier fait un erreur de saisie et que cette erreur n'est pas
+			relevée par le logiciel en question. Enfin, dans le cas 3), les messages
+			s'accumulent à la sortie de l'EAI car la route entre l'EAI et l'application
+			destinataire est bloquée, par exemple par une coupure momentanée du réseau.
+			% Schéma des causes d'erreur
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=15cm]{../img/error_1.png}
+				\caption{\label{Figure 3} De multiples causes d'erreurs peuvent stoper
+				momentanément un flux de message.}
+			\end{figure}
 			
-			\paragraph{}% Encore un peu de vocabuaire\ldots
-			La surveillance des flux est ce que l'on appel la supervision. Pour tenter de
-			comprendre en quoi cela consiste, quelques notions un petit peu plus
-			techniques nous sont nécessaires. Notament les notions de connecteur et
-			d'erreur. Rappelons que même si nous ne nous basons ici que sur l'exemple de
-			l'EAI Cloverleaf, il est cependant possible que ces concepts soient
-			applicables à d'autres EAI.
-			
-			\paragraph{}% La notion de thread
-			L'EAI établi des connexions avec les appications métier. Celles-ci
-			permettent à l'outil de récupérer les données émisent par le logiciel et d'en
-			injecter de nouvelles. Au niveau de l'EAI ces connexions s'appellent des
-			thread.
-			
-			\paragraph{}% Les causes d'erreurs
-			S'il est nécessaire de superviser les flux, c'est que de erreur peuvent
-			survenir. Différentes raisons peuvent expliquer qu'un flux tombe en erreur
-			:\newline
+			\paragraph{}% Surveiller un flux c'est pas facile
+			Ainsi, il est capital d'exercer une surveillance continue sur les différents
+			flux, pour être certain que l'EAI assure bien ses fonctions et que les
+			messages transitent correctement. Cette surveillance est ce que l'on appel la
+			supervision des flux. Cette tâche peut être assurée grâce à deux outils :
 			\begin{itemize}
-			  \item Un problème réseau empèche momentanément un ou plusieurs messages de
-			  passer.
-			  \item 
+			  \item L'environnement de développement intégré (IDE) de Cloverleaf. Cet
+			  outil permet de controler tout l'EAI, c'est-à-dire aussi bien assurer la
+			  supervision que de mettre en place de nouveaux flux. L'IDE est un outil
+			  très complexe qui nécéssite une formation spécialisée, ce que les
+			  personnels des services informatiques des centres hospitaliers n'ont pas
+			  forcément.
+			  \item Les consoles de supervision.
 			\end{itemize}
 			
 		\subsubsection{TrackCIS est un outil qui permet la supervision des flux}
-			\paragraph{}
-			Texte de la sous sous partie
+			\paragraph{}% C'est quoi une console de supervision ?
+			Une console de supervision permet d'assurer la surveillance
+			de tout ou partie des flux gérés par l'EAI. Ce type d'outil dispose d'un
+			nombre limté de fonctionnalité par rapport à l'IDE. Il est destiné à des
+			personnes ne maîtrisant pas totalement le fonctionnement de l'EAI. Cependant,
+			pour pouvoir utilisé correctement de tels outils, une formation minimum est
+			généralement requise.
+			
+			\paragraph{}% Exemple de global monitor
+			
 		
-		% Résumé de la partie 1.1
+		\paragraph{}% Résumé de la partie 1.1
 		Nous avons vu dans cette première partie que l'EAI est une solution au
 		problème de l'onteropérabilité en établissant des flux de données entre
 		applications métier. Nous avons souligné le fait que la surveillance (la
 		supervision) continue des flux est indispensable au bon fonctionnement de
-		l'EAI et, par extention, de tout le SI. Enfin, TrackCIS est un outil qui permet de rendre la
-		supervision plus simple et plus rapide.\newline
+		l'EAI et, par extention, de tout le SI. Enfin, TrackCIS est un outil qui
+		permet de rendre la supervision plus simple et plus rapide.\newline
 		Dans la suite nous découvrirons les prblématiques inhérentes à cet outil.
 		
 	\subsection{TrackCIS est au cœur d'une problématique commerciale pour Xperis}
@@ -160,13 +201,27 @@
 		Cloverleaf.
 		
 		\subsubsection{Xperis est l'intermédiaire dans la distribution de Cloverleaf}
-			\paragraph{}% Présentation de Cloverleaf
-			Xperis est une entreprise Bordelaise spécialisée dans le
-			consulting autour d'un EAI du nom de Cloverleaf.
+			\paragraph{}% Les acteurs de ce projet
+			Les acteurs du projet qui nous concerne sont Xperis et les centres
+			hospitaliers clients d'Xperis.
+			\begin{itemize}
+			  \item Xperis est le commanditaire du projet. Il est également un
+			  utilisateur de TrackCIS.
+			  \item Les centres hospitalier sont les utilisateurs finaux de la solution
+			  que nous étudirons et implémenterons au cours de ce projet.
+			\end{itemize}
+			
+			\paragraph{}% Présentation d'Xperis
+			Le premier acteur de notre projet est la société Xperis. Cette entrepsrise
+			Bordelaise est spécialisée dans le Consulting autour de l'EAI Cloverleaf.
+			C'est une TPE (Très Petite Entreprise), qui compte une dizaine de personnes.
+			6 consultants techniques, deux ingénieurs commerciaux, une responsable
+			administrative et communication et un génrant
 			
 			\paragraph{}% Position d'Xperis sur le marché
-			
-			\paragraph{}% Rapide historique d'Xperis
+			Xperis est le seul distributeur de CLoverleaf en France. L'entreprise fait le
+			lien entre Infor et les éditeurs de logiciels hospitaliers. Les clients
+			d'Xperis sont ces éditeurs.
 			
 		\subsubsection{Xperis cherche à établir des liens directs avec les hôpitaux}
 			\paragraph{}% panorama du monde hospitalier
@@ -174,17 +229,17 @@
 			dont 1 416 établissements publics. Ces derniers sont répartis en trois catégories 
 			\citep{drees_panoramas_2016} :
 			\begin{itemize}
-				\item[-] 182 centres hospitaliers régionaux (CHR) : ils dispensent des soins 
+				\item 182 centres hospitaliers régionaux (CHR) : ils dispensent des soins 
 				spécialisés à la population de la région,
-				\item[-] 973 centres hospitaliers (CH) : ils assurent les soins médicaux, 
+				\item 973 centres hospitaliers (CH) : ils assurent les soins médicaux, 
 				chirurgie et prise en charge des personnes âgées,
-				\item[-] 97 centres hospitaliers psychiatriques,
-				\item[-] 164 établissements de soins longue durée.
+				\item 97 centres hospitaliers psychiatriques,
+				\item 164 établissements de soins longue durée.
 			\end{itemize}
 			Les hôpitaux privés sont répartis en deux catégories :
 			\begin{itemize}
-				\item[-] 1 012 établissements privés à but lucratifs,
-				\item[-] 683 établissements à but non lucratifs, dont 21 centre de lutte contre 
+				\item 1 012 établissements privés à but lucratifs,
+				\item 683 établissements à but non lucratifs, dont 21 centre de lutte contre 
 				le cancer.
 			\end{itemize}
 			
@@ -235,7 +290,7 @@
 			fait que TrackCIS ne se vende pas est commerciale. Ceci pouvant impliquer
 			plusieurs chose comme le fait que :
 			\begin{itemize}
-			  \item les clients n'ont pas réellemen besoins d'un outil tel que TrackCIS.
+			  \item les clients n'ont pas réellement besoins d'un outil tel que TrackCIS.
 			  Il esxiste en effet d'autres outils de supervision pour Cloverleaf, comme
 			  par exemple l'outil Global Monitore, dont nous reparlerons un peu plus
 			  loin, ou encore EAI Supervision.
@@ -276,10 +331,55 @@
 			
 		\subsubsection{Méthodologie générale du projet}
 			\paragraph{}% Résumé des problèms soulevés
+			Nous avons constaté dans les parties précédentes plusieurs problématiques
+			inhérentes à TrackCIS. Nous avons également pris le partie de tenter de
+			répondre à ces problèmatiques selon une logique fonctionnelle, de qui
+			implique de développer de nouvelles fonctionnalités sur cet outil.
 			
 			
 			\paragraph{}% Cadrage de notre travail
+			Avant d'exposer la méthodologie suivie dans ce projet, fixons les limites de
+			ce projet. Nous ne nous intéresserons ici qu'au développement d'un
+			module d'affichage de statistiques dans TrackCIS. Les raisons à ce choix sont
+			:
+			\begin{itemize}
+			  \item Le développement d'un tel module est un objectif prioritaire pour
+			  Xperis concernant TrackCIS.
+			  \item La possibilité de récupérer des statistiques sur le fonctionnement de
+			  Cloverleaf est une fonctionnalité nouvelle de l'EAI. Aucune console de
+			  supervision n'en n'a pour l'instant totalement exploité les possibilité.
+			  \item De ce fait, ce nouveau module peut apporter un facteur de
+			  différentiation notable à TrackCIS par rapport aux outres consoles.
+			  \item Ceci pourrait apporter une solution à la problématique commerciale
+			  de TrackCIS, à savoir le fait qu'il s'en vend peu.
+			\end{itemize}
+			Cependant, l'implémentation de ce seul modul statsitque n'apporterait une
+			réponse fonctionnelle complète. En effet, les besoins des utilisateurs sont à
+			ce jour mal connus par l'entreprise. La typologie même de ces utilisateur est
+			aujourd'hui difficile à définir.\newline
+			Notre objectif est donc le suivant :\newline
+			Contribuer à l'amélioration de TrackCIS par l'implémentation d'un module de
+			statstiques et par une analyse des besoins dans le but de propositions
+			d'autres axes d'amélioration.
+
+			\paragraph{}% Méthodologie générale + présentation de l'approche
+			% fonctions -> comportements -> structure de Xavier Blanc
+			Pour ce faire, nous procéderons en trois grandes étapes : l'analyse du
+			besoin, la conception d'une solution et le développement de cette
+			solution. Au cours de chacune de ces étapes nous serons amener  modéliser
+			différents aspect de l'application, notament 3 :
+			\begin{itemize}
+			  \item Modélisation des fonctions de l'application
+			  \item Modélisation des comportement de l'application et des utilisateurs
+			  \item Modélisation de la structure de l'application
+			\end{itemize}
+			Nous nous bason ici sur le
+			
+			Dans le livre intitulé UML2, Xavier Blanc et Isabelle mounier présente une
+			méthodologie d'analyse et de conception en trois étapes.
+			
+			\paragraph{}% Détail pour la phase d'analyse du besoin
 			
 			
-			\paragraph{}% Méthodologie générale
+			
 			
