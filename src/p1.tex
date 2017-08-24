@@ -196,11 +196,29 @@ hospitalières}
 				à des utilisateur ne maîtrisant pas forcément l'EAI.
 			\end{description}
 			
-			\paragraph{}% Objectif de l'outil
-			
-			
 			\paragraph{}% Les principales fonctionnalités
-			
+			Les principales fonctionnalités de TrackCIS sont :
+			\begin{itemize}
+			  \item Visualiser la liste des messages qui transitent dans le flux en temps
+			  réel. L'utilisateur peut ainssi voir les données qui passent par l'EAI. Il
+			  a accès a des informations sur ces messages comme leur date d'émission, ou
+			  leur état. Il peuvent par exemple voir si un message est en erreur, c'est à
+			  dire s'il est bloqué quelque part dans l'EAI.
+			  \item Pouvoir éditer et rejouer les messages. Lors d'une erreur, il peut
+			  être utile pour la personne en charge de la supervision de pouvoir modifier
+			  à la main le contenu du message. Ceci peut s'avérer utile quand l'erreur
+			  est due à une erreur de saisie par l'utilisateur de l'application de
+			  départ.
+			  \item La rejoue de message. Une fois une erreur corrigée, l'utilisateur de
+			  la console peut rejouer le message, c'est à dire le refaire passer dans
+			  l'EAI de façon à ce qu'il rejoigne l'application destinataire. La rejoue de
+			  message peut également s'avérée utile lors de problèmes de réseau. Une
+			  coupeure momentanée du réseau peu bloquer les messages qui transitant à ce
+			  moment. Une fois la coupure résolue, il faut rejouer les messages pour les
+			  débloquer et les faire transiter correctement.
+			\end{itemize}
+			Rappelons que chaque message peut contenir des données médicales ou
+			administratives utilent pour le tratement des patients.
 		
 		\paragraph{}% Résumé de la partie 1.1
 		Nous avons vu dans cette première partie que l'EAI est une solution au
@@ -284,19 +302,36 @@ hospitalières}
 			
 		\subsubsection{Un outil qui se vend mal et qui est peu utilisé}
 			\paragraph{}% L'objectif initial du projet TrackCIS
-			
-			\paragraph{}% Les specs de départ de TrackCIS
+			Comparativement aux autre consoles de supervision, TrackCIS se veut plus
+			simple et plus ergonomique. Initialement, le publique visé était les
+			utlisateurs métier, c'est-à-dire des personnes ne travaillant pas dans le
+			milieu informatique comme par exemple des infirmiers ou des pharmaciens. Ces
+			personnes, ou référents métiers, sont des utilisateurs d'applications
+			médicales. Le projet de TrackCIS avait pour objectif de confier une partie de
+			la supervision de l'EAI à ces personnes, sur les flux qui les intéressaient.
+			Ainsi, si un utilisateur rencontre un problème lié à l'intéropérabilité avec
+			une des application (par exemple un patient enregistré à l'acceuil mais dont
+			les informations ne sont pas présentent dans le logiciel de gestion des
+			dossiers médicals), il peut se tourner vers le référent métier plutôt que
+			vers le service informatique. Ce type e démarche permettrait de supprimer des
+			intermédiaire et donc de diminuer le temps de résolution des problèmes.
 			
 			\paragraph{}% Le problème actuel avec cet outil
+			Mais le projet TrackCIS n'a pas pris et même si quelque consoles ont été
+			vendues, peu de CH l'utilise pleinement. Les raisons à cela peuvent être
+			multiple et relativement méconue d'Xperis. L'une d'elles est que la console
+			n'est pas vendue pré-paramétrée et que c'est au CH de faire ce paramétrage.
+			Celui-ci peut représenter une charge assez lourde. Une autre raison serait
+			que les référents métier ne sont pas encore mis en place dans les hôpitaux.
 			
-			% Résumé de la partie 1.2
-			\paragraph{}
-			Nous avons vu qu'Xperis est confronté à un certain nombre de problématiques
-			commerciales. L'entreprise à une vrais volonté de traiter en direct avec les
-			hôpitaux pour gagner en indpendance vis à vis des éditeurs. TrackCIS entre
-			dans cette stratégie mais a du mal à se faire une place parmi les
-			clients.\newline
-			L'ensemble de ces problématiques constituent le socle du présent travail.
+	% Résumé de la partie 1.2
+	\paragraph{}
+	Nous avons vu qu'Xperis est confronté à un certain nombre de problématiques
+	commerciales. L'entreprise à une vrais volonté de traiter en direct avec les
+	hôpitaux pour gagner en indpendance vis à vis des éditeurs. TrackCIS entre
+	dans cette stratégie mais a du mal à se faire une place parmi les
+	clients.\newline
+	L'ensemble de ces problématiques constituent le socle du présent travail.
 	
 	\subsection{Vers une nouvelle version de TrackCIS}
 		\paragraph{}% problème => solution commerciale ou solution fonctionnelle
@@ -335,17 +370,41 @@ hospitalières}
 			chercher à connaitre
 			
 			\paragraph{}% Les anciennes specs ne permettent pas de bien comprendre le besoin des utilisaturs
-			
-			\paragraph{}% Ce qui soulève la question de qui sont les utilisateurs
+			Comme nous l'avons vu jusque là, les raisons du manque de
+			popularité de TrackCIS auprès des clients d'Xperis sont multiple et
+			méconnues. L'une des principales questions que soulève ce problèmes est de
+			savoir qui sont les utilisateurs de TrackCIS. Actuellement il n'y a que très
+			peu de réels utilisateur. Il s'agit de comprendre dans un premier temps quel
+			publique est susceptible d'utiliser au quotidien un tel outil. Notre objectif
+			est de comprendre comment réadapter cet outil au besoin des utilisateur, il
+			nous faut donc comprendre qui ils sont. Il nous faut également comprendre
+			leurs besoins et traduire ceux-ci en fonctionnalités implémentables dans
+			l'outil. Voici donc le principal point de départ de notre travail.
 			
 		\subsubsection{Un module statistique lié aux évolutions de Cloverleaf}
 			\paragraph{}% Volonté de développer un module stat
-			Une volonté liée à l'implémentation de cette fonctionnalité dans Cloverleaf depuis 
-			la nouvelle version. De plus, les statistiques sont actuellement assez mal 
-			exploitées par les autres outils.
+			A ce stade, les améliorations à apporter à TrackCIS nous sont encore
+			inconuent. Cependant, l'une d'elle pourrait consister en l'implémentation
+			d'un module d'affichage de statistiques. Xperis affiche une volonté forte de
+			développer un tel module qui apporterait un double avantage à l'outil :
+			\begin{itemize}
+			  \item Une innovation. En effet, la possibilté de récupérer des statistiques
+			  de Cloverleaf est un fonctionnalité récente de l'EAI que peu de console de
+			  supervision utilisent pleinement à ce jour. Un module statistique
+			  apporterait à l'utilisateur une expérience nouvelle sur la supervision de
+			  l'EAI, et donc un rôle nouveau à TrackCIS.
+			  \item De plus, les statistiques vont dans le sens de la phylosophie de
+			  TrackCIS et des consoles de supervision en général : avoir une vue
+			  d'ensemble instentanée de l'état d'un flux. L'affichage de telles données
+			  pourrait apporter une nouvelle manière de superviser à l'utilisateur.
+			\end{itemize}
 			
-			\paragraph{}% Les atous d'un tel module
-			Avantage concurentiel, vision globale sur l'état des flux, du SI\ldots
+			\paragraph{}
+			Ce module statistique représente l'axe principal du projet développé ici. Si,
+			dans la suite nous nous consacrerons à comprendre comment, d'une manière
+			général, améliorer TrackCIS, seul le module statistique sera implémenter
+			techniquement à l'outil. Les autres fonctionnalités pourront l'être dans les
+			travaux qui feront suite à ce mémoire.
 			
 		\subsubsection{Méthodologie générale du projet}
 			\paragraph{}% Résumé des problèms soulevés
@@ -353,7 +412,6 @@ hospitalières}
 			inhérentes à TrackCIS. Nous avons également pris le partie de tenter de
 			répondre à ces problèmatiques selon une logique fonctionnelle, de qui
 			implique de développer de nouvelles fonctionnalités sur cet outil.
-			
 			
 			\paragraph{}% Cadrage de notre travail
 			Avant d'exposer la méthodologie suivie dans ce projet, fixons les limites de
@@ -393,7 +451,7 @@ hospitalières}
 			\end{itemize}
 			Nous nous bason ici sur le
 			
-			Dans le livre intitulé UML2, Xavier Blanc et Isabelle mounier présente une
+			Dans le livre intitulé UML2, Xavier Blanc et Isabelle Mounier présente une
 			méthodologie d'analyse et de conception en trois étapes.
 			
 			\paragraph{}% Détail pour la phase d'analyse du besoin
