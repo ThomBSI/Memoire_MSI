@@ -1,6 +1,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
+%\usepackage[francais]{babel}
 \usepackage[top=3cm, bottom=3cm, right=2cm, left=2cm]{geometry}
 \usepackage[round,authoryear]{natbib}
 
@@ -24,7 +24,9 @@
 \title{Mémoire d'ingénieur}
 
 % Titres des parties 
-\renewcommand{\thesection}{\Roman{section}-}
+\usepackage[frenchb]{babel}
+\addto\captionsfrench{\renewcommand{\chaptername}{Partie}}
+\renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand{\thesubsection}{\Alph{subsection})}
 \renewcommand{\thesubsubsection}{\arabic{subsubsection})}
 

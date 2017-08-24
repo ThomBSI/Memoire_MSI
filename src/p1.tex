@@ -1,5 +1,5 @@
-\newpage
-\section{TrackCIS, un outil au service de l'interopérabilité des applications hospitalières}
+\chapter{TrackCIS, un outil au service de l'interopérabilité des applications
+hospitalières}
 	\paragraph{}
 	Cette première grande partie est une introduction du projet sur lequel porte ce
 	mémoire. Ce projet s'inscrit dans des enjeux propres à la société Xperis et
@@ -125,7 +125,7 @@
  				dont certains sont spécifiques au monde hospitalier. L'annexe N présente
  				quelques-uns des principaux formats utilisés (HL7 et HPRIM).
  			\end{description}
- 			
+%<<<<<< release1
 		\subsubsection{Les flux de messages doivent être surveillés}
 			\paragraph{}% Importance fonctionnelle de la supervision
 			L'EAI est un outil complexe mais dont le bon fonctionnement est essentiel. En
@@ -136,17 +136,17 @@
 
 			\paragraph{}% Exemple de cas de disfonctionnement
 			Il existe différentes raisons pour lesquelles un flux peut tomber en erreur.
-			La Figure 3 \ref{Figure 3} expose les trois principales. La cause 1) évoquée
+			La Figure 3 \ref{Figure 3} expose les trois principales. La cause (1) évoquée
 			sur le schéma, correspond à une erreur qui survient entre l'application source et l'EAI,
 			c'est-à-dire lors du transfert du message de l'application à l'EAI. Une
 			erreur de ce type peut avoir des causes variées. Il peut s'agir d'un problème
 			au niveau du réseau qui transporte les message (par exemple une coupure
-			internet). Le cas 2) correspond à une erreur qui est levée
+			internet). Le cas (2) correspond à une erreur qui est levée
 			lors du traitement du message par l'EAI. Il se peut que le contenu du
 			message ne soit pas conforme à ce qu'attendait le script réalisant le
 			traitement. Ce peut être par exemple le cas lorsqu'un utilisateur de
 			logiciel métier fait un erreur de saisie et que cette erreur n'est pas
-			relevée par le logiciel en question. Enfin, dans le cas 3), les messages
+			relevée par le logiciel en question. Enfin, dans le cas (3), les messages
 			s'accumulent à la sortie de l'EAI car la route entre l'EAI et l'application
 			destinataire est bloquée, par exemple par une coupure momentanée du réseau.
 			% Schéma des causes d'erreur
@@ -182,6 +182,25 @@
 			généralement requise.
 			
 			\paragraph{}% Exemple de global monitor
+			Il existe actuellement différentes consoles de supervisions dédiées à la
+			surveillance des flux de Cloverleaf. En voici quelques exemples :
+			\begin{description}
+				\item[Global Monitor] Cette console est développée par le même éditeur qui
+				est à l'origine de Cloverleaf : Infor. Global Monitor est un outil assez
+				complexe, il est destiné à des personnes relativement rompuent au
+				fonctionnement de l'EAI.
+				\item[EAI Supervision] Cet outil est développé par l'un des plus gros
+				éditeur de logiciels hospitalier français : Maincare. Cette console ne
+				permet cependant pas de gérer tous les flux, mais selement ceux faisant
+				intervenir des applications développées par Mainecare.
+				\item[TrackCIS] Cette console à été développée par Xperis. Elle est destinée
+				à des utilisateur ne maîtrisant pas forcément l'EAI.
+			\end{description}
+			
+			\paragraph{}% Objectif de l'outil
+			
+			
+			\paragraph{}% Les principales fonctionnalités
 			
 		
 		\paragraph{}% Résumé de la partie 1.1
