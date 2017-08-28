@@ -37,3 +37,24 @@
 % Ajoute un niveau de détail de titre à la table des matières
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
+
+\makeatletter
+\newcommand\frontmatter{%
+    \cleardoublepage
+  %\@mainmatterfalse
+  \pagenumbering{roman}}
+
+\newcommand\mainmatter{%
+    \cleardoublepage
+ % \@mainmattertrue
+  \pagenumbering{arabic}}
+
+\newcommand\backmatter{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+ % \@mainmatterfalse
+   }
+\makeatother

@@ -1,10 +1,19 @@
 \chapter{Phase d'analyse : des besoins aux fonctionnalités}
 	\paragraph{}
-	Intorduction de la partie.
+	Dans la partie précédente nous avons vu ce qu'est un EAI et les enjeux de la
+	supervision. Nous avons vu que TrackCIS est une console de supervision. Dans
+	cette deuxième partie, nous chercherons à comprendre les besoins des
+	utilisateurs de consoles de supervision et nous les traduirons en
+	fonctionnalités implémentables dans TrackCIS.
 	
 	\subsection{L'enquête permet une meilleure compréhension des besoins des utilisateurs}
 		\paragraph{}
-		Introduction de la sous partie.
+		Un besoin est formulé par le destinataire d'une application, l'utilisateur. Il
+		peut l'être explicitement ou implicitement. Dans le cas qui nous intéresse il
+		nous importe de comprendre les besoins des utilisateurs potentiels de
+		TrackCIS. De plus, pour véritablement comprendre ces besoins, nous devons
+		aussi connaître les utilisateurs en question, en faire une typologie. C'est
+		pourquoi nous commençons notre projet par une enquête.
 		
 		\subsubsection{Élaboration d'un questionnaire d'enquête et conduite des entretiens}
 			\paragraph{}% Les objectifs de l'enquêtes
@@ -225,8 +234,6 @@
 			\paragraph{}% Les utilisateurs
 			
 		\subsubsection{L'enquête permet de dresser une liste des besoins}
-			\paragraph{}% La notion de besoin
-			
 			\paragraph{}% Les attentes qui sont ressorties de l'enquête
 			
 			\paragraph{}% La lise des besoins
@@ -240,12 +247,42 @@
 	\subsection{La liste des besoins permet de dresser une liste de fonctionnalités}
 		\paragraph{}% On ne se concentre que sur les besoins liés aux stats
 		Nous avons dressé et analysé une liste de besoins émanant d'utilisateur
-		concernant la supervision. Notre projet ne vise pas à traiter l'intégralité de
-		ces besoins. Nous ne nous focaliserons ici que sur les besoins relatifs à un
-		module de consultation de statistiques.
+		concernant la supervision. L'objectif est maintenant, à partir de cette liste,
+		de dresser une liste de fonctionnalités.
 		
 		\subsubsection{De la liste des besoins à la liste des fonctionnalités}
+			\paragraph{}% C'est quoi une fonctionnalité ??
+			Une fonctionnalité est un service rendu par une application à un utilisateur.
+			Par exemple, la version actuelle de TrackCIS permet à l'utilisateurs de
+			consulter la liste des messages qui sont passé dans un flux. Ceci est une
+			fonctionnalité et elle répond à un besoin de l'utilisateur. En l'occurence le
+			besoin en question pourrait être "consulter la liste des messages transitant
+			par le fux". Dans ce cas-ci, le passage du besoin à la fonctionnalité est
+			évidente, puisque ls deux sont formulable de la même manière. Mais dans ce
+			cas quelle est la différences entre les deux ? Un besoin n'est pas lié à un
+			outil en particulier, c'est une volonté de l'utilisateur lié à un manque. Une
+			fonctionnalité est elle liée à un outil particulier, puisqu'il s'agit d'un
+			service rendu par cet outil.
+		
 			\paragraph{}% Mode de passage des besoins aux fonctionnalités
+			Grace à l'enquête terrain, nous en savons un peu plus sur le mode de
+			fonctionnement de l'interopérabilité dans le monde hospitalier. Nous en
+			savons également d'aventage sur la supervision et les pratiques associée
+			ainsi que les paersonnes qui en ont la charge. Enfin, nous avons une liste de
+			besoins liées à la supervision des flux. Il est important de préciser que
+			nous ne traiterons pas ici tous les besoins de cette liste. Ce choix est
+			justifié par le fait que :
+			\begin{itemize}
+			  \item Certain des besoins listés sont déjà satisfait par TrackCIS. En
+			  effet, les questions posées lors des entretiens n'étaient pas
+			  spécifiquement portées sur cet outil, la plupart des personnes interogées
+			  ne l'utilisant pas. Ces besoins ne seront donc pas traités.
+			  \item Xperis souhaite apporter toutes les améliorations nécessaires à
+			  TrackCIS. Cependant, l'amélioration prioritaire concerne le nouveau module
+			  statistique. C'est pourquoi les besoins ayant atrait aux statistiques
+			  seront les seuls à être tratiés ici, et donc à être déclinés en
+			  fonctionnalités.
+			\end{itemize}
 			
 			\paragraph{}% Formalisation des fonctionnalités grace au diagramme FODA
 			
