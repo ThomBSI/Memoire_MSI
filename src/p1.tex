@@ -33,7 +33,7 @@ hospitalières}
 			existe une grande diversité d'applicatifs métier dans ce secteur. Le
 			\ref{tableau 1} offre un aperçu de quelques fonctions
 			remplies par les logiciels que l'on peut trouver dans un hôpital.
-			\begin{table}[!h]
+			\begin{table}[H]
 				\centering
 				\begin{tabular}{| p{4cm} | p{10cm} |} %Exemples des principaux logiciels
 				% métier
@@ -75,24 +75,21 @@ hospitalières}
 			certaines données émises par le logiciel de gestion des entrées patients
 			pour les injecter dans l'outil de gestion des dossiers médicaux. Plus
 			généralement, il transfert des données émises par un outil A pour les
-			mettre à disposition d'un outil B \ref{intro_interop}.\newline
-			
-			% Schéma général d'un EAI
-			\begin{figure}[!h]
+			mettre à disposition d'un outil (figure \ref{intro_interop}).
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=10cm]{../img/eai_1.png}
 				\caption{\label{intro_interop} L'EAI est un outil qui permet
 				d'établir des routes entre applications métier.}
 			\end{figure}
-			
-			Cloverleaf est un EAI dédié au monde hsopitalier (il n'est cependant pas le
+			Cloverleaf est un EAI dédié au monde hospitalier (il n'est cependant pas le
 			seul).
 			
 			\paragraph{}% transfo de messages
 			Les fonctions de l'EAI ne se résume pas au seul transport des données. Il
 			est parfois utile de réaliser des actions sur les informations transmises
-			d'une application à l'autre \ref{interop_transfo}. Ces actions peuvent êtres par
-			exemple :\newline
+			d'une application à l'autre (figure \ref{interop_transfo}). Ces actions
+			peuvent êtres par exemple :\newline
 			\begin{itemize}
 			  \item de valider les informations transmises. Par exemple, l'EAI va
 			  s'assurer que pour chaque donnée émise par une application de gestion des
@@ -101,11 +98,9 @@ hospitalières}
 			  gère pas forcément les mêmes formats de données que l'application émettrice
 			  car, rappelons-le, les applications ne sont pas forcément conçues pour
 			  fonctionner ensemble. L'EAI est ainsi capable de faire des conversions de
-			  format de donnée.
+			  format de donnée.\newline
 			\end{itemize}
-
-			% Schéma détaillé EAI
-			\begin{figure}[!h]
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=15cm]{../img/eai_2.png}
 				\caption{\label{interop_transfo} Un EAI peut effectuer des opérations sur
@@ -128,21 +123,21 @@ hospitalières}
  				dont certains sont spécifiques au monde hospitalier. L'annexe 1 présente
  				quelques-uns des principaux formats utilisés (les formats HL7 et HPRIM).
  			\end{description}
-%<<<<<< release1
+
 		\subsubsection{Les flux de messages doivent être surveillés}
 			\paragraph{}% Importance fonctionnelle de la supervision
 			L'EAI est un outil complexe et dont le bon fonctionnement est essentiel. En
-			effet, c'est tout le SI de l'hôptial qui repose en permanance sur lui. Si
+			effet, c'est tout le SI de l'hôpital qui repose en permanence sur lui. Si
 			un disfonctionnement intervient, des pans entier du
-			service hospitalier risque d'en patir, ce qui aura des conséquences sur le
+			service hospitalier risque d'en pâtir, ce qui aura des conséquences sur le
 			traitement des patients. Lorsqu'un disfonctionnement survient au niveau d'un
 			flux, au point que celui-ci ne peut plus transmettre ses messages, on dit
 			qu'il tombe en erreur.
 
 			\paragraph{}% Exemple de cas de disfonctionnement
 			Il existe différentes raisons pour lesquelles un flux peut tomber en erreur.
-			La Figure 3 \ref{interop_erreur} expose les trois principales. La cause (1) évoquée
-			sur le schéma, correspond à une erreur qui survient entre l'application source et l'EAI,
+			La figure \ref{interop_erreur} expose les trois principales. La cause (1)
+			évoquée sur le schéma, correspond à une erreur qui survient entre l'application source et l'EAI,
 			c'est-à-dire lors du transfert du message de l'application à l'EAI. Une
 			erreur de ce type peut avoir des causes variées. Il peut s'agir d'un problème
 			au niveau du réseau qui transporte les message (par exemple une coupure
@@ -154,24 +149,24 @@ hospitalières}
 			relevée par le logiciel en question. Enfin, dans le cas (3), les messages
 			s'accumulent à la sortie de l'EAI car la route entre l'EAI et l'application
 			destinataire est bloquée, par exemple par une coupure momentanée du réseau.
-			% Schéma des causes d'erreur
-			\begin{figure}[!h]
+			\newline
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=15cm]{../img/error_1.png}
-				\caption{\label{interop_erreur} De multiples causes d'erreurs peuvent stoper
-				momentanément un flux de message.}
+				\caption{\label{interop_erreur} De multiples causes d'erreurs peuvent
+				stopper momentanément un flux de message.}
 			\end{figure}
 			
 			\paragraph{}% Surveiller un flux c'est pas facile
 			Ainsi, il est capital d'exercer une surveillance continue sur les différents
 			flux, pour être certain que l'EAI assure bien ses fonctions et que les
-			messages transitent correctement. Cette surveillance est ce que l'on appel la
-			supervision des flux. Cette tâche peut être assurée grâce à deux outils :
+			messages transitent correctement. Cette surveillance est ce que l'on appelle
+			la supervision des flux. Cette tâche peut être assurée grâce à deux outils :
 			\begin{itemize}
 			  \item L'environnement de développement intégré (IDE) de Cloverleaf. Cet
-			  outil permet de controler tout l'EAI, c'est-à-dire aussi bien assurer la
+			  outil permet de contrôler tout l'EAI, c'est-à-dire aussi bien assurer la
 			  supervision que de mettre en place de nouveaux flux. L'IDE est un outil
-			  très complexe qui nécéssite une formation spécialisée, ce que les
+			  très complexe qui nécessite une formation spécialisée, ce que les
 			  personnels des services informatiques des centres hospitaliers n'ont pas
 			  forcément.
 			  \item Les consoles de supervision.
@@ -181,19 +176,19 @@ hospitalières}
 			\paragraph{}% C'est quoi une console de supervision ?
 			Une console de supervision permet d'assurer la surveillance
 			de tout ou partie des flux gérés par l'EAI. Elle dispose d'un
-			nombre limté de fonctionnalité par rapport à l'IDE mais se veut plus simple
+			nombre limité de fonctionnalité par rapport à l'IDE mais se veut plus simple
 			et plus rapide d'utilisation. Il existe actuellement pour Cloverleaf un
 			certain nombre de consoles :
 			\begin{description}
 				\item[Global Monitor] Cette console est développée par le même éditeur qui
 				est à l'origine de Cloverleaf : Infor. Global Monitor est un outil assez
-				complexe, il est destiné à des personnes relativement rompuent au
+				complexe, il est destiné à des personnes relativement rompues au
 				fonctionnement de l'EAI.
 				\item[EAI Supervision] Cet outil est développé par l'un des plus gros
-				éditeur de logiciels hospitalier français : Maincare. Cette console ne
-				permet cependant pas de gérer tous les flux, mais selement ceux faisant
-				intervenir des applications développées par Mainecare.
-				\item[TrackCIS] Cette console à été développée par Xperis. Elle est destinée
+				éditeurs de logiciels hospitalier français : Maincare. Cette console ne
+				permet cependant pas de gérer tous les flux, mais seulement ceux faisant
+				intervenir des applications développées par Maincare.
+				\item[TrackCIS] Cette console a été développée par Xperis. Elle est destinée
 				à des utilisateur ne maîtrisant pas forcément l'EAI.
 			\end{description}
 			
@@ -202,10 +197,10 @@ hospitalières}
 			En voici les principales fonctionnalités :
 			\begin{itemize}
 			  \item Visualiser la liste des messages qui transitent dans le flux en temps
-			  réel. L'utilisateur peut ainssi voir les données qui passent par l'EAI. Il
-			  a accès a des informations sur ces messages comme leur date d'émission, ou
-			  leur état. Il peuvent par exemple voir si un message est en erreur, c'est à
-			  dire s'il est bloqué quelque part dans l'EAI.
+			  réel. L'utilisateur peut ainsi voir les données qui passent par l'EAI. Il
+			  a accès à des informations sur ces messages comme leur date d'émission, ou
+			  leur état. Ils peuvent par exemple voire si un message est en erreur, c'est
+			  à dire s'il est bloqué quelque part dans l'EAI.
 			  \item Pouvoir éditer et rejouer les messages. Lors d'une erreur, il peut
 			  être utile pour la personne en charge de la supervision de pouvoir modifier
 			  à la main le contenu du message. Ceci peut s'avérer utile quand l'erreur
@@ -214,40 +209,40 @@ hospitalières}
 			  \item La rejoue de message. Une fois une erreur corrigée, l'utilisateur de
 			  la console peut rejouer le message, c'est à dire le refaire passer dans
 			  l'EAI de façon à ce qu'il rejoigne l'application destinataire. La rejoue de
-			  message peut également s'avérée utile lors de problèmes de réseau. Une
-			  coupeure momentanée du réseau peu bloquer les messages qui transitant à ce
+			  message peut également s'avérer utile lors de problèmes de réseau. Une
+			  coupure momentanée du réseau peu bloquer les messages qui transitant à ce
 			  moment. Une fois la coupure résolue, il faut rejouer les messages pour les
 			  débloquer et les faire transiter correctement.
 			\end{itemize}
 		
 		\paragraph{}% Résumé de la partie 1.1
 		Nous avons vu dans cette première partie que l'EAI est une solution au
-		problème de l'onteropérabilité en établissant des flux de données entre
+		problème de l'interopérabilité en établissant des flux de données entre
 		applications métier. Nous avons souligné le fait que la surveillance (la
 		supervision) continue des flux est indispensable au bon fonctionnement de
-		l'EAI et, par extention, de tout le SI. Enfin, TrackCIS est un outil qui
+		l'EAI et, par extension, de tout le SI. Enfin, TrackCIS est un outil qui
 		permet de rendre la supervision plus simple et plus rapide.\newline
-		Dans la suite nous découvrirons les prblématiques inhérentes à cet outil.
+		Dans la suite nous découvrirons les problématiques inhérentes à cet outil.
 		
 	\subsection{TrackCIS est au cœur d'une problématique commerciale pour Xperis}
 		\paragraph{}
-		Précédement nous avons établi les bases des problématiques d'interopérabilité
+		Précédemment nous avons établi les bases des problématiques d'interopérabilité
 		des établissements hospitalier. Xperis est une entreprise qui propose
 		d'accompagner ces dernier dans la mise en place et le maintien de Cloverleaf.
 		
 		\subsubsection{Xperis est l'intermédiaire dans la distribution de Cloverleaf}
 			\paragraph{Infor}
-			C'est la société américaine qui développe l'EAI Cloverleaf. Infor distribut
+			C'est la société américaine qui développe l'EAI Cloverleaf. Infor distribue
 			son EAI dans de nombreux pays du monde par l'intermédiaires de sociétés
 			telles que Xperis.
 			
 			\paragraph{Les éditeurs}
-			Les editeurs de logiciels médicaux sont de grosses sociétés dont la
+			Les éditeurs de logiciels médicaux sont de grosses sociétés dont la
 			croissance est assurée par de nombreuses fusions et acquisitions. Ainsi ils
 			proposent des solutions logicielles très diverses, car initialement
-			développées par des sociétés différentes. Ce sont ces entreprise qui achètent
-			l'EAI et le mettent en place chez leur clients, les hôpitaux. Parmi les
-			principaux éditeurs du monde hospitalier on trouve :
+			développées par des sociétés différentes. Ce sont ces entreprises qui
+			achètent l'EAI et le mettent en place chez leurs clients, les hôpitaux. Parmi
+			les principaux éditeurs du monde hospitalier on trouve :
 			\begin{itemize}
 				\item Maincare
 				\item Le SIB (Syndicat Interhospitalier de Bretagne)
@@ -256,25 +251,24 @@ hospitalières}
 			
 			\paragraph{Xperis}
 			Xperis est le seul distributeur (ou master distributeur) de la solution
-			Cloverleaf en France. la société est bosée à Bordeaux, compte une dizaine de
-			slariés et est l'intermédiaire entre Infor et les éditeurs.
+			Cloverleaf en France. La société est basée à Bordeaux, compte une dizaine de
+			salariés et est l'intermédiaire entre Infor et les éditeurs.
 			Même si ces derniers sont les principaux clients de l'entreprise,
 			l'entreprise cherche actuellement à établir des relations commerciales
 			directes avec les établissements hospitaliers.\newline
-			La \ref{xperis_secteur} résume les interactions qui existent entre tous
-			ces acteurs.
-			
-			\begin{figure}[!h]% Position d'Xperis dans le secteur de la santé
+			La figure \ref{xperis_secteur} résume les interactions qui existent entre
+			tous ces acteurs.
+			\begin{figure}[H]% Position d'Xperis dans le secteur de la santé
 				\centering
-				\includegraphics[width=15cm]{../img/xperis_secteur.png}
-				\caption{\label{xperis_secteur} De multiples causes d'erreurs peuvent stoper
-				momentanément un flux de message.}
+				\includegraphics[width=17cm]{../img/xperis_secteur.png}
+				\caption{\label{xperis_secteur} Xperis est l'intermédiaire entre Info et
+				les éditeurs français.}
 			\end{figure}
 			
 		\subsubsection{Xperis cherche à établir des liens directs avec les hôpitaux}
 			\paragraph{}% panorama du monde hospitalier
 			Le dernier parti prenant à présenter, qui est l'utilisateur final de
-			CLoverleaf, sont les établissements hospitalier français. Au 31 décembre
+			Cloverleaf, sont les établissements hospitaliers français. Au 31 décembre
 			2014, on dénombrait en France 3 111 établissements hospitaliers, dont 1 416
 			établissements publics. Ces derniers sont répartis en trois catégories
 			\citep{drees_panoramas_2016} :
@@ -305,38 +299,38 @@ hospitalières}
 			
 			\paragraph{}% Maincaire va peut-être se séparer d'Xperis un jour
 			Le business-modèle d'Xperis repose sur les problèmes d'interopérabilité des 
-			éditeurs. Or certains éditeurs cherchent à résoudre ce problème par eux-même. C'est 
-			par exemple le cas de Maincare, le plus gros client d'Xperis. L'entreprise affiche 
-			depuis quelques mois la volonté de développer sa propre solution d'interopérabilité 
-			\citep{perochon_e-sante:_2016}. Le risque pour Xperis est donc, à terme, de perdre son 
-			plus important client. 
+			éditeurs. Or certains éditeurs cherchent à résoudre ce problème par
+			eux-mêmes. C'est par exemple le cas de Maincare, le plus gros client
+			d'Xperis. L'entreprise affiche depuis quelques mois la volonté de développer
+			sa propre solution d'interopérabilité \citep{perochon_e-sante:_2016}. Le
+			risque pour Xperis est donc, à terme, de perdre son plus important client. 
 			
 			\paragraph{}% La stratégie d'Xperis face à ces challenges
 			Pour préparer cette éventualité, l'entreprise cherche de plus 
 			en plus à traiter directement avec les établissements hospitaliers. TrackCIS
-			contribut à cela puisque il s'agit d'un outil développé en interne et
+			contribue à cela puisqu'il s'agit d'un outil développé en interne et
 			distribué directement aux hôpitaux.
 			
 		\subsubsection{Un outil qui se vend mal et qui est peu utilisé}
 			\paragraph{}% L'objectif initial du projet TrackCIS
-			Comparativement aux autre consoles de supervision, TrackCIS se veut plus
+			Comparativement aux autres consoles de supervision, TrackCIS se veut plus
 			simple et plus ergonomique. Initialement, le publique visé était les
-			utlisateurs métier, c'est-à-dire des personnes ne travaillant pas dans le
+			utilisateurs métier, c'est-à-dire des personnes ne travaillant pas dans le
 			milieu informatique comme par exemple des infirmiers ou des pharmaciens. Ces
 			personnes, ou référents métiers, sont des utilisateurs d'applications
 			médicales. Le projet de TrackCIS avait pour objectif de confier une partie de
 			la supervision de l'EAI à ces personnes, sur les flux qui les intéressaient.
-			Ainsi, si un utilisateur rencontre un problème lié à l'intéropérabilité avec
-			une des application (par exemple un patient enregistré à l'acceuil mais dont
+			Ainsi, si un utilisateur rencontre un problème lié à l'interopérabilité avec
+			une des application (par exemple un patient enregistré à l'accueil mais dont
 			les informations ne sont pas présentent dans le logiciel de gestion des
-			dossiers médicals), il peut se tourner vers le référent métier plutôt que
+			dossiers médicaux), il peut se tourner vers le référent métier plutôt que
 			vers le service informatique. Ce type e démarche permettrait de supprimer des
-			intermédiaire et donc de diminuer le temps de résolution des problèmes.
+			intermédiaires et donc de diminuer le temps de résolution des problèmes.
 			
 			\paragraph{}% Le problème actuel avec cet outil
-			Mais le projet TrackCIS n'a pas pris et même si quelque consoles ont été
+			Mais le projet TrackCIS n'a pas pris et même si quelques consoles ont été
 			vendues, peu de CH l'utilise pleinement. Les raisons à cela peuvent être
-			multiple et relativement méconue d'Xperis. L'une d'elles est que la console
+			multiple et relativement méconnue d'Xperis. L'une d'elles est que la console
 			n'est pas vendue pré-paramétrée et que c'est au CH de faire ce paramétrage.
 			Celui-ci peut représenter une charge assez lourde. Une autre raison serait
 			que les référents métier ne sont pas encore mis en place dans les hôpitaux.
@@ -345,23 +339,23 @@ hospitalières}
 	\paragraph{}
 	Nous avons vu qu'Xperis est confronté à un certain nombre de problématiques
 	commerciales. L'entreprise à une vrais volonté de traiter en direct avec les
-	hôpitaux pour gagner en indpendance vis à vis des éditeurs. TrackCIS entre
+	hôpitaux pour gagner en indépendance vis à vis des éditeurs. TrackCIS entre
 	dans cette stratégie mais a du mal à se faire une place parmi les
 	clients.\newline
 	L'ensemble de ces problématiques constituent le socle de notre travail.
 	
 	\subsection{Vers une nouvelle version de TrackCIS}
 		\paragraph{}% problème => solution commerciale ou solution fonctionnelle
-		Le poblème que pose TrackCIS soulève une question : pourquoi cet outil ne se
-		vend t-il pas ? La réponse à cette question, loin d'être triviale, pourrait
+		Le problème que pose TrackCIS soulève une question : pourquoi cet outil ne se
+		vend-il pas ? La réponse à cette question, loin d'être triviale, pourrait
 		être de deux nature : une solution commerciale et une solution fonctionnelle.
 		\begin{description}
 			\item[La solution commerciale : ] Nous faisons ici l'hypothèse que la cause
 			au fait que TrackCIS ne se vende pas est commerciale. Ceci pouvant impliquer
-			plusieurs chose comme le fait que :
+			plusieurs choses comme le fait que :
 			\begin{itemize}
 			  \item les clients n'ont pas réellement besoins d'un outil tel que TrackCIS.
-			  Il esxiste en effet d'autres outils de supervision pour Cloverleaf, comme
+			  Il existe en effet d'autres outils de supervision pour Cloverleaf, comme
 			  par exemple l'outil Global Monitore, dont nous reparlerons un peu plus
 			  loin, ou encore EAI Supervision.
 			  \item les utilisateur de TrackCIS n'existent pas. Cet outil a été développé
@@ -369,31 +363,31 @@ hospitalières}
 			  intéressant de superviser quelques flux.
 			  Or il est tout à fait possible que ce type de personne n'existe pas ou pas
 			  encore dans les hôpitaux.
-			  \item la communication ou le démarchage autour de TrackCIS est insufisant
+			  \item la communication ou le démarchage autour de TrackCIS est insuffisant
 			  ou non adapté.
 			\end{itemize}
 			\item[La solution fonctionnelle : ] Cette fois-ci notre hypothèse est que
-			TrackCIS ne se vend pas car il lui manque des fonctionnalité indispensables à
-			ses utilisateurs.
+			TrackCIS ne se vend pas car il lui manque des fonctionnalités indispensables
+			à ses utilisateurs.
 		\end{description}
 		
 		\subsubsection{Comprendre les utilisateurs et leurs besoins}
 			\paragraph{}% Nous ne traitons que de la solution fonctionnelle
 			De ces deux solutions à la problématique soulevée par TrackCIS (commerciale
-			ou fonctionnelle), nous prenons le partie de n'en traiter qu'une, la
+			ou fonctionnelle), nous prenons le parti de n'en traiter qu'une, la
 			seconde.\newline
 			L'objectif assumé de ce mémoire est de traiter de l'amélioration
 			fonctionnelle et technique d'un outil tel que TrackCIS. Notre objectif est de
 			chercher à connaitre
 			
 			\paragraph{}% Les anciennes specs ne permettent pas de bien comprendre le besoin des utilisaturs
-			Comme nous l'avons vu jusque là, les raisons du manque de
+			Comme nous l'avons vu jusque-là, les raisons du manque de
 			popularité de TrackCIS auprès des clients d'Xperis sont multiple et
-			méconnues. L'une des principales questions que soulève ce problèmes est de
+			méconnues. L'une des principales questions que soulève ce problème est de
 			savoir qui sont les utilisateurs de TrackCIS. Actuellement il n'y a que très
-			peu de réels utilisateur. Il s'agit de comprendre dans un premier temps quel
+			peu de réels utilisateurs. Il s'agit de comprendre dans un premier temps quel
 			publique est susceptible d'utiliser au quotidien un tel outil. Notre objectif
-			est de comprendre comment réadapter cet outil au besoin des utilisateur, il
+			est de comprendre comment réadapter cet outil au besoin des utilisateurs, il
 			nous faut donc comprendre qui ils sont. Il nous faut également comprendre
 			leurs besoins et traduire ceux-ci en fonctionnalités implémentables dans
 			l'outil. Voici donc le principal point de départ de notre travail.
@@ -401,33 +395,33 @@ hospitalières}
 		\subsubsection{Un module statistique lié aux évolutions de Cloverleaf}
 			\paragraph{}% Volonté de développer un module stat
 			A ce stade, les améliorations à apporter à TrackCIS nous sont encore
-			inconuent. Cependant, l'une d'elle pourrait consister en l'implémentation
+			inconnues. Cependant, l'une d'elle pourrait consister en l'implémentation
 			d'un module d'affichage de statistiques. Xperis affiche une volonté forte de
 			développer un tel module qui apporterait un double avantage à l'outil :
 			\begin{itemize}
-			  \item Une innovation. En effet, la possibilté de récupérer des statistiques
-			  de Cloverleaf est un fonctionnalité récente de l'EAI que peu de console de
-			  supervision utilisent pleinement à ce jour. Un module statistique
-			  apporterait à l'utilisateur une expérience nouvelle sur la supervision de
-			  l'EAI, et donc un rôle nouveau à TrackCIS.
-			  \item De plus, les statistiques vont dans le sens de la phylosophie de
+			  \item Une innovation. En effet, la possibilité de récupérer des
+			  statistiques de Cloverleaf est une fonctionnalité récente de l'EAI que peu
+			  de console de supervision utilisent pleinement à ce jour. Un module
+			  statistique apporterait à l'utilisateur une expérience nouvelle sur la
+			  supervision de l'EAI, et donc un rôle nouveau à TrackCIS.
+			  \item De plus, les statistiques vont dans le sens de la philosophie de
 			  TrackCIS et des consoles de supervision en général : avoir une vue
-			  d'ensemble instentanée de l'état d'un flux. L'affichage de telles données
+			  d'ensemble instantanée de l'état d'un flux. L'affichage de telles données
 			  pourrait apporter une nouvelle manière de superviser à l'utilisateur.
 			\end{itemize}
 			
 			\paragraph{}
 			Ce module statistique représente l'axe principal du projet développé ici. Si,
 			dans la suite nous nous consacrerons à comprendre comment, d'une manière
-			général, améliorer TrackCIS, seul le module statistique sera implémenter
+			générale, améliorer TrackCIS, seul le module statistique sera implémenté
 			techniquement à l'outil. Les autres fonctionnalités pourront l'être dans les
 			travaux qui feront suite à ce mémoire.
 			
 		\subsubsection{Méthodologie générale du projet}
 			\paragraph{}% Résumé des problèms soulevés
 			Nous avons constaté dans les parties précédentes plusieurs problématiques
-			inhérentes à TrackCIS. Nous avons également pris le partie de tenter de
-			répondre à ces problèmatiques selon une logique fonctionnelle, de qui
+			inhérentes à TrackCIS. Nous avons également pris le parti de tenter de
+			répondre à ces problématiques selon une logique fonctionnelle, de qui
 			implique de développer de nouvelles fonctionnalités sur cet outil.
 			
 			\paragraph{}% Cadrage de notre travail
@@ -440,38 +434,43 @@ hospitalières}
 			  Xperis concernant TrackCIS.
 			  \item La possibilité de récupérer des statistiques sur le fonctionnement de
 			  Cloverleaf est une fonctionnalité nouvelle de l'EAI. Aucune console de
-			  supervision n'en n'a pour l'instant totalement exploité les possibilité.
+			  supervision n'en n'a pour l'instant totalement exploité les possibilités.
 			  \item De ce fait, ce nouveau module peut apporter un facteur de
 			  différentiation notable à TrackCIS par rapport aux outres consoles.
 			  \item Ceci pourrait apporter une solution à la problématique commerciale
 			  de TrackCIS, à savoir le fait qu'il s'en vend peu.
 			\end{itemize}
-			Cependant, l'implémentation de ce seul modul statsitque n'apporterait une
+			Cependant, l'implémentation de ce seul module statistique n'apporterait une
 			réponse fonctionnelle complète. En effet, les besoins des utilisateurs sont à
-			ce jour mal connus par l'entreprise. La typologie même de ces utilisateur est
-			aujourd'hui difficile à définir.\newline
+			ce jour mal connus par l'entreprise. La typologie même de ces utilisateurs
+			est aujourd'hui difficile à définir.\newline
 			Notre objectif est donc le suivant :\newline
 			Contribuer à l'amélioration de TrackCIS par l'implémentation d'un module de
-			statstiques et par une analyse des besoins dans le but de propositions
+			statistiques et par une analyse des besoins dans le but de propositions
 			d'autres axes d'amélioration.
 
 			\paragraph{}% Méthodologie générale + présentation de l'approche
 			% fonctions -> comportements -> structure de Xavier Blanc
 			Pour ce faire, nous procéderons en trois grandes étapes : l'analyse du
-			besoin, la conception d'une solution et le développement de cette
-			solution. Au cours de chacune de ces étapes nous serons amener  modéliser
-			différents aspect de l'application, notament 3 :
+			besoin, la conception d'une solution et son développement. Au cours de
+			chacune de ces étapes nous serons amenés  modéliser différents aspects de
+			l'application :
 			\begin{itemize}
-			  \item Modélisation des fonctions de l'application
-			  \item Modélisation des comportement de l'application et des utilisateurs
-			  \item Modélisation de la structure de l'application
+			  \item Modélisation des fonctions de l'application. Nous établirons une
+			  liste des fonctionnalités que devra comporter la solution finale. Nous
+			  établirons cette liste à partir des besoins des utilisateurs.
+			  \item Modélisation des comportements de l'application et des utilisateurs.
+			  Nous imaginerons des scénarios d'utilisation pour les différentes
+			  fonctionnalités à développer.
+			  \item Modélisation de la structure de l'application. Il s'agira de définir
+			  les moyens techniques ainsi que l'architecture du module à développer.
 			\end{itemize}
 			
 			\paragraph{}% Détail pour la phase d'analyse du besoin
 			Les deux parties suivantes vont présenter la mise en oeuvre d'une
-			méthodologie qui nous permettra d'une part de connaîtres les besoins des
-			utlisateurs et comment les satisfaire avec TrackCIS, et d'autre part la mise
-			en pratique de ces amélioration au travers d'un nouveau module.
+			méthodologie qui nous permettra d'une part de connaitre les besoins des
+			utilisateurs et comment les satisfaire avec TrackCIS, et d'autre part la
+			mise en pratique de ces améliorations au travers d'un nouveau module.
 			
 			
 			
