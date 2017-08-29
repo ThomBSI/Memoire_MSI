@@ -1,8 +1,9 @@
 \chapter{Phase d'analyse : des besoins aux fonctionnalités}
 	\paragraph{}
 	Dans la partie précédente nous avons vu ce qu'est un EAI et les enjeux de la
-	supervision. Nous avons vu que TrackCIS est une console de supervision. Dans
-	cette deuxième partie, nous chercherons à comprendre les besoins des
+	supervision. Nous avons vu que TrackCIS est une console de supervision et
+	notre projet vise à l'améliorer.
+	Dans cette deuxième partie, nous chercherons à comprendre les besoins des
 	utilisateurs de consoles de supervision et nous les traduirons en
 	fonctionnalités implémentables dans TrackCIS.
 	
@@ -12,8 +13,8 @@
 		peut l'être explicitement ou implicitement. Dans le cas qui nous intéresse il
 		nous importe de comprendre les besoins des utilisateurs potentiels de
 		TrackCIS. De plus, pour véritablement comprendre ces besoins, nous devons
-		aussi connaître les utilisateurs en question, en faire une typologie. C'est
-		pourquoi nous commençons notre projet par une enquête.
+		aussi savoir qui sont les utilisateurs. L'enquête nous permettra d'obtenir ces
+		informations.
 		
 		\subsubsection{Élaboration d'un questionnaire d'enquête et conduite des entretiens}
 			\paragraph{}% Les objectifs de l'enquêtes
@@ -22,27 +23,27 @@
 			  \item D’une part nous souhaitons pouvoir établir une liste de besoins.
 			  \item D’autre part, cette enquête sera l’occasion de comprendre un peu
 			  mieux comment sont organisés les DSIO (direction des services informatique
-			  et de l’organisation) des établissements hospitaliers, ainsi que les types
-			  d’utilisateurs des consoles de supervision.
+			  et de l’organisation) des établissements hospitaliers, ainsi que de faie
+			  une typologie des utilisateurs de consoles de supervision.
 			\end{itemize}
 			
 			\paragraph{}% Les grands thèmes abordés
 			Pour répondre à ces deux objectif, le questionnaire d’enquête doit être le
-			plus générale possible. Ainsi, nous conduirons les entretiens en suivant le
-			plan de questionnaire suivant :
+			plus générale possible et les questions ouvertes. Ainsi, nous proposons le
+			plan d'entretien suivant :
 			\begin{itemize}
-			  \item[- Identification de la personne, exploration du contexte] . Cette
+			  \item[1) Identification de la personne, exploration du contexte] . Cette
 			  partie aura pour but de nous aider à comprendre comment est organisé le
 			  service et qui est notre interlocuteur.
-			  \item[- Utilisations et utilisateurs de Cloverleaf et problématique de la
+			  \item[2) Utilisations et utilisateurs de Cloverleaf et problématique de la
 			  supervision des flux] . Dans cette partie nous poserons des questions sur
 			  la manière dont est utilisé Cloverleaf et par qui ainsi que les personnes
 			  qui sont en charge de la supervision.
-			  \item[- Attentes par rapport aux consoles de supervision] Cette partie,
+			  \item[3) Attentes par rapport aux consoles de supervision] Cette partie,
 			  beaucoup plus abstraite, servira à comprendre ce qu’est la supervision
 			  pour les utilisateurs de consoles et quels sont les attentes des
 			  utilisateurs sur les consoles de supervision.
-			  \item[- Les consoles actuelles] Ces questions viseront à explorer ce que
+			  \item[4) Les consoles actuelles] Ces questions viseront à explorer ce que
 			  les utilisateurs utilisent le plus dans les outils existant, quels sont
 			  les manques et les améliorations qu’ils proposent. Cette partie explorera
 			  également les propositions des utilisateurs concernant un future module
@@ -52,24 +53,24 @@
 			\paragraph{}% Conduite des entretiens
 			Les entretiens sont conduit de manière semi-directive par téléphone ou en
 			face à face quand cela est possible.
-			Les questions ne sont que des guides pour orienter la discussion, c’est
-			pourquoi elles sont les plus ouvertes possible.\newline
+			Les questions présentent dans le guide d'entretien ne sont que des guides
+			pour orienter la discussion, c’est pourquoi elles sont les plus ouvertes possible.\newline
 			Le questionnaire a vocation à évoluer d’un entretien à un autre : des
 			questions peuvent être modifiées, supprimées ou ajoutées de façon à obtenir
-			des informations de plus en plus pertinentes. Chaque entretien donne lieu à
-			un compte-rendu détaillé dont la structure reprend la trame du
-			questionnaire. Le questionnaire, dans sa version finale, se trouve en annexe
-			A.
+			des informations de plus en plus pertinentes (l'annexe 2 présente la dernière
+			version du guide d'entretien). Chaque entretien donne lieu à un compte-rendu
+			détaillé dont la structure reprend la trame du questionnaire.
 			
 			\paragraph{}% Les principes de l'étude qualitative
 			Il s'agit d'une étude qualitative. Contrairement aux études quantitatives qui
-			permettent de récolter des données repérsentatives d'une population,
+			permettent de récolter des données repérsentatives d'une population donnée,
 			dans une étude qualitative nous ne cherchons pas à interroger le plus de
-			monde possible. Les entretients sont basés sur des question ouverte et durent
-			en général plus longtemp que dans des enquêtes quantitatives. L'objetcif
-			d'une telle étude est de faire ressortir la diversité des comportement. Dans
-			notre cas, il s'agit de mettre en avant les différentes utilisations
-			possibles des consoles de supervision et ses utilisateurs.
+			personnes possible. Les entretients sont basés sur des question ouverte et
+			durent en général plus longtemp que dans des enquêtes quantitatives, une
+			trentaine de minute dans notre cas.
+			L'objetcif d'une telle étude est de faire ressortir la diversité des
+			comportement. Ici, il s'agit entre autre de mettre en avant les différentes
+			utilisations possibles des consoles de supervision et ses utilisateurs.
 			
 			\paragraph{}% Choix de la population interrogée
 			Un panel de 5 établissements hospitaliers est interrogé. Tous ces
@@ -83,16 +84,16 @@
 			\end{itemize}
 			
 			\paragraph{}% Méthodes d'analyse des résultat
-			A l'issue des enquêtes nous procéderons à l'analyse des résultats. Après une
+			A l'issue des enquêtes nous procédons à l'analyse des résultats. Après une
 			rapide relecture de tous les comptes rendu d'entretien, nous établissons une
-			listes des grands thèmes qui ont été abordés durant les discussion. Nous
-			classons ensuites toutes les informations collectées dans ces thèmes.\newline
-			Les thèmes qui sont ressortis sont les suivants :
+			listes des grands thèmes qui ont été abordés durant les discussion.
+			On classe ensuites chaque information collectée dans l'un de ces
+			thèmes.\newline Les grand thèmes en question sont les suivants :
 			\begin{itemize}
 			  \item[- grand thème 1] L’organisation des services informatique dans les
 			  hôpitaux,
-			  \item[- grand thème 2] Les types d’utilisateurs de TC,
-			  \item[- grand thème 3] Les types d’utilisations de TC,
+			  \item[- grand thème 2] Les types d’utilisateurs de TrackCIS,
+			  \item[- grand thème 3] Les types d’utilisations de TrackCIS,
 			  \item[- grand thème 4] Les attentes par rapport aux consoles de supervision
 			  et la réponse des outils actuels à ces attentes,
 			  \item[- grand thème 5] Les fonctionnalités manquant aux consoles de
@@ -105,61 +106,68 @@
 		\subsubsection{La supervision fait partie du processus de résolution des
 		anomalies}
 			\paragraph{}% Présentation
-			Nous analyserons ici l'organisation interne des services liées à
+			Nous analysons ici l'organisation interne des services liées à
 			l'interopérabilité dans les hôpitaux. Nous verons ensuite quelles sont les
 			pratiques liées à la supervision (autrement dit, nous détaillerons les
 			grands thèmes 1 et 3).
 			
 			\paragraph{}% L'organisation des DSIO
-			Les services informatiques ont des structures variables selon les
+			Les services informatiques ont des structures très variables selon les
 			établissements. Cependant, il existe dans tous les cas observés au moins un
 			département consacré à l’interopérabilité. Ce département peut se subdiviser
 			en deux pôles :
 			\begin{itemize}
-			  \item Un pôle intégration
+			  \item Un pôle intégration,
 			  \item Un pôle exploitation
 			\end{itemize}
-			Le pôle intégration prend en charge la mise en place de nouveaux flux et du
-			bon fonctionnement de l’EAI. Son niveau de compétence sur Cloverleaf est
-			élevé. Ce type de pôle existe dans des établissements relativement autonomes
-			vis-à-vis des éditeurs. Le pôle intégration se compose généralement de 2 à 3
-			personnes. Les outils utilisés sont principalement l’IDE, EAI Supervision et
-			Global Monitor (GM).\\
-			Le pôle exploitation a en charge la supervision des flux. Le niveau de
-			maîtrise de Cloverleaf y est plus faible. Les outils utilisés sont en
-			général les consoles de supervision (GM, TC, EAI supervision), mais pas
-			l’IDE, trop complexe pour ce type d’utilisateur.\\
+			\textbf{Le pôle intégration} prend en charge la mise en place de nouveaux
+			flux et du bon fonctionnement de l’EAI en général. Son niveau de compétence sur
+			Cloverleaf est élevé. Ce type de pôle existe dans des établissements
+			relativement autonomes vis-à-vis des éditeurs de logiciels. Le pôle
+			intégration se compose généralement de 2 à 3 personnes. Les outils utilisés
+			sont principalement l’IDE, et des consoles de supervision telles que EAI
+			Supervision ou Global Monitor.\newline
+			\textbf{Le pôle exploitation} a en charge la supervision des flux. Le niveau
+			de maîtrise de Cloverleaf y est plus faible. Les outils utilisés sont en
+			général les différentes consoles de supervision,
+			mais rarement l’IDE, trop complexe pour ce type d’utilisateur.\newline
 			Les deux pôles peuvent cohabiter au sein d’un même établissement. Certains,
 			comme le CHU de Metz, n’ont qu’un pôle exploitation, la mise en place des
 			flux étant assuré par un autre département (en l’occurrence, le département
-			en charge de l’urbanisation). D’autres établissements, beaucoup plus
+			en charge de l’urbanisation du SI). D’autres établissements, beaucoup plus
 			dépendants des éditeurs, ne s’occupent pas de la mise en place des flux ni
 			du fonctionnement de l’EAI, mais seulement de la supervision. C’est par
-			exemple le cas du CHU de Châtellerault.\\
-			La Figure 5 résume les différents niveaux de gestion de l’interopérabilité au
-			sein d’un hôpital. Un pôle exploitation se situe au niveau le plus bas
-			tandis qu’un pôle intégration peut se situer au niveau 2 ou 3. Le niveau le
-			plus haut est en général assuré par un département urbanisation, en charge
-			de la définition de la politique de tout le SI.
+			exemple le cas du CHU de Châtellerault.\newline
+			La figure \ref{orga_interop} résume les différents niveaux de gestion de
+			l’interopérabilité au sein d’un hôpital. Les niveaux correspondent au degré
+			de responsabilité vis à vis de l'interopérabilité. Plus un niveau est élevé,
+			plus les impactes des décisions prises à ce niveaux seront fort sur le SI. Un
+			pôle exploitation se situe au niveau le plus bas tandis qu’un pôle
+			intégration peut se situer au niveau 2 ou 3. Le niveau le plus haut est en
+			général assuré par un département urbanisation, en charge de la définition
+			de la politique de tout le SI.
 			% Niveau de responsabilité pour l'interop dans le SI
-			\begin{figure}[!h]
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=8cm]{../img/si_1.png}
-				\caption{\label{Figure 4} Les différents niveaux de responsabilité autour
-				de la gestion de l'interopérabilité.}
+				\caption{\label{orga_interop} Les différents niveaux de responsabilité
+				autour de la gestion de l'interopérabilité.}
 			\end{figure}
 			
 			\paragraph{}% Diversité des pratiques
-			L’ensemble des outils liés à Cloverleaf (IDE et consoles de supervision) sont
-			utilisés pour la supervision des flux. Les utilisateurs les plus aguerris
-			sur Cloverleaf utilisent l’IDE, notamment le bouton status qui donnes accès
-			à des données statistiques sur un thread ou un process. Pour détecter les
-			problèmes, l’utilisateur se fie principalement à l’heure de dernière
-			écriture d’un message. Si rien n’a été écrit depuis un certain temps, c’est
-			que le flux est bloqué et que les messages ne passent plus. Ce type
-			d’utilisateur est généralement en charge de la résolution des problèmes les
-			plus complexes. Pour cela, il a parfois recours à la consultation de l’error
-			database ou des SMAT pour comprendre l’origine de l’erreur.\\
+			L’ensemble des outils liés à Cloverleaf (IDE et consoles de supervision)
+			sont utilisés pour la supervision des flux. Les utilisateurs les plus
+			aguerris sur Cloverleaf utilisent l’IDE, notamment à une fonctionnalité,
+			nomée \textit{status}, qui donnes accès à des données statistiques sur un
+			thread ou un process à un instant t. Pour détecter les problèmes,
+			l’utilisateur se fie principalement à la date et heure de dernière écriture
+			d’un message sur le flux. Si rien n’a été écrit depuis un certain temps, c’est que
+			le flux est bloqué et que les messages ne passent plus. Ce type d’utilisateur est
+			généralement en charge de la résolution des problèmes les plus complexes.
+			Pour cela, il a parfois recours à des fonctionnalité avencées comme la
+			consultation de la base de donnée d'erreur (ou \textit{error database}) ou
+			à base de données contenant les messages pour comprendre l’origine de
+			l’erreur.\\
 			Du côté des consoles de supervision, les usages qui sont ressortis sont :
 			\begin{itemize}
 			  \item Visualiser l’état des flux (si les threads et process sont bien en
@@ -186,8 +194,8 @@
 			\end{itemize}
 			\paragraph{}
 			Cette liste nous permet de connaître les principales utilisations des
-			consoles de supervision \ref{Figure x}. L’utilisation la plus simple est la
-			visualisation : voir les messages qui passent et pouvoir détecter rapidement
+			consoles de supervision (figure \ref{usage_consoles}). L’utilisation la plus
+			simple est la visualisation : voir les messages qui passent et pouvoir détecter rapidement
 			les erreurs. Une fois les erreurs détectées, l’utilisateur cherche à
 			comprendre ce qui les a causées. Pour cela, il peut être suffisant de
 			regarder le contenu du message pour en repérer les anomalies, ou bien aller
@@ -199,50 +207,201 @@
 			les messages passent correctement d’une application à une autre. Enfin, les
 			utilisateurs les plus avertis ont en charge l’administration de la console,
 			c’est-à-dire son paramétrage (attribution des droits de consultation et
-			d’action aux utilisateurs, paramétrage des colonnes …). Ce rôle revient
-			généralement au pôle intégration ou à Xperis. On remarque que, dans le cas
-			de TC, le paramétrage de la console est un facteur limitant à son
-			utilisation en production.
-			% Niveau de responsabilité pour l'interop dans le SI
-			\begin{figure}[!h]
+			d’action aux utilisateurs, paramétrage des données affichées\ldots). Ce rôle
+			revient généralement au pôle intégration, aux éditeurs ou à Xperis. On
+			remarque que, dans le cas de TrackCIS, le paramétrage de la console est un
+			facteur limitant à son utilisation en production.
+			\begin{figure}[H]% Niveau de responsabilité pour l'interop dans le SI
 				\centering
 				\includegraphics[width=8cm]{../img/usage_1.png}
-				\caption{\label{Figure x} Les différents d'utilisation des consoles de
+				\caption{\label{usage_consoles} Les différents d'utilisation des consoles de
 				supervision.}
 			\end{figure}
 			
 			\paragraph{}
-			En bilan, nous pouvons définir la supervision d'un flux comme :
+			En résumé, nous pouvons définir la supervision d'un flux comme :
 			\begin{itemize}
-			  \item Voire en un coup d’œil la présence d’anomalies telles que :
+			  \item Détecter en un coup d’œil la présence d’anomalies telles que :
 			  	\begin{itemize}
 			  	  \item Des erreurs,
 			  	  \item Des ralentissements,
 			  	  \item Des blocages
 		  	    \end{itemize}
 			  \item Pouvoir expliquer, même partiellement ces anomalies,
-			  \item Et éventuellement pouvoir agir dessus, par exemple en rejouant un
-			  message qui n’est pas passé à cause d’un problème momentané de la connexion.
+			  \item Et éventuellement pouvoir agir dessus dans le but de les corriger,
+			  par exemple en rejouant un message qui n’est pas passé à cause d’un
+			  problème momentané de la connexion. Selon deux des 5 personnes interrogées,
+			  le but premier d'une console de supervision n'est cependant pas la
+			  correction de anomalie, mais uniquement leur détection.
 			\end{itemize}
 			
 		\subsubsection{Une grande diversité des utilisateurs des consoles de
 		supervision}
 			\paragraph{}% Présentation
-			Nous présenterons ici la typologie d'utilisateur qui est ressortie de
-			l'étude, ce qui correspond au grand thème 2.
+			Nous savons maintenant comment à lieux la superision d'un flux dans la
+			pratique et nous connaissons un peu mieux l'organisation en place dans les
+			centres hospitaliers. Nous présenterons ici la typologie des utilisateur qui
+			est ressortie de l'étude, ce qui correspond au grand thème 2.
 			
 			\paragraph{}% Les utilisateurs
+			La typologie des utilisateurs découle du schéma d’organisation des services
+			informatiques vu préciédemment (figure \ref{orga_interop}. On retrouve les
+			deux niveaux que sont l’intégration et l’exploitation en plus d’un troisième
+			niveau : le niveau métier. Le tableau \ref{type_utilisateurs} propose une
+			description des 4 grands profils d’utilisateurs de consoles de supervision que l’étude a dégagée.
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{| p{3cm} | p{4,5cm} | p{4,5cm} | p{4,5cm} |} %Exemples des
+				% principaux logiciels métier
+					\hline
+						\thead{Utilisateur}
+						&\thead{Niveau de maitrise}
+						&\thead{Outils utilisés}
+						&\thead{Rôles}
+						\\
+					\hline
+						Responsable d'intégration
+						&
+						Bon niveau de maîtrise de Cloverleaf.
+						&
+						Tous les outils (l'IDE, EAI Supervision, Global Monitor et TrackCIS)
+						&
+						Mise en place de nouveaux flux, résolution des problèmes complexes.
+						\\
+					\hline
+						Responsable d'exploitation
+						&
+						Connaissances et formation de base sur l’EAI.
+						&
+						Consoles de superivision (EAI Supervision, Global Monitor et TrackCIS)
+						&
+						Surveillance, correction des erreurs simples (erreurs de contenus de
+						messages), remonte les erreurs plus complexes
+						\\
+					\hline
+						Personne d'astreinte
+						&
+						Il s'agit en général d'informaticiens mais non spécialisés et non formés
+						sur Cloverleaf.
+						&
+						Consoles de supervision simples d'utilisations telles que TrackCIS ou
+						Global Monitor.
+						&
+						Surveillance de quelques flux et éventuellement correction des erreurs les
+						plus simples.
+						\\
+					\hline
+						Référent applicatif
+						&
+						Pas ou peu de connaissance sur le fonctionnement de Cloverleaf. Il s'agit
+						malgré tout de profils informaticiens.
+						&
+						Des consoles de supervision simple d'utilisation telle que TrackCIS.
+						&
+						Surveiller les flux concernant une application dont ils ont la charge. Les
+						référents applicatifs existent déjà dans les hôptitaux, mais ils ne
+						s'occupe pas de l'interopérabilité.
+						\\
+					\hline
+						Référent métier
+						&
+						Pas de connaissances sur le fonctionnement de l’EAI. Typiquement il s'agit
+						de personnel médical (infirmière, pharmacien\ldots) ou administratif.
+						&
+						Des consoles de supervision simple d'utilisation telle que TrackCIS.
+						&
+						Surveillance et éventuellement correction des erreurs simples. Ce type
+						d'utilisateur n'existe pas encore dans les hôpitaux. Cependant, 3 des 5
+						établissements interrogés disent avoir la volonté de mettre en place ce
+						type d'utilisateur.
+						\\
+					\hline
+				\end{tabular}
+				\caption{\label{type_utilisateurs} Typologie des utilisateur dégagée par
+				l'enquêtes.}
+			\end{table}
+			Ces différents acteurs coopèrent ensemble pour la résolution de problème,
+			comme le résume la figure \ref{resolution_pbs}. Ce processus fait intervenir
+			beaucoup d’intermédiaires ce qui pose problème à la fois aux utilisateurs métiers,
+			car la résolution de problème prend du temps, et au services informatiques
+			(notamment les pôles intégration et exploitation) car ils se retrouvent à
+			devoir régler quotidiennement des problèmes parfois simple (comme des
+			erreurs de saisie). Ceci justifie la volonté de certains établissements,
+			comme le CHU de Toulouse, de donner accès à des utilisateurs métiers
+			d’applications la possibilité de corriger les erreurs les plus simples
+			(comme les erreurs de saisie).
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=15cm]{../img/user_1.png}
+				\caption{\label{resolution_pbs} Processus de résolution d'un problème dans
+				Cloverleaf.}
+			\end{figure}
 			
 		\subsubsection{L'enquête permet de dresser une liste des besoins}
 			\paragraph{}% Les attentes qui sont ressorties de l'enquête
-			
-			\paragraph{}% La lise des besoins
-			A partir des entretiens, nous avons dresser une liste de besoins de natures
-			diverse. Ceux-ci consernent différents aspect de TrackCIS ou de la
-			supervision. On peut les classer dans différentes catégories :
+			Nous remarquons que les avis concernant le rôle des consoles de supervisions
+			convergent entre les différentes personnes interrogées. Celles-ci attendent
+			de ces outils qu’ils jouent le rôle de tableau de bord clair, simple et si
+			possible au design épuré de façon à ce que les informations soient les plus
+			lisibles possibles. Une console doit permettre une visualisation rapide des
+			erreurs. Elles doivent également permettre leur analyse. La correction des
+			erreurs n’est évoquée que comme une fonction secondaire et facultative de
+			ces outils.\newline
+			D’une manière générale, les utilisateurs son satisfait de l’ergonomie de TC.
+			Les principales remarques concernant ce point sont :
 			\begin{itemize}
-			  \item Les besoins
+			  \item Le paramétrage des colonnes qui est difficile,
+			  \item La lenteur d’affichage des messages,
+			  \item Pour certains flux  (les flux externes), il faut parcourir tous les
+			  messages pour retrouver ceux ayant un retour négatif.
 			\end{itemize}
+			Le ressenti global est que les utilisateurs informaticiens, principalement du
+			département interopérabilité, ne sont pas spécialement sensibles à
+			l’ergonomie des outils de supervision. Ils sont plus soucieux du fonctionnel
+			que du design. Mais la plupart des personnes interrogées soutiennent que des
+			utilisateurs métiers seraient, quant à eux, plus soucieux du design et de la
+			facilité de prise en amin de l’outil. Malheureusement, nous n’avons pu
+			interroger de tels utilisateurs.
+			
+			\paragraph{}% C'est quoi une bonne console
+			En résumé, une bonne console est un outil donnant la vision la plus générale
+			possible. La console de supervision a pour objectif premier de faire gagner
+			du temps à son utilisateur et à permettre une résolution plus rapide des
+			problèmes. De ce fait, la console de supervision a pour objectif d’améliorer
+			la fiabilité globale de l’EAI, donc du SI.
+			
+			\paragraph{}% La lise des besoins, classification
+			En plus des information que nous avons décrites jusque là, les entetiens nous
+			on permi de faire remonter différents besoins des utilisateurs. Ceux-ci l'ont
+			été explicitement ou non, et concerne généralement des manques. Voici
+			quelques exemples de besoins, la liste complète se trouvant en annexe 3 :
+			\begin{itemize}
+			  \item Pouvoir trouver facilement la cause des erreurs,
+			  \item Voir l'évolution du nombre de messages envoyés par flux au cours du
+			  temps,
+			  \item Voir la date et heure d'écriture du dernier message,
+			  \item Visualiser l'état des flux en temps réel,
+			  \item Pouvoir afficher la console sur un écran géan
+			\end{itemize}
+			Un total de 57 besoins ont été ainsi identifié. Ceux-ci ne sont pas
+			spécifiquements lmié à un outil en particulier, ils concernent la supervision
+			en général. Certains de ces besoins son d'ailleurs déjà satisfait dans
+			TrackCIS, comme c'est par exemple le cas pour : "Pouvoir rejouer les
+			messages" ou encore "Avoir un outil utilisable en lecture seule". Ce type de
+			besoin nous ayant été remonté par des non utilisateurs de TrackCIS. Nous
+			pouvons faire un premier classement des besoins en utilisant les catégories
+			suivantes :
+			\begin{itemize}
+			  \item Besoins concernant les performances,
+			  \item Besoins concernant le design, l'ergonomie et la facilité
+			  d'utilisation,
+			  \item Besoins concernant la résulution des problèmes,
+			  \item Besoins concernant les données statistiques,
+			  \item Besoins concernant les rôles de la console,
+			  \item Les autres besoins
+			\end{itemize}
+			
+			\paragraph{}% La lise des besoins, priorisation
 	
 	\subsection{La liste des besoins permet de dresser une liste de fonctionnalités}
 		\paragraph{}% On ne se concentre que sur les besoins liés aux stats
@@ -284,14 +443,31 @@
 			  fonctionnalités.
 			\end{itemize}
 			
-			\paragraph{}% Formalisation des fonctionnalités grace au diagramme FODA
-			
 		\subsubsection{Priorisation des fonctionnalités liées aux statistiques}
 			\paragraph{}% But de la priorisation des fonctionnalités
 			
-			\paragraph{}% Quelques rappels en UML
+			\paragraph{}% Présentation FODA
+			Le diagramme FODA est une représentation graphique des différentes
+			fonctionnalités de l’application (Kang, 1990). Il est organisé en features.
+			Une feature est une macro fonctionnalité. A l’intérieur de chaque feature
+			peuvent se trouver d’autres fonctionnalités, plus précises, sous lesquelles
+			peuvent s’en trouver d’autres, etc. Les feuilles de l’arbre ainsi formé
+			(correspondant au niveau de fonctionnalité le plus détaillé) correspondent à
+			des parties fonctionnelles de l’application qui seront développées.\newline
+			La figure \ref{foda_legende} présente le principe de base du diagramme FODA.
+			La \textit{feature} 1 est obligatoire (point noir), elle correspond à la
+			fonctionnalité d'un produit minimum viable. La \textit{feature 2} est
+			facultative (point blanc), elle correspond à une fonctionnalité qui pourra être
+			développée dans des versions plus évoluées ou plus personnalisées de
+			l’outil. Elle n’est pas indispensable au fonctionnement ni à la mise sur le
+			marché, mais rend tout de même un service intéressant pour l'utilisateur.
+			\begin{figure}[H]% Légende du FODA
+				\centering
+				\includegraphics[width=7cm]{../img/foda_legende.png}
+				\caption{\label{foda_legende} Principe du diagramme FODA.}
+			\end{figure}
 			
-			\paragraph{}% Représentation des fonctionnalités liées aux stats en UML
+			\paragraph{}% FODA de TrackCIS stats
 	
 	\subsection{Des fonctionnalités vers les cas d'utilisation}
 		\paragraph{}
