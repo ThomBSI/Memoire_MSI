@@ -213,7 +213,7 @@
 			facteur limitant à son utilisation en production.
 			\begin{figure}[H]% Niveau de responsabilité pour l'interop dans le SI
 				\centering
-				\includegraphics[width=8cm]{../img/usage_1.png}
+				\includegraphics[width=10cm]{../img/usage_1.png}
 				\caption{\label{usage_consoles} Les différents d'utilisation des consoles de
 				supervision.}
 			\end{figure}
@@ -401,28 +401,6 @@
 			  \item Les autres besoins
 			\end{itemize}
 			
-			\paragraph{}% La lise des besoins, priorisation
-	
-	\subsection{La liste des besoins permet de dresser une liste de fonctionnalités}
-		\paragraph{}% On ne se concentre que sur les besoins liés aux stats
-		Nous avons dressé et analysé une liste de besoins émanant d'utilisateur
-		concernant la supervision. L'objectif est maintenant, à partir de cette liste,
-		de dresser une liste de fonctionnalités.
-		
-		\subsubsection{De la liste des besoins à la liste des fonctionnalités}
-			\paragraph{}% C'est quoi une fonctionnalité ??
-			Une fonctionnalité est un service rendu par une application à un utilisateur.
-			Par exemple, la version actuelle de TrackCIS permet à l'utilisateurs de
-			consulter la liste des messages qui sont passé dans un flux. Ceci est une
-			fonctionnalité et elle répond à un besoin de l'utilisateur. En l'occurence le
-			besoin en question pourrait être "consulter la liste des messages transitant
-			par le fux". Dans ce cas-ci, le passage du besoin à la fonctionnalité est
-			évidente, puisque ls deux sont formulable de la même manière. Mais dans ce
-			cas quelle est la différences entre les deux ? Un besoin n'est pas lié à un
-			outil en particulier, c'est une volonté de l'utilisateur lié à un manque. Une
-			fonctionnalité est elle liée à un outil particulier, puisqu'il s'agit d'un
-			service rendu par cet outil.
-		
 			\paragraph{}% Mode de passage des besoins aux fonctionnalités
 			Grace à l'enquête terrain, nous en savons un peu plus sur le mode de
 			fonctionnement de l'interopérabilité dans le monde hospitalier. Nous en
@@ -446,12 +424,99 @@
 			Les élements de cette liste qui ne seront pas traités dans ce mémoire
 			pourront servir de base à Xperis pour des amélioration future de l'outil.
 			
+			\paragraph{}% La lise des besoins, priorisation
+			Le classement des besoins permet d'en faciliter la lecture et la
+			compréhension, ce qui nous permettra d'imaginer plus aiséement les
+			fonctionnalités qui viendrons y répondre. De plus, tous les éléments de cette
+			liste ne sont pas égaux, certains besoins compte d'avantage aux yeux des
+			personnes interrogée que d'autre. De plus certains ont été cité plus souvant.
+			L'enquête que nous avons mené est qualitative et le faible panel de personnes
+			interrogées ne nous permet pas de faire des analyse statistiques sur la
+			récurence de certains besoins. Cependant, ledit panel est représentatif des
+			utilisateurs actuels de TrackCIS, qui ont tous été interrogés. De façon à
+			noter l'inportance de chaque besoin pour les utilisateurs, nous proposons de
+			nous baser sur le barème présenté dans le tableau \ref{bareme_besoins}
+			ainssi que sur le nombre de citation. Le choix des notes dans le barème
+			ci-dessous est arbitraire et a pour but de bien différencier les besoins les
+			plus prioritaires de ceux qui le sont moins.
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{| p{4cm} | p{8cm} | p{2cm} |}
+					\hline
+						\thead{Priorité}
+						&\thead{Description}
+						&\thead{Note}
+						\\
+					\hline
+						Peu important
+						&
+						S'il est satisfait, ce besoin ne fait qu'améliorer le confort de l'utilisateur. S'il ne l'est pas, rien ne change.
+						&
+						2
+						\\
+					\hline
+						Important
+						&
+						S'il est satisfait, améliore l'efficacité de l'utilisateur dans son métier
+						&
+						3
+						\\
+					\hline
+						Très important
+						&
+						S'il est satisfait, améliore considérablement l'efficacité de l'utilisateur dans son métier
+						&
+						5
+						\\
+					\hline
+						Critique
+						&
+						Besoin qu'il est nécessaire de satisfaire, faute de quoi cela nuira à l'utilisateur.
+						&
+						8
+						\\
+					\hline
+				\end{tabular}
+				\caption{\label{bareme_besoins} Barème choisi pour noter l'importance de
+				chaque besoin perçue lors de l'entretien.}
+			\end{table}
+			Nous calculons la note de chaque besoin avec la formule ci-dessous
+			(\ref{besoin_formule}).
+			Soit N le nombre de citation et I la note d'importance définie avec le barème du
+			tableau \ref{bareme_besoins}.
+			\begin{equation}
+				\label{besoin_formule}
+				Note\ du\ besoin=N\times I
+			\end{equation}
+			Le résultat de cette priorisation se trouve dans la colonne "Note besoin" du
+			tableau de l'annexe 3.
+	
+	\subsection{La liste des besoins permet de dresser une liste de fonctionnalités}
+		\paragraph{}% On ne se concentre que sur les besoins liés aux stats
+		Nous avons dressé et analysé une liste de besoins émanant d'utilisateur
+		concernant la supervision. L'objectif est maintenant, à partir de cette liste,
+		de dresser une liste de fonctionnalités.
+		
+		\subsubsection{De la liste des besoins à la liste des fonctionnalités}
+			\paragraph{}% C'est quoi une fonctionnalité ??
+			Une fonctionnalité est un service rendu par une application à un utilisateur.
+			Par exemple, la version actuelle de TrackCIS permet à l'utilisateurs de
+			consulter la liste des messages qui sont passé dans un flux. Ceci est une
+			fonctionnalité et elle répond à un besoin de l'utilisateur. En l'occurence le
+			besoin en question pourrait être "consulter la liste des messages transitant
+			par le fux". Dans ce cas-ci, le passage du besoin à la fonctionnalité est
+			évidente, puisque ls deux sont formulable de la même manière. Mais dans ce
+			cas quelle est la différences entre les deux ? Un besoin n'est pas lié à un
+			outil en particulier, c'est une volonté de l'utilisateur lié à un manque. Une
+			fonctionnalité est elle liée à un outil particulier, puisqu'il s'agit d'un
+			service rendu par cet outil.
+		
 			\paragraph{}% La liste des fonctionalités
 			On peut établir des fonctionnalités à partir des besoins que l'on a retenu.
 			Une fonctionnalité est une réponse à un besoin. Cette réponse est portée par
 			un outil, en l'occurence TrackCIS. Les besoins retenus sont aux nombre de 33.
 			Nous imaginons à partir de là une liste composée de 30 fonctionnalités
-			regroupés en 8 grands ensembles :
+			(annexe 4) regroupées en 8 grands ensembles :
 			\begin{itemize}
 			  \item Visualisation du niveau de disponibilité du flux.
 			  \item Visualisation de la date et heure du dernier message passé.
@@ -464,7 +529,13 @@
 			
 		\subsubsection{Priorisation des fonctionnalités liées aux statistiques}
 			\paragraph{}% But de la priorisation des fonctionnalités
-			A partir de 
+			De la même manière que nous avons priorisé les besoin, nous cherchons ici à
+			prioriser les fonctionnalités qui en découlent. L'objectif de cela est
+			d'anticiper le développement des fonctionnalités : les plus importantes
+			devant être implémentées en premier. Il nous faut donc mettre en place un
+			barème permettant d'ordonner les fonctionnalités les unes par rapport aux
+			autres. Nous allons nous ader pour cela du diagramme FODA (Feature Oriented
+			Domain Analysis).
 			
 			\paragraph{}% Présentation FODA
 			Le diagramme FODA est une représentation graphique des différentes
@@ -476,7 +547,7 @@
 			des parties fonctionnelles de l’application qui seront développées.\newline
 			La figure \ref{foda_legende} présente le principe de base du diagramme FODA.
 			La \textit{feature} 1 est obligatoire (point noir), elle correspond à la
-			fonctionnalité d'un produit minimum viable. La \textit{feature 2} est
+			fonctionnalité d'un produit minimum viable (PMV). La \textit{feature 2} est
 			facultative (point blanc), elle correspond à une fonctionnalité qui pourra être
 			développée dans des versions plus évoluées ou plus personnalisées de
 			l’outil. Elle n’est pas indispensable au fonctionnement ni à la mise sur le
@@ -488,6 +559,61 @@
 			\end{figure}
 			
 			\paragraph{}% FODA de TrackCIS stats
+			Nous mettons en pratique cette classification en concertation avec l'équipe
+			d'Xperis. Cette séparation entre fonctionnalité optionnelles ou faisant parti
+			du PMV refète donc le choix de l'entreprise. Pour tenir également compte des
+			priorités des utilisateurs interrogés durant l'enquête, nous proposons la
+			formule ci-dessous. Soit Bi la note d'un besoin donnée,
+			\begin{math}\sum Bi\end{math} représente la somme des notes des besoins qui
+			sont satisfaits par cette fonctionnalité. On a la formule \ref{fonctio_nopmv}
+			pour une fonctionnalité notée comme facultative et la formule
+			\ref{fonctio_pmv} pour une fonctionnalité notée comme obligatoire. Les notes
+			obtenues pour chaque fonctionnalités sont présentées dans la colonne "Note
+			de fonctionnalité" du tableau de l'annexe 4.
+			\begin{equation}
+				\label{fonctio_nopmv}
+				Note\ de\ la\ fonctionnalite=\sum Bi
+			\end{equation}
+			\begin{equation}
+				\label{fonctio_pmv}
+				Note\ de\ la\ fonctionnalite=2\times \sum Bi
+			\end{equation}
+			
+		\subsubsection{Le nouveau module se découpe en huits grands groupes de
+		fonctionnalités}
+			\paragraph{}
+			Les figures \ref{foda_1} et \ref{foda_2} représentent l'ensemble des
+			fonctionnalités du module statistique de TrackCIS sous forme de diagramme
+			FODA . Chaque feature correspond à un des 8 grands
+			ensembles de fonctionnalité décrit précédemment. Attardons nous sur chaque
+			feature. \begin{figure}[h]% foda 1
+				\centering
+				\includegraphics[width=17cm]{../img/part2/foda_1.png}
+				\caption{\label{foda_1} Diagramme FODA pour le module statistique de
+				TrackCIS (première partie).}
+			\end{figure}
+			\begin{figure}[h]% foda 2
+				\centering
+				\includegraphics[width=17cm]{../img/part2/foda_2.png}
+				\caption{\label{foda_2} Diagramme FODA pour le module statistique de
+				TrackCIS (deuxième partie).}
+			\end{figure}
+			
+			\paragraph{Visualisation du niveau de disponibilité du flux.}
+			
+			
+			\paragraph{Visualisation de la date et heure du dernier message passé.}
+			
+			\paragraph{Visualisation de l’historique des messages.}
+			
+			\paragraph{Visualisation des ressources serveur.}
+			
+			\paragraph{Administration des statistiques.}
+			
+			\paragraph{Exporter les données statistiques.}
+			
+			\paragraph{Facilitation de l’utilisation.}
+			
 	
 	\subsection{Des fonctionnalités vers les cas d'utilisation}
 		\paragraph{}
@@ -496,7 +622,66 @@
 		
 		\subsubsection{État de l'art sur les consoles de supervision et la visualisation de données}
 			\paragraph{}
-			Texte de la sous sous partie
+			Pour cet état de l’art nous nous baserons sur des outils remplissant des
+			fonctions similaires à celles que l’on attendrait de TrackCIS. Cet état de
+			l’art est réalisé dans le but du développement du module statistique. Nous
+			nous attarderons donc, dans l’analyse des exemples, sur :
+			\begin{itemize}
+			  \item Les données qui sont affichée et leurs rôles,
+			  \item La manière dont ces données sont représentées (courbe, histogramme,
+			  jauge...), pourquoi elles sont représentées de la sorte et si cela semble
+			  efficace et ergonomique du point de vue de l’utilisateur.
+			\end{itemize}
+			Nous analyserons ici 2 outils : TradeXpress et M12.
+			
+			\paragraph{TradeXpress :}
+			TradeXpress est une plateforme d’intégration B2B. L’outil permet de connecter
+			les application d’une entreprise à celles de ses partenaires (clients,
+			fournisseurs…). TradeXpress n’est pas spécialisé dans un domaine en
+			particulier. Il permet de gérer l’intégralité des flux, il va bien au-delà
+			de la simple supervision. Cependant, certaines de ces fonctionnalités sont
+			axés supervision, ce sont celles qui nous intéressent ici. La figure
+			\ref{trade_xpress} présente la page de monitoring des flux de la console.\newline
+			La vue se divise en deux parties aux rôles différents : une partie consacrée
+			à l’état du système, une autre dédiée à la supervision. La première partie
+			montre une vision de l’état actuel (en temps réel) du serveur. La partie
+			supervision offre deux vision :
+			\begin{itemize}
+			  \item Une au jour à l’aide de jauges montrant le nombre de messages ou
+			  documents transitant par l’EAI. On peut voir juste en dessous de l’encadré
+			  gris un bouton permettant de sélectionner la date.
+			  \item Un historique à la semaine du volume de messages passés pour chaque
+			  domaine. L’utilisateur peut choisir les données ainsi que la semaine à
+			  afficher.
+			\end{itemize}
+			Le design de l’outil est simple et relativement classique. Les informations
+			utiles à l’utilisateur occupent un maximum de place sur la page. Il y a le
+			moins de superflu possible : pas de cadre autour des parties et seulement
+			cinq couleurs différentes.\newline
+			Pour la partie supervision, l’utilisateur ne peut pas sélectionner la
+			période de temps, il doit se contenter de visualiser les données d’un jour
+			ou d’une semaine particulière. Ceci restreint les possibilités de
+			visualisation, mais simplifie l’utilisation de la console.\newline
+			Pour que les jauges soient pertinentes il faut qu’elles soient calibrées avec
+			une valeur minimum et maximum. La documentation disponible en ligne ne précise
+			pas s’il est possible de calibrer ces jauges, ni à qui revient ce rôle.
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=17cm]{../img/part2/trade_xpress.png}
+				\caption{\label{trade_xpress} Tableau de bord de l'outil Trade Xpress.}
+			\end{figure}
+			
+			\paragraph{M12 :}
+			M12 est une console permettant de monitorer des flux existant, principalement
+			les flux basés sur des web services. La console permet de générer des
+			alertes (par exemple des alertes mail) en cas de problème, et de rejouer les
+			flux.
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=17cm]{../img/part2/m12.png}
+				\caption{\label{m12} Tableau de bord de l'outil M12.}
+			\end{figure}
+			
 		\subsubsection{Choix des modes de visualisation par le biais de maquettes}
 			\paragraph{}
 			Texte de la sous sous partie
