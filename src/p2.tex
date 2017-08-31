@@ -72,6 +72,7 @@
 			l'utilise tous simplement pas).
 			\begin{table}[H]
 				\centering
+				\caption{\label{panel_enquete} Description du panel interrogé.}
 				\begin{tabular}{| p{3cm} | p{5cm} | p{5cm} |}
 					\hline
 						\thead{Etablissement}
@@ -118,7 +119,6 @@
 						\\
 					\hline
 				\end{tabular}
-				\caption{\label{panel_enquete} Description du panel interrogé.}
 			\end{table}
 			
 			\paragraph{}% Méthodes d'analyse des résultat
@@ -276,7 +276,9 @@
 			Le tableau \ref{type_utilisateurs} détail des quatre grands profils d’utilisateurs.
 			\begin{table}[H]
 				\centering
-				\begin{tabular}{| p{3cm} | p{4,5cm} | p{4,5cm} | p{4,5cm} |} %Exemples des
+				\caption{\label{type_utilisateurs} Typologie des utilisateur dégagée par
+				l'enquêtes.}
+				\begin{tabular}{| p{3cm} | p{4cm} | p{4,5cm} | p{4,5cm} |} %Exemples des
 				% principaux logiciels métier
 					\hline
 						\thead{Utilisateur}
@@ -342,8 +344,6 @@
 						\\
 					\hline
 				\end{tabular}
-				\caption{\label{type_utilisateurs} Typologie des utilisateur dégagée par
-				l'enquêtes.}
 			\end{table}
 			Ces différents acteurs coopèrent ensemble pour la résolution de problème,
 			comme le montre la figure \ref{resolution_pbs}. Ce processus fait intervenir
@@ -407,8 +407,8 @@
 			Un total de 57 besoins a été ainsi identifiés. Ceux-ci ne sont pas
 			spécifiquement liés à un outil, ils concernent la supervision
 			en général. Certains de ces besoins sont déjà satisfait dans
-			TrackCIS, comme c'est par exemple le cas pour~: "Pouvoir rejouer les
-			messages" ou encore "Avoir un outil utilisable en lecture seule". Ce type de
+			TrackCIS, comme c'est par exemple le cas pour~: <<Pouvoir rejouer les
+			messages>> ou encore <<Avoir un outil utilisable en lecture seule>>. Ce type de
 			besoin nous ayant été remonté par des non utilisateurs de TrackCIS. Nous
 			pouvons faire un premier classement des besoins en utilisant les catégories
 			suivantes~:
@@ -436,6 +436,8 @@
 			de bien différencier les besoins les plus prioritaires de ceux qui le sont moins.
 			\begin{table}[H]
 				\centering
+				\caption{\label{bareme_besoins} Barème choisi pour noter l'importance de
+				chaque besoin perçue lors de l'entretien.}
 				\begin{tabular}{| p{4cm} | p{8cm} | p{2cm} |}
 					\hline
 						\thead{Priorité}
@@ -472,8 +474,6 @@
 						\\
 					\hline
 				\end{tabular}
-				\caption{\label{bareme_besoins} Barème choisi pour noter l'importance de
-				chaque besoin perçue lors de l'entretien.}
 			\end{table}
 			Nous calculons la note de chaque besoin avec la formule ci-dessous
 			(formule \ref{besoin_formule}).
@@ -483,7 +483,7 @@
 				\label{besoin_formule}
 				Note\ du\ besoin=N\times I
 			\end{equation}
-			Le résultat de cette priorisation se trouve dans la colonne "Note du besoin"
+			Le résultat de cette priorisation se trouve dans la colonne <<Note du besoin>>
 			du tableau de l'annexe 3.
 	
 	\subsection{La liste des besoins permet de dresser une liste de fonctionnalités}
@@ -509,8 +509,8 @@
 			Par exemple, la version actuelle de TrackCIS permet à l'utilisateurs de
 			consulter la liste des messages qui sont passé dans un flux. Ceci est une
 			fonctionnalité et elle répond à un besoin de l'utilisateur. En l'occurrence
-			le besoin en question pourrait être~: "je souhaite avoir accès à tous les messages
-			qui transitent par mon flux".
+			le besoin en question pourrait être~: <<je souhaite avoir accès à tous les messages
+			qui transitent par mon flux>>.
 			Dans ce cas-ci, le passage du besoin à la fonctionnalité est simple. D’une
 			façon générale un besoin n'est pas lié à un outil en particulier, c'est une
 			volonté de l'utilisateur associée à un manque.
@@ -577,8 +577,8 @@
 			sont satisfaits par cette fonctionnalité. On a la formule \ref{fonctio_nopmv}
 			pour une fonctionnalité notée comme facultative et la formule
 			\ref{fonctio_pmv} pour une fonctionnalité notée comme obligatoire. Les notes
-			obtenues pour chaque fonctionnalité sont présentées dans la colonne "Note
-			de fonctionnalité" du tableau de l'annexe 4.
+			obtenues pour chaque fonctionnalité sont présentées dans la colonne <<Note
+			de fonctionnalité>> du tableau de l'annexe 4.
 			\begin{equation}
 				\label{fonctio_nopmv}
 				Note\ de\ la\ fonctionnalite=\sum Bi
@@ -604,15 +604,15 @@
 			La page dédiée aux statistiques serait divisée en widgets. Chacun est une
 			petite boite contenant un type d'informations. Dans la version que nous proposons ici,
 			ils sont au nombre de cinq et correspondent aux features décrites ci-dessous.
-			\begin{figure}% foda 1
+			\begin{figure}[H]% foda 1
 				\centering
-				\includegraphics[width=17cm]{../img/part2/foda_1.png}
+				\includegraphics[width=16cm]{../img/part2/foda_1.png}
 				\caption{\label{foda_1} Diagramme FODA pour le module statistique de
 				TrackCIS (première partie).}
 			\end{figure}
-			\begin{figure}% foda 2
+			\begin{figure}[H]% foda 2
 				\centering
-				\includegraphics[width=17cm]{../img/part2/foda_2.png}
+				\includegraphics[width=16cm]{../img/part2/foda_2.png}
 				\caption{\label{foda_2} Diagramme FODA pour le module statistique de
 				TrackCIS (deuxième partie).}
 			\end{figure}
@@ -738,9 +738,9 @@
 			Pour que les jauges soient pertinentes il faut qu’elles soient calibrées avec
 			une valeur minimum et maximum. La documentation disponible en ligne ne précise
 			pas s’il est possible de calibrer ces jauges, ni à qui revient ce rôle.
-			\begin{figure}[h]
+			\begin{figure}[H]
 				\centering
-				\includegraphics[width=17cm]{../img/part2/trade_xpress.png}
+				\includegraphics[width=16cm]{../img/part2/trade_xpress.png}
 				\caption{\label{trade_xpress} Tableau de bord de l'outil Trade Xpress.}
 			\end{figure}
 			
@@ -758,9 +758,9 @@
 			n'apporte pas d'informations à l'utilisateur.\newline
 			Les informations sont réparties sur la page sous la forme d'encadré
 			contenant chacun un type de donnée.
-			\begin{figure}[h]
+			\begin{figure}[H]
 				\centering
-				\includegraphics[width=17cm]{../img/part2/m12.png}
+				\includegraphics[width=16cm]{../img/part2/m12.png}
 				\caption{\label{m12} Tableau de bord de l'outil M12.}
 			\end{figure}
 			
@@ -794,18 +794,18 @@
 			
 			\paragraph{Vue utilisateur}
 			
-			\begin{figure}[h]
+			\begin{figure}[H]
 				\centering
-				\includegraphics[width=17cm]{../img/part2/maquette_user_1.png}
+				\includegraphics[width=16cm]{../img/part2/maquette_user_1.png}
 				\caption{\label{maquette_user} Maquette de l'onglet statistique de
 				TrackCIS.}
 			\end{figure}
 			
 			\paragraph{Vue administrateur}
 			
-			\begin{figure}[h]
+			\begin{figure}[H]
 				\centering
-				\includegraphics[width=17cm]{../img/part2/maquette_admin_1.png}
+				\includegraphics[width=16cm]{../img/part2/maquette_admin_1.png}
 				\caption{\label{maquette_admin} Maquette de l'ouglet permettant
 				l'administration des statistiques de TrackCIS.}
 			\end{figure}
