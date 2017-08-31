@@ -1,7 +1,7 @@
 \chapter{Phase d'analyse~: des besoins aux fonctionnalités}
 	\paragraph{}
 	La partie précédente était consacrée à l'explication des notions qui nous
-	seront indispensable pour la suite. Nous avons vu
+	seront indispensables pour la suite. Nous avons vu
 	ce qu'est un EAI et les enjeux de la supervision. Nous avons également vu que
 	TrackCIS est une console de supervision et que notre projet vise à l'améliorer.
 	L'objectif de cette deuxième partie est de décrire aussi précisément que
@@ -23,7 +23,7 @@
 			  \item Comprendre comment sont supervisés les flux, ce qui implique~:
 			  \begin{itemize}
 			    \item de savoir comment sont
-			  	organisés les DSIO (direction des services informatique et de
+			  	organisés les DSIO (direction des services informatiques et de
 			  	l’organisation) des établissements hospitaliers pour mieux comprendre qui
 			  	s'occupe de la supervision,
 			  	\item de connaître les pratiques actuelles des personnes en charge de la
@@ -39,11 +39,11 @@
 			étude qualitative nous ne cherchons pas à interroger le plus de personnes
 			possibles. Les entretiens sont basés sur des questions ouvertes et durent en
 			général plus longtemps que dans des enquêtes quantitatives, une trentaine de
-			minute dans notre cas.
+			minutes dans notre cas.
 			L'objetcif est de faire ressortir la diversité des comportements, des
 			pratiques.\newline
-			Les entretiens sont conduit de manière semi-directive par téléphone ou en face à
-			face quand cela est possible.
+			Les entretiens sont conduits de manière semi-directive par téléphone ou en
+			face à face quand cela est possible.
 			Le questionnaire n'est qu'une trame aidant à orienter la discussion. Il a
 			vocation à évoluer d’un entretien à l'autre. Des questions peuvent être
 			modifiées, supprimées ou ajoutées de façon à obtenir des informations de plus en
@@ -61,15 +61,15 @@
 			  \item[3) Attentes par rapport aux consoles de supervision~:] Qu'est-ce
 			  qu'une bonne console de supervision ? En quoi consiste la supervision ?
 			  \item[4) Les consoles actuelles~:] Comment les consoles actuelles
-			  sont-elles utilisées ? Quelles sont les avantages et inconvénients des
-			  outils existant ? L'affichage de statistique est-il pertinent ?
+			  sont-elles utilisées ? Quelles sont les avantages et les inconvénients des
+			  outils existants ? L'affichage de statistiques est-il pertinent ?
 			\end{itemize}
 			
 			\paragraph{}% Choix de la population interrogée
-			Un panel de 5 établissements hospitaliers est interrogé. Tous ces
+			Un panel de cinq établissements hospitaliers est interrogé. Tous ces
 			établissements sont des clients d’Xperis (tableau \ref{panel_enquete}) mais
 			n'utilisent pas forcément TrackCIS (car ils ne l'ont pas acheté ou ne
-			l'utilise tous simplement pas).
+			l'utilisent tout simplement pas).
 			\begin{table}[H]
 				\centering
 				\caption{\label{panel_enquete} Description du panel interrogé.}
@@ -80,7 +80,7 @@
 						&\thead{Personne interrogée}
 						\\
 					\hline
-						Tour
+						Tours
 						&
 						Oui, mais la console est actuellement peu utilisée.
 						&
@@ -124,19 +124,19 @@
 			\paragraph{}% Méthodes d'analyse des résultat
 			A l'issue des entretiens, après une rapide relecture de tous les comptes
 			rendus d'entretien, nous établissons une liste des grands thèmes qui ont été
-			abordés durant les discussion.
+			abordés durant les discussions.
 			On classe ensuite chaque information collectée dans l'un de ces
 			thèmes.\newline Les grands thèmes en question sont les suivants~:
 			\begin{itemize}
-			  \item[1)] L’organisation des services informatique dans les
-			  hôpitaux,
-			  \item[2)] Les types d’utilisateurs de TrackCIS,
-			  \item[3)] Les types d’utilisations de TrackCIS,
+			  \item[1)] L’organisation des services informatiques dans les
+			  hôpitaux
+			  \item[2)] Les types d’utilisateurs de TrackCIS
+			  \item[3)] Les types d’utilisations de TrackCIS
 			  \item[4)] Les attentes par rapport aux consoles de supervision
-			  et la réponse des outils actuels à ces attentes,
+			  et la réponse des outils actuels à ces attentes
 			  \item[5)] Les fonctionnalités manquant aux consoles de
-			  supervisions actuelles,
-			  \item[6)] Les statistiques sur les flux.
+			  supervisions actuelles
+			  \item[6)] Les statistiques sur les flux
 			\end{itemize}
 			Dans la suite de cette partie nous entrerons dans le détail des informations
 			collectées pour chacun de ces grands thèmes.
@@ -174,31 +174,31 @@
 			différents niveaux de gestion de l’interopérabilité au sein d’un hôpital.
 			Les niveaux correspondent au degré de responsabilité vis à vis de
 			l'interopérabilité. Plus un niveau est élevé, plus les impacts des
-			décisions prises à ce niveaux seront fort sur le SI. Un pôle exploitation se
+			décisions prises à ce niveau seront forts sur le SI. Un pôle exploitation se
 			situe au niveau le plus bas tandis qu’un pôle intégration peut se situer au
-			niveau 2 ou 3. Le niveau le plus haut est en général assuré par un
+			niveau deux ou trois. Le niveau le plus haut est en général assuré par un
 			département urbanisation, en charge de la définition de la politique de tout le SI.
 			% Niveau de responsabilité pour l'interop dans le SI
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=10cm]{../img/si_1.png}
-				\caption{\label{orga_interop} Les différents niveaux de responsabilité
+				\caption{\label{orga_interop} Les différents niveaux de responsabilités
 				autour de la gestion de l'interopérabilité.}
 			\end{figure}
 			
 			\paragraph{}% Diversité des pratiques
 			L’ensemble des outils liés à Cloverleaf (IDE et consoles)
-			peuvent être utilisés pour la supervision des flux. Les utilisateurs les plus
+			peut être utilisé pour la supervision des flux. Les utilisateurs les plus
 			aguerris sur Cloverleaf utilisent l’IDE, notamment une fonctionnalité,
-			nommée \textit{status}, qui donnes accès à des données statistiques sur un
+			nommée \textit{status}, qui donnent accès à des données statistiques sur un
 			thread ou un process à un instant t. Pour détecter les problèmes,
-			l’utilisateur se fie principalement à la date et heure de dernière écriture
-			d’un message sur le flux. Si rien n’a été écrit depuis un certain temps, c’est que
+			l’utilisateur se fie principalement à la date et à l'heure de dernière
+			écriture d’un message sur le flux. Si rien n’a été écrit depuis un certain temps, c’est que
 			le flux est bloqué et que les messages ne passent plus. Ce type d’utilisateur
-			fait généralement parti du pôle intégration et est en charge de la résolution
-			des problèmes les plus complexes.
+			fait généralement partie du pôle intégration et est en charge de la
+			résolution des problèmes les plus complexes.
 			Pour cela, il a parfois recours à des fonctionnalités avancées comme la
-			consultation de la base de données d'erreur (ou \textit{error database}) ou
+			consultation de la base de données d'erreurs (ou \textit{error database}) ou
 			de la base de données contenant les messages (ou \textit{SMAT database})
 			pour remonter à l’origine de l’erreur.\newline
 			Du côté des consoles de supervision, les principaux usages sont~:
@@ -207,22 +207,22 @@
 			  process fonctionnent correctement,
 			  \item Affichage sur écran géant,
 			  \item Rechercher un message en particulier, ou un certain type de
-			  messages. Par exemple, tous les messages concernant un patient donné ou
+			  message. Par exemple, tous les messages concernant un patient donné ou
 			  qui sont passés à une date donnée,
 			  \item Visualiser les messages qui sont en erreur,
 			  \item Supervision en mode lecture seule~: permet de faire remonter les
 			  erreurs aux personnes ayant les compétences pour les résoudre,
 			  \item Lire le contenu d'un message pour diagnostiquer une erreur,
 			  \item L'éditer pour corriger l'erreur quand celle-ci est causée par le
-			  message, puisrejouer le message,
+			  message, puis rejouer le message,
 			  \item Réaliser des tests lors de la mise en place de flux (usage repéré
 			  uniquement au CHU de Toulouse),
 			  \item Pour les flux entre les applications de l'éditeur Maincare
-			  uniquement, s’assurer que les messages sont bien intégrés dans les
+			  uniquement, s’assurer que les messages soient bien intégrés dans les
 			  applications destinatrices,
 			  \item Restreindre l’utilisation de certaines fonctionnalités pour par
-			  exemple confier les outils à des personnes d’astreintes ou des personnes
-			  métier,
+			  exemple confier les outils à des personnes d’astreintes ou à des personnes
+			  métiers,
 			  \item Comparer le contenu d’un message à l'entrée et à la sortie d'un flux.
 			  \item Paramétrer l’outil~: création de colonnes, attribution des droits…
 			\end{itemize}
@@ -272,17 +272,17 @@
 			des services informatiques (figure \ref{orga_interop}). On retrouve les
 			deux niveaux que sont l’intégration et l’exploitation auxquelles on peut
 			ajouter le niveau métier, les référents applicatifs et les personnes
-			d'astreinte.
-			Le tableau \ref{type_utilisateurs} détail des quatre grands profils d’utilisateurs.
+			d'astreintes.
+			Le tableau \ref{type_utilisateurs} détaille les quatre grands profils
+			d’utilisateurs.
 			\begin{table}[H]
 				\centering
-				\caption{\label{type_utilisateurs} Typologie des utilisateur dégagée par
-				l'enquêtes.}
-				\begin{tabular}{| p{3cm} | p{4cm} | p{4,5cm} | p{4,5cm} |} %Exemples des
-				% principaux logiciels métier
+				\caption{\label{type_utilisateurs} Typologie des utilisateurs dégagée par
+				l'enquête.}
+				\begin{tabular}{| p{3cm} | p{4cm} | p{4,5cm} | p{4,5cm} |}
 					\hline
 						\thead{Utilisateur}
-						&\thead{Niveau de maitrise}
+						&\thead{Niveau de maîtrise}
 						&\thead{Outils utilisés}
 						&\thead{Rôles}
 						\\
@@ -303,7 +303,7 @@
 						Consoles de supervision (EAI Supervision, Global Monitor et TrackCIS)
 						&
 						Surveillance, correction des erreurs simples (erreurs de contenus de
-						messages), remonte les erreurs plus complexes
+						messages), signale les erreurs plus complexes
 						\\
 					\hline
 						Personne d'astreinte
@@ -323,11 +323,11 @@
 						Pas ou peu de connaissance sur le fonctionnement de Cloverleaf. Il s'agit
 						malgré tout de profils informaticiens.
 						&
-						Des consoles de supervision simple d'utilisation telle que TrackCIS.
+						Des consoles de supervision simples d'utilisation telles que TrackCIS.
 						&
 						Surveiller les flux concernant une application dont ils ont la charge. Les
 						référents applicatifs existent déjà dans les hôpitaux, mais ils ne
-						s'occupe pas de l'interopérabilité.
+						s'occupent pas de l'interopérabilité.
 						\\
 					\hline
 						Référent métier
@@ -335,7 +335,7 @@
 						Pas de connaissances sur le fonctionnement de l’EAI. Typiquement il s'agit
 						de personnel médical (infirmière, pharmacien\ldots) ou administratif.
 						&
-						Des consoles de supervision simple d'utilisation telle que TrackCIS.
+						Des consoles de supervision simples d'utilisation telles que TrackCIS.
 						&
 						Surveillance et éventuellement correction des erreurs simples. Ce type
 						d'utilisateur n'existe pas encore dans les hôpitaux. Cependant, 3 des 5
@@ -345,14 +345,14 @@
 					\hline
 				\end{tabular}
 			\end{table}
-			Ces différents acteurs coopèrent ensemble pour la résolution de problème,
+			Ces différents acteurs coopèrent ensemble pour la résolution de problèmes,
 			comme le montre la figure \ref{resolution_pbs}. Ce processus fait intervenir
 			beaucoup d’intermédiaires ce qui pose problème à la fois aux utilisateurs métiers,
-			car cela prend du temps, et au services informatique
+			car cela prend du temps, et au services informatiques
 			(notamment les pôles intégration et exploitation) car ils doivent corriger
 			quotidiennement des erreurs parfois simples (comme des erreurs de saisie).
 			C'est ce qui motive certains établissements, comme le CHU de
-			Toulouse, à mettre en place des référent métier capable de détecter et
+			Toulouse, à mettre en place des référents métiers capables de détecter et
 			de corriger les problèmes les plus simples.
 			\begin{figure}[H]
 				\centering
@@ -370,24 +370,24 @@
 			lisibles possibles. Une console doit permettre une visualisation rapide des
 			erreurs et leur compréhension. Leur correction n’est évoquée que comme une
 			fonction secondaire et facultative de ces outils.\newline
-			D’une manière générale, les utilisateurs son satisfait de l’ergonomie
-			actuelle de TrackCIS et la cite comme un de ses points fort.
+			D’une manière générale, les utilisateurs sont satisfaits de l’ergonomie
+			actuelle de TrackCIS et la cite comme un de ses points forts.
 			Les principaux points négatifs sont~:
 			\begin{itemize}
 			  \item Le paramétrage des colonnes est difficile,
 			  \item La lenteur d’affichage des messages,
 			  \item Pour certains flux  (les flux externes), il faut parcourir l'ensemble
-			  les messages pour retrouver ceux ayant eu un retour négatif.
+			  des messages pour retrouver ceux ayant eu un retour négatif.
 			\end{itemize}
 			Les utilisateurs au profil informaticien ne sont pas spécialement sensibles
 			à l’ergonomie des outils de supervision, mais sont plus soucieux de leurs
-			fonctionnalités. Cependant, design et de la facilité de prise en main
+			fonctionnalités. Cependant le design et de la facilité de prise en main
 			seraient des atouts plus importants pour des utilisateurs métiers.
 			
 			\paragraph{}% C'est quoi une bonne console
 			En résumé, une bonne console est un outil donnant la vision la plus générale
 			possible. La console de supervision a pour objectif premier de faire gagner
-			du temps à son utilisateur et à permettre une résolution plus rapide des
+			du temps à son utilisateur et de permettre une résolution plus rapide des
 			problèmes. De ce fait, la console de supervision a pour objectif d’améliorer
 			la fiabilité globale de l’EAI, donc du SI.
 			
@@ -400,13 +400,13 @@
 			  \item Pouvoir trouver facilement la cause des erreurs,
 			  \item Voir l'évolution du nombre de messages envoyés par flux au cours du
 			  temps,
-			  \item Voir la date et heure d'écriture du dernier message,
+			  \item Voir la date et l'heure d'écriture du dernier message,
 			  \item Visualiser l'état des flux en temps réel,
 			  \item Pouvoir afficher la console sur un écran géant
 			\end{itemize}
 			Un total de 57 besoins a été ainsi identifiés. Ceux-ci ne sont pas
 			spécifiquement liés à un outil, ils concernent la supervision
-			en général. Certains de ces besoins sont déjà satisfait dans
+			en général. Certains de ces besoins sont déjà satisfaits dans
 			TrackCIS, comme c'est par exemple le cas pour~: <<Pouvoir rejouer les
 			messages>> ou encore <<Avoir un outil utilisable en lecture seule>>. Ce type de
 			besoin nous ayant été remonté par des non utilisateurs de TrackCIS. Nous
@@ -431,13 +431,13 @@
 			souvent.\newline
 			De façon à noter l'importance de chaque besoin pour les utilisateurs, nous
 			proposons de nous baser sur le barème présenté dans le tableau
-			\ref{bareme_besoins} ainsi que sur le nombre de citation. Le choix des notes
+			\ref{bareme_besoins} ainsi que sur le nombre de citations. Le choix des notes
 			dans le barème ci-dessous est arbitraire et a pour but
 			de bien différencier les besoins les plus prioritaires de ceux qui le sont moins.
 			\begin{table}[H]
 				\centering
 				\caption{\label{bareme_besoins} Barème choisi pour noter l'importance de
-				chaque besoin perçue lors de l'entretien.}
+				chaque besoin perçu lors de l'entretien.}
 				\begin{tabular}{| p{4cm} | p{8cm} | p{2cm} |}
 					\hline
 						\thead{Priorité}
@@ -488,7 +488,7 @@
 	
 	\subsection{La liste des besoins permet de dresser une liste de fonctionnalités}
 		\paragraph{}% On ne se concentre que sur les besoins liés aux stats
-		Nous avons dressé et analysé une liste de besoins émanant d'utilisateur
+		Nous avons dressé et analysé une liste de besoins émanant d'utilisateurs
 		concernant la supervision en général. L'objectif est maintenant, à partir de
 		cette liste, de dresser une liste de fonctionnalités pour TrackCIS.
 		
@@ -498,7 +498,7 @@
 			liste, mais uniquement ceux qui sont relatifs à un module d'affichage de
 			statistiques. Xperis souhaite apporter toutes les améliorations nécessaires à
 			TrackCIS. Cependant, l'amélioration prioritaire concerne le nouveau module
-			statistique. C'est pourquoi les besoins ayant attrait aux statistiques seront
+			statistique. C'est pourquoi les besoins relatifs aux statistiques seront
 			les seuls à être traités ici, et donc à être déclinés en
 			fonctionnalités.\newline
 			Les éléments de cette liste qui ne seront pas traités dans ce mémoire
@@ -506,8 +506,8 @@
 		
 			\paragraph{}% Une fonctionnalité est un service
 			Une fonctionnalité est un service rendu par une application à un utilisateur.
-			Par exemple, la version actuelle de TrackCIS permet à l'utilisateurs de
-			consulter la liste des messages qui sont passé dans un flux. Ceci est une
+			Par exemple, la version actuelle de TrackCIS permet à l'utilisateur de
+			consulter la liste des messages qui sont passés dans un flux. Ceci est une
 			fonctionnalité et elle répond à un besoin de l'utilisateur. En l'occurrence
 			le besoin en question pourrait être~: <<je souhaite avoir accès à tous les messages
 			qui transitent par mon flux>>.
@@ -518,13 +518,21 @@
 			s'agit d'un service rendu par cet outil et qui répond à un besoin.
 		
 			\paragraph{}% La liste des fonctionalités
-			On peut dresser une liste de fonctionnalités à partir des besoins que l'on a
-			retenu et qui sont au nombre de 33.
+			On peut dresser une liste de 30 fonctionnalités à partir des 33 besoins que
+			l'on a retenus.
+			
+			
+			
+			
+			
+			
+			
+			
 			Nous imaginons à partir de là une liste composée de 30 fonctionnalités
 			(annexe 4) regroupées en 8 grands ensembles \label{ensembles_fonctios}~:
 			\begin{itemize}
 			  \item Visualisation du niveau de disponibilité du flux.
-			  \item Visualisation de la date et heure du dernier message passé.
+			  \item Visualisation de la date et et de l'heure du dernier message passé.
 			  \item Visualisation de l’historique des messages.
 			  \item Visualisation des ressources serveur.
 			  \item Administration des statistiques.
@@ -566,19 +574,20 @@
 			
 			\paragraph{}% FODA de TrackCIS stats
 			Nous mettons en pratique cette classification en concertation avec l'équipe
-			d'Xperis. Cette séparation entre fonctionnalité optionnelles ou faisant parti
-			du PMV reflète donc le choix de l'entreprise.
+			d'Xperis. Cette séparation entre fonctionnalités optionnelles ou faisant
+			parti du PMV reflète donc le choix de l'entreprise.
 			Pour tenir également compte des priorités des utilisateurs interrogés durant
-			l'enquête, il nous faut intégrer la note de besoin calculée précédemment. Une
-			fonctionnalité est la réponse à un ou plusieurs besoins et un besoin peut
-			être satisfait par plusieurs fonctionnalité \ref{mapping_besoins}. Sachant
+			l'enquête, il nous faut intégrer la note des besoins calculée précédemment.
+			Une fonctionnalité est la réponse à un ou plusieurs besoins et un besoin peut
+			être satisfait par plusieurs fonctionnalités \ref{mapping_besoins}. Sachant
 			cela, nous proposons la formule ci-dessous.
-			Soit Bi la note d'un besoin donnée, \begin{math}\sum Bi\end{math} représente la somme des notes des besoins qui
-			sont satisfaits par cette fonctionnalité. On a la formule \ref{fonctio_nopmv}
-			pour une fonctionnalité notée comme facultative et la formule
-			\ref{fonctio_pmv} pour une fonctionnalité notée comme obligatoire. Les notes
-			obtenues pour chaque fonctionnalité sont présentées dans la colonne <<Note
-			de fonctionnalité>> du tableau de l'annexe 4.
+			Soit Bi la note d'un besoin donnée, \begin{math}\sum Bi\end{math} représente
+			la somme des notes des besoins qui sont satisfaits par cette fonctionnalité.
+			On a la formule \ref{fonctio_nopmv} pour une fonctionnalité notée comme
+			facultative et la formule \ref{fonctio_pmv} pour une fonctionnalité notée
+			comme obligatoire. Les notes obtenues pour chaque fonctionnalité sont
+			présentées dans la colonne <<Note de fonctionnalité>> du tableau de l'annexe
+			4.
 			\begin{equation}
 				\label{fonctio_nopmv}
 				Note\ de\ la\ fonctionnalite=\sum Bi
@@ -599,11 +608,12 @@
 			\paragraph{}
 			Les figures \ref{foda_1} et \ref{foda_2} représentent l'ensemble des
 			fonctionnalités du module statistique de TrackCIS sous forme de diagramme FODA.
-			Chaque feature correspond à un des 8 grands ensembles de fonctionnalité décrit à
-			la page \pageref{ensembles_fonctios}.\newline
+			Chaque feature correspond à un des huit grands ensembles de fonctionnalités
+			décrit à la page \pageref{ensembles_fonctios}.\newline
 			La page dédiée aux statistiques serait divisée en widgets. Chacun est une
-			petite boite contenant un type d'informations. Dans la version que nous proposons ici,
-			ils sont au nombre de cinq et correspondent aux features décrites ci-dessous.
+			petite boîte contenant un type d'information. Dans la version que nous
+			proposons ici, ils sont au nombre de cinq et correspondent aux features
+			décrites ci-dessous.
 			\begin{figure}[H]% foda 1
 				\centering
 				\includegraphics[width=16cm]{../img/part2/foda_1.png}
@@ -641,7 +651,7 @@
 			période qu'il veut visualiser ainsi que les types de données. Ce widget
 			permettrait de voir l'évolution au cours du temps des messages ayant
 			correctement transité dans le flux, des messages tombés en erreurs ou en
-			attente ou encore des acquittements ressuent des applications destinataires.
+			attente ou encore des acquittements reçuent des applications destinataires.
 			
 			\paragraph{Visualisation des ressources serveur.}
 			Cette feature correspond à deux widgets qui ont tous deux attraits à l'état
@@ -657,7 +667,7 @@
 			statistiques.
 			
 			\paragraph{Administration des statistiques.}
-			Cette partie est réservée aux administrateurs. Il s'agit d'un nouvel Dans le
+			Cette partie est réservée aux administrateurs. Dans le
 			PMV il est possible de définir quel utilisateur peut voir quel widget sur sa
 			page statistique. Ce qui signifie que l'utilisateur ne peut pas paramétrer
 			sa propre page, à part la position des widgets.
@@ -668,8 +678,7 @@
 			Dans le PMV, il est uniquement possible d'exporter les données sous forme de
 			PDF ou d'image reprenant l'affichage du contenu des widgets à l'identique.
 			Une version plus évoluée de la feature permettrait de choisir quelles sont
-			les widgets que l'on veut exporter, s'il faut qu'ils le soient chacun sur un
-			fichier séparer.
+			les widgets que l'on veut exporter.
 			
 			\paragraph{Facilitation de l’utilisation.}
 			Cette dernière feature concerne l'ergonomie que doit respecter le nouveau
@@ -680,10 +689,10 @@
 	\subsection{Des fonctionnalités vers les cas d'utilisation}
 		\paragraph{}
 		Nous savons maintenant quelles sont les services que doit rendre notre nouveau
-		module. Nous avons vu qu'ils ne sont pas tous destiné aux mêmes utilisateurs.
+		module. Nous avons vu qu'ils ne sont pas tous destinés aux mêmes utilisateurs.
 		Il en existe deux types pour TrackCIS~: les utilisateurs et les
 		administrateurs. Le module statistique utilise aussi cette typologie. Les
-		seules fonctionnalités décrite dans la partie précédente ne nous suffisent
+		seules fonctionnalités décrites dans la partie précédente ne nous suffisent
 		pas pour développer le module. A elles seules elles décrivent d'une certaine
 		manière le future module, mais ça n'est pas suffisant. Il nous faut une
 		description plus précise et surtout dynamique de la solution, ce que nous
@@ -697,7 +706,7 @@
 			fonctions similaires à celles que l’on attendrait de TrackCIS. Pour chaque
 			outil étudié, nous nous attarderons sur~:
 			\begin{itemize}
-			  \item Les données qui sont affichée et leurs rôles respectif (ce qu'elles
+			  \item Les données qui sont affichées et leurs rôles respectifs (ce qu'elles
 			  apportent à l'utilisateur),
 			  \item La manière dont ces données sont représentées (courbe, histogramme,
 			  jauge...), pourquoi elles sont représentées de la sorte et si cela semble
@@ -708,10 +717,10 @@
 			\paragraph{TradeXpress~:}
 			TradeXpress est une plateforme d’intégration B2B (Business To Business).
 			Elle permet de connecter les applications d’une entreprise à celles de ses
-			partenaires (clients, fournisseurs…). TradeXpress n’est pas spécialisé dans un
-			domaine en particulier et permet de gérer l’intégralité des flux entre
+			partenaires (clients, fournisseurs…). TradeXpress n’est pas spécialisée dans
+			un domaine en particulier et permet de gérer l’intégralité des flux entre
 			applications, allant bien au-delà de la simple supervision. Cependant, certaines
-			de ces fonctionnalités sont axés supervision, ce sont celles qui nous
+			de ces fonctionnalités sont axées supervision, ce sont celles qui nous
 			intéressent ici. La figure \ref{trade_xpress} présente la page de monitoring des
 			flux.\newline
 			La vue est divisée en deux parties aux rôles
@@ -722,7 +731,7 @@
 			La partie supervision présente deux types d'informations~:
 			\begin{itemize}
 			  \item Une vue au jour à l’aide de jauges montrant le nombre de messages ou
-			  documents transitant par la plateforme. On peut voir juste en dessous de
+			  documents transitant par la plateforme. On peut voir juste en-dessous de
 			  l’encadré gris un bouton permettant de choisir la date.
 			  \item Un historique à la semaine du volume de messages passé pour chaque
 			  domaine métier (commandes, factures\ldots). L’utilisateur peut choisir les
@@ -751,13 +760,13 @@
 			problème et de rejouer les messages.\newline
 			L'interface présentée par la figure \ref{m12}. Peu d'informations sout
 			librement accessibles sur cet outil, c'est pourquoi nous nous attarderons
-			moins sur Les trois graphiques situés dans la partie gauche de la page
-			donnes des informations sur l'état actuelle des flux. Chacun apporte deux
-			informations, l'une se situe à l'intérieur du cercle gris sous la forme d'un
-			nombre, l'autre en dehors sous la forme d'un pourcentage. Le cercle en soi
-			n'apporte pas d'informations à l'utilisateur.\newline
-			Les informations sont réparties sur la page sous la forme d'encadré
-			contenant chacun un type de donnée.
+			moins sur les trois graphiques situés dans la partie gauche de la page.
+			Chacun apporte deux informations, l'une se situe à l'intérieur du cercle
+			gris sous la forme d'un nombre, l'autre en dehors sous la forme d'un
+			pourcentage. Le cercle en soi n'apporte pas d'informations à
+			l'utilisateur.\newline
+			Les informations sont réparties sur la page sous la
+			forme d'encadré contenant chacun un type de données.
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=16cm]{../img/part2/m12.png}
@@ -765,21 +774,21 @@
 			\end{figure}
 			
 			\paragraph{}
-			A la suite de cet état de l'art, les idées suivantes peuvent être retenue
+			A la suite de cet état de l'art, les idées suivantes peuvent être retenues
 			pour TrackCIS~:
 			\begin{itemize}
 			  \item l'utilisation de compteurs ou de jauges est pertinente pour
-			  visualiser des données en temps réelle, comme par exemple l'utilisation de
+			  visualiser des données en temps réel, comme par exemple l'utilisation de
 			  la mémoire vive d'un serveur. Cela nécessite d'avoir une valeur minimum et
 			  une valeur de seuil pour que l'utilisateur puisse interpréter rapidement la
 			  donnée qui lui est présentée.
 			  \item Chaque élément présent dans une visualisation doit contribuer à
 			  apporter une information à l'utilisateur.
-			  \item Moins l'utilisateur doit faire de cliques pour afficher les
+			  \item Moins l'utilisateur doit faire de clics pour afficher les
 			  informations qu'il veut mieux c'est. C'est par exemple le cas d'un tableau
 			  de bord présentant en une seule page de multiples données <<prêtes à
 			  l'usage>>.
-			  \item Donner trop de libertés à l'utilisateur peu en complexifier
+			  \item Donner trop de libertés à l'utilisateur peut en complexifier
 			  l'expérience. Il peut être judicieux de restreindre par exemple le choix
 			  des périodes de temps ou le choix des données à afficher sur un graphique.
 			\end{itemize}
