@@ -4,7 +4,7 @@
 \usepackage[top=3cm, bottom=3cm, right=2.5cm, left=2.5cm]{geometry}
 \usepackage[round,authoryear]{natbib}
 
-% Figures et léégendes
+% Figures et légendes
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{caption}
@@ -18,21 +18,27 @@
 % Tableaux
 \usepackage{array}
 \newcommand{\comment}[1]{}
-\newcommand*{\thead}[1]{\multicolumn{1}{|c|}{\bfseries #1}}
+\newcommand*{\thead}[1]{
+	% Entête des tableaux
+	\centering\bfseries\arraybackslash #1
+}
 
 % Page de garde
+\usepackage{fullpage}
 \title{Mémoire d'ingénieur}
 
 % Titres des parties 
 \usepackage[frenchb]{babel}
 \addto\captionsfrench{\renewcommand{\chaptername}{Partie}}
 \renewcommand{\thechapter}{\Roman{chapter}}
-\renewcommand{\thesubsection}{\Alph{subsection})}
-\renewcommand{\thesubsubsection}{\arabic{subsubsection})}
+\renewcommand{\thesection}{\Alph{section})}
+\renewcommand{\thesubsection}{\arabic{subsection})}
 
 % Espacements
 \renewcommand{\baselinestretch}{1.15}
 \setlength{\parskip}{0.2cm}
+\usepackage{titlesec}
+\titlespacing\chapter{0pt}{*-300pt}{0pt}
 
 % Maths
 \usepackage{amsmath}
@@ -43,22 +49,22 @@
 \setcounter{secnumdepth}{3}
 
 \makeatletter
-\newcommand\frontmatter{%
-    \cleardoublepage
-  %\@mainmatterfalse
-  \pagenumbering{roman}}
-
-\newcommand\mainmatter{%
-    \cleardoublepage
- % \@mainmattertrue
-  \pagenumbering{arabic}}
-
-\newcommand\backmatter{%
-  \if@openright
-    \cleardoublepage
-  \else
-    \clearpage
-  \fi
- % \@mainmatterfalse
-   }
+	\newcommand\frontmatter{%
+	  \cleardoublepage
+	  \thispagestyle{empty}
+	}
+	
+	\newcommand\mainmatter{%
+	  \cleardoublepage
+	  \pagenumbering{arabic}
+	}
+	
+	\newcommand\backmatter{%
+	  \pagenumbering{roman}
+	  \if@openright
+	    \cleardoublepage
+	  \else
+	    \clearpage
+	  \fi
+	}
 \makeatother

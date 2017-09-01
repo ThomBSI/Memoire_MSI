@@ -8,12 +8,12 @@ hospitalières}
 	les différents éléments importants de notre étude de façon à en cerner tous
 	les enjeux et à mettre en place une méthodologie adaptée.
 
-	\subsection{TrackCIS est une console de supervision de l'EAI Cloverleaf}
+	\section{TrackCIS est une console de supervision de l'EAI Cloverleaf}
 		\paragraph{}
 		Commençons par définir quelques notions techniques qui nous seront utiles,
 		sinon indispensables pour la suite~: les EAI et leurs consoles de supervision.
 		
-		\subsubsection{Qu'est-ce qu'un EAI ?}
+		\subsection{Qu'est-ce qu'un EAI ?}
 			\paragraph{}% Interopérabilité
 			EAI signifie Intégration d'Applications d'Entreprise. Pour bien comprendre de
 			quoi il s'agit et quel rôle tient un tel outil dans un système d'information
@@ -38,23 +38,22 @@ hospitalières}
 				\caption{\label{exemple_appli}Quelques fonctions assurées par les
 				logiciels métiers présents dans les hôpitaux
 				\citep{interopsante_guide_2015}.}
-				\begin{tabular}{| p{4cm} | p{10cm} |} %Exemples des principaux logiciels
-				% métier
+				\begin{tabular}{| p{4cm} | p{4cm} | p{4cm} |}
 					\hline
-					\thead{Type de fonctionnalité}&\thead{Description}
+					\thead{Nom}&\thead{Fonction}&\thead{Editeur}
 					\\
 					\hline
-					La GAM (Gestion Administrative des Malades)
-					&
-					Bla bla bla bla
+					Pastel&Gestion administrative&
 					\\
 					\hline
-					Le DPI (Dossier Patient Informatisé)
-					&
-					Le DPI 
-					DPI et GAM sont les deux princpaux outils utilisés dans les centres
-					hospitéliers. De nombreux éditeurs proposent des logiciels permettant de
-					remplir ces fonctions.\\
+					Crossway&Gestion des dossiers patients&Maincare
+					\\
+					\hline
+					Pharma&Gestion de la pharmacie&
+					\\
+					\hline
+					Hexalis&Logiciel de	gestion de laboratoire&Agfa
+					\\
 					\hline
 				\end{tabular}
 			\end{table}
@@ -125,7 +124,7 @@ hospitalières}
  				quelques-uns des principaux formats utilisés (les formats HL7 et HPRIM).
  			\end{description}
 
-		\subsubsection{Les flux de messages doivent être surveillés}
+		\subsection{Les flux de messages doivent être surveillés}
 			\paragraph{}% Importance fonctionnelle de la supervision
 			L'EAI est un outil complexe et dont le bon fonctionnement est essentiel. En
 			effet, c'est tout le SI de l'hôpital qui repose en permanence sur lui. Si
@@ -173,7 +172,7 @@ hospitalières}
 			  \item Les consoles de supervision.
 			\end{itemize}
 			
-		\subsubsection{TrackCIS est un outil qui permet la supervision des flux}
+		\subsection{TrackCIS est un outil qui permet la supervision des flux}
 			\paragraph{}% C'est quoi une console de supervision ?
 			Une console de supervision permet d'assurer la surveillance
 			de tout ou partie des flux gérés par l'EAI. Elle dispose d'un
@@ -225,7 +224,7 @@ hospitalières}
 		permet de rendre la supervision plus simple et plus rapide.\newline
 		Dans la suite nous découvrirons les problématiques inhérentes à cet outil.
 		
-	\subsection{TrackCIS est au cœur d'une problématique commerciale pour Xperis}
+	\section{TrackCIS est au cœur d'une problématique commerciale pour Xperis}
 		\paragraph{}
 		Précédemment nous avons établi les bases des problématiques d'interopérabilité
 		des établissements hospitaliers. Xperis est une entreprise qui propose
@@ -233,7 +232,7 @@ hospitalières}
 		Cette société se trouve à l'intermédiaire entre de nombreux acteurs que nous
 		allons présenter.
 		
-		\subsubsection{Cloverleaf est un EAI du secteur de la santé}
+		\subsection{Cloverleaf est un EAI du secteur de la santé}
 			\paragraph{Les établissements hospitaliers~:}% panorama du monde hospitalier
 			Le premier parti prenant est l'utilisateur final de
 			Cloverleaf c'est-à-dire l'ensemble des établissements hospitaliers
@@ -274,7 +273,7 @@ hospitalières}
 				\item Le MIPIH (Midi Picardi Informatique Hospitalière)
 			\end{itemize}
 			
-		\subsubsection{Xperis cherche à établir des liens directs avec les hôpitaux}
+		\subsection{Xperis cherche à établir des liens directs avec les hôpitaux}
 			\paragraph{Xperis~:}
 			Xperis est le seul distributeur (ou master distributeur) de la solution
 			Cloverleaf en France. La société est basée à Bordeaux, compte une dizaine de
@@ -307,7 +306,7 @@ hospitalières}
 			contribue à cela puisqu'il s'agit d'un outil développé en interne et
 			distribué directement aux hôpitaux.
 			
-		\subsubsection{Un outil qui se vend mal et qui est peu utilisé}
+		\subsection{Un outil qui se vend mal et qui est peu utilisé}
 			\paragraph{}% L'objectif initial du projet TrackCIS
 			Comparativement aux autres consoles de supervision, TrackCIS se veut plus
 			simple et plus ergonomique. Initialement, le public visé était les
@@ -342,7 +341,7 @@ hospitalières}
 	clients.\newline
 	L'ensemble de ces problématiques constitue le socle de notre travail.
 	
-	\subsection{Vers une nouvelle version de TrackCIS}
+	\section{Vers une nouvelle version de TrackCIS}
 		\paragraph{}% problème => solution commerciale ou solution fonctionnelle
 		Le problème que pose TrackCIS soulève une question~: pourquoi cet outil ne se
 		vend-il pas ? La réponse à cette question, loin d'être triviale, pourrait
@@ -369,7 +368,7 @@ hospitalières}
 			à ses utilisateurs.
 		\end{description}
 		
-		\subsubsection{Comprendre les utilisateurs et leurs besoins}
+		\subsection{Comprendre les utilisateurs et leurs besoins}
 			\paragraph{}% Nous ne traitons que de la solution fonctionnelle
 			De ces deux solutions à la problématique soulevée par TrackCIS (commerciale
 			ou fonctionnelle), nous prenons le parti de n'en traiter qu'une, la
@@ -390,7 +389,7 @@ hospitalières}
 			leurs besoins et traduire ceux-ci en fonctionnalités implémentables dans
 			l'outil. Voici donc le principal point de départ de notre travail.
 			
-		\subsubsection{Un module statistique lié aux évolutions de Cloverleaf}
+		\subsection{Un module statistique lié aux évolutions de Cloverleaf}
 			\paragraph{}% Volonté de développer un module stat
 			A ce stade, les améliorations à apporter à TrackCIS nous sont encore
 			inconnues. Cependant, l'une d'elles pourrait consister en l'implémentation
@@ -415,7 +414,7 @@ hospitalières}
 			techniquement à l'outil. Les autres fonctionnalités pourront l'être dans les
 			travaux qui feront suite à ce mémoire.
 			
-		\subsubsection{Méthodologie générale du projet}
+		\subsection{Méthodologie générale du projet}
 			\paragraph{}% Résumé des problèms soulevés
 			Nous avons constaté dans les parties précédentes plusieurs problématiques
 			inhérentes à TrackCIS. Nous avons également pris le parti de tenter de

@@ -6,6 +6,12 @@
 \begin{document}
 	
 	% Page de garde
+	\begin{titlepage}
+		\enlargethispage{2cm}
+		\makebox[7cm]{Ministère de l'Agriculture, de l'Agronomie et de la Forêt}
+		\makebox[7cm]{Ecole Nationale Supérieure des Sciences }
+	\end{titlepage}
+	
 	\maketitle
 	\newpage
 	
@@ -27,10 +33,14 @@
 	
 	\input{conclusion.tex}
 
-	\appendix
-	\input{a1.tex}
+  \newpage
+	\backmatter
+	
 	
 \bibliographystyle{plain}
 \bibliography{../biblio/biblio}
+
+\appendix
+\input{a1.tex}
 
 \end{document}
