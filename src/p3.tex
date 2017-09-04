@@ -315,11 +315,11 @@ statistique}
 			La conception du module statistique de TrackCIS doit respecter les
 			contraintes suivantes~:
 			\begin{itemize}% Liste des contraintes
-			  \item être basé sur l'architecture déjà en place. Il n'est pas question
+			  \item être basée sur l'architecture déjà en place. Il n'est pas question
 			  dans ce projet de faire des modifications de l'existant. Ceci est
 			  valable aussi bien pour le code lui-même que pour la structure de la base
-			  de donnée.
-			  \item être fermé à la modification et ouvert à l'extention. C'est-à-dire
+			  de données.
+			  \item être fermée à la modification et ouverte à l'extension. C'est-à-dire
 			  qu'il doit être possible, pour une équipe de développement ultérieur,
 			  d'ajouter des fonctionnalités au module sans avoir à modifier le code
 			  existant (simplement en ajoutant des classes).
@@ -327,46 +327,47 @@ statistique}
 			  données pertinentes pour l'utilisateur, certains traitements seront
 			  nécessaires sur les données brutes. Ceux-ci peuvent cependant ralentir ou
 			  perturber le fonctionnement de Cloverleaf. Il est nécessaire pour cela que
-			  ces traitements ne soient pas fait sur le serveur de l'EAI, donc pas au
+			  ces traitements ne soient pas faits sur le serveur de l'EAI, donc pas au
 			  niveau de l'API.
-			  \item ne pas surchager le serveur sur lequel est déployé le Frontal. Le
+			  \item ne pas surcharger le serveur sur lequel est déployé le Frontal. Le
 			  serveur servant à héberger le frontal n'est pas forcément une machine très
 			  puissante, bien que cela varie en fonction des établissements.
 			\end{itemize}
 			
-			\paragraph{Changements au niveau du modèle de donnée :}
+			\paragraph{Changements au niveau du modèle de donnée~:}
 			Pour notre module, nous avons besoin de stocker de nouvelles informations
-			relatives aux préférences des utilisateurs. Chacun des widget permet
-			notemment de selectionner la période de temps ou bien les données que l'on
+			relatives aux préférences des utilisateurs. Chacun des widgets permet
+			notamment de selectionner la période de temps ou bien les données que l'on
 			souhaite afficher. Ce sont ces données qu'il faut sauvegarder et que nous
 			appelons <<préférences>> d'affichage.
-			Ainsi le modèle de données actuel de TrackCIS se vera enrrichir de deux tables :
+			Ainsi le modèle de données actuel de TrackCIS se verra enrichir de deux
+			tables~:
 			\begin{itemize}
-			  \item[--La table <<stats\_types>> :] Elle contient la liste des tous les
+			  \item[-- La table <<stats\_types>>~:] Elle contient la liste des tous les
 			  grands types de statistiques que TrackCIS est capable d'afficher. Dans la
 			  version du module statistique présenté ici, cette table contiendrait
 			  six enregistrements correspondant aux noms des six widgets (Historique,
 			  Transfert, Disponibilité, Serveur, Disque, Denier message).
-			  \item[--La table <<config\_stats>> :] Chaque eregistrement est spécifique
+			  \item[-- La table <<config\_stats>~:] Chaque enregistrement est spécifique
 			  d'un utilisateur, d'un flux et d'un type de statistique. Il s'agit de la table
 			  qui stock les préférences d'affichage.
 			\end{itemize}
 			La figure \ref{modele_donnee} présente la partie du modèle de donnée de
-			TrackCIS spécifique au module statistique. Il ne repésente pas
+			TrackCIS spécifique au module statistique. Il ne représente pas
 			l'ensemble des tables existantes dans la base de données de TrackCIS,
 			uniquement celles relatives à notre module. Notons que certains champs (ou
-			colonnes) sont ajoutés à des tables existantes. C'est le cas de :
+			colonnes) sont ajoutés à des tables existantes. C'est le cas de~:
 			\begin{itemize}
-			  \item[--La table user :] Nous y ajoutons le champ <<LastPage>> qui
+			  \item[--La table user~:] Nous y ajoutons le champ <<LastPage>> qui
 			  sauvegarde la dernière page consultée par l'utilisateur
-			  \item[--La table config\_user\_flux\_permission :] Nous y ajoutons le
+			  \item[--La table config\_user\_flux\_permission~:] Nous y ajoutons le
 			  champs StatPermissions. Cette table est spécifique à un utilisateur et à un flux.
 			  Le champs StatPermissions contient les informations sur ls statistiques
-			  d'un utilisateur donnée peut voir pour un flux donnée
-			  \item[--La table config\_flux :] Nous y ajoutons les champs
+			  d'un utilisateur donné peut voir pour un flux donnée
+			  \item[--La table config\_flux~:] Nous y ajoutons les champs
 			  ThresholdTimeMin et ThresholdTimeMax qui sont spécifique du widget Temps de transfert.
-			  Celui-ic permttant d'afficher le temps de transfert sur une jauge, ces deux
-			  champs correspondent aux valeurs minimal et maximale de la jauge.
+			  Celui-ci permettant d'afficher le temps de transfert sur une jauge, ces
+			  deux champs correspondent aux valeurs minimal et maximale de la jauge.
 			\end{itemize}
 			\begin{figure}[H]
 				\centering
@@ -376,36 +377,36 @@ statistique}
 				config\_flux existent déjà dans la version actuelle de TrackCIS.}
 			\end{figure}
 			
-			\paragraph{L'architecture du module au niveau du Frontal et de l'API :}
+			\paragraph{L'architecture du module au niveau du Frontal et de l'API~:}
 			Nous nous basons sur l'architecture existante et nous contentons d'ajouter
 			des classes spécifiques aux statistiques dans les groupes de classes
 			existant. La figure \ref{archi_stats} repend les deux schémas présentés
-			précédement (les figures \ref{archi_actuelle_front} et
+			précédemment (les figures \ref{archi_actuelle_front} et
 			\ref{archi_actuelle_api}) et montre bien que l'architecture du module
 			statistique ne modifie pas les groupes de classes existantes. Le diagramme
-			des classes détaillé du module statsitique est disponible en annexe 9.
+			des classes détaillé du module statistique est disponible en annexe 9.
 			\begin{description}
-				\item[Contrôleur :] Nous ajoutons une nouvelle classe de contrôleur au
+				\item[Contrôleur~:] Nous ajoutons une nouvelle classe de contrôleur au
 				niveau du Frontal (point (a) sur la figure \ref{archi_stats}), elle sera
-				spécifiquement dédiées aux statistiques. Pour l'API, nous utilisons la
+				spécifiquement dédiée aux statistiques. Pour l'API, nous utilisons la
 				classe de contrôleur existante et nous nous contentons d'y ajouter une
 				méthode dédiée au module (b)
-				\item[Services :] Les classes de services sont spécifiques de chaque widget.
+				\item[Services~:] Les classes de services sont spécifiques de chaque widget.
 				Elles effectuent des traitements sur les données brutes renvoyées par
 				Cloverleaf pour les rendre affichable et lisibles pour l'utilisateur. Pour
-				ajouter un widget il sufit d'ajouter une classe de service au niveau de
+				ajouter un widget il suffit d'ajouter une classe de service au niveau de
 				l'API et du Frontal ((c) et (d))
-				\item[Donées :] De la même manière que les classes de services, nous créons
+				\item[Données~:] De la même manière que les classes de services, nous créons
 				une classe de donnée par widget (au niveau de
 				l'API (e) et du Frontal(f)). D'autres classes de données sont communes
-				a tous les widget, c'est le cas de la classe stokant les données de
+				à tous les widgets, c'est le cas de la classe stockant les données de
 				préférences d'affichage (date de début, date de fin, données à
 				afficher\ldots)
-				\item[Répertoires :] Nous ajoutons ici (g) deux classes : l'une permttant de
-				récupérer et de mettre à jour les préférences d'affichage, l'autre
+				\item[Répertoires~:] Nous ajoutons ici (g) deux classes : l'une permettant
+				de récupérer et de mettre à jour les préférences d'affichage, l'autre
 				permettant de récupérer et mettre à jour les droit de visualisation (géré
 				par le champ StatPermissions de la table config\_user\_flux\_permission)
-				\item[Vue :] Enfin, nous créons une page JSP dédiée à l'affichage des
+				\item[Vue~:] Enfin, nous créons une page JSP dédiée à l'affichage des
 				statistiques (h)
 			\end{description}
 			\begin{figure}[H]
@@ -415,33 +416,33 @@ statistique}
 				l'API ne modifie pas l'existant.}
 			\end{figure}
 			
-			\paragraph{La répartition des traitements :}
+			\paragraph{La répartition des traitements~:}
 			Pour afficher des données lisibles et intéressantes pour les utilisateurs, il
 			est nécessaire de faire des traitements sur les données brutes, comme par
-			exemple :
+			exemple~:
 			\begin{itemize}
 			  \item Agréger les données sur un pas de temps donné (par jour, par heure\ldots)
-			  \item Faire des conversions de formats de données, ce qui est notemment
+			  \item Faire des conversions de formats de données, ce qui est notamment
 			  utile pour les formats de dates
-			  \item Faire des calcul de moyennes (par exmeple calculer le temps moyen de
+			  \item Faire des calculs de moyennes (par exemple calculer le temps moyen de
 			  transfert sur une période donnée)
 			\end{itemize}
-			Ces tratiements sont parfois lourd et risquent de nuire au bon fonctionnement
+			Ces traitements sont parfois lourd et risquent de nuire au bon fonctionnement
 			de Cloverleaf. C'est pourquoi nous devons les répartir sur les différents
 			niveaux de l'architecture. Les contraintes sont les suivantes :
 			\begin{itemize}
 			  \item L'API est déployée sur le même serveur que Cloverleaf. Pour nuire le
 			  moins possible à son fonctionnement, le moins de traitements possibles
-			  doivent avoir lieux à ce niveau. L'API ne doit servir qu'a extraire les
-			  données brut sur la période de temps vvoulue et à les renvoyer au Frontal
+			  doivent avoir lieux à ce niveau. L'API ne doit servir qu'à extraire les
+			  données brutes sur la période de temps voulue et à les renvoyer au Frontal
 			  \item Le Frontal est déployé sur un serveur dont la puissance peut être
 			  très variables d'un établissement à l'autre. Tous les traitements ne
-			  peuvent donc avoir lieux à ce niveaux, il devront être réparti entre le
+			  peuvent donc avoir lieux à ce niveau, ils devront être réparti entre le
 			  Frontal et le client
 			\end{itemize}
 			Ce sont donc les scripts Javascript interprété au niveau du client qui vont
 			être en charge d'une grande partie des traitements ainsi que de l'affichage
-			des données sous forme de graphiques. Ceci est rendu possible grace à une
+			des données sous forme de graphiques. Ceci est rendu possible grâce à une
 			bibliothèque graphique Javascript.
 			
 		\subsection{Réalisation des choix techniques}
@@ -453,21 +454,21 @@ statistique}
 			\paragraph{}% Méthodo des choix
 			Nous n'allons pas ici détailler tous les choix techniques qui ont été fait.
 			Nous mettrons en avant dans cette partie la méthodologie avec laquelle ces
-			différents choix on été effectués en l'illustrant d'un exemple, en
-			l'occurence le choix de la bibliothèque graphique Javascript. Comme nous
+			différents choix ont été effectués en l'illustrant d'un exemple, en
+			l'occurrence le choix de la bibliothèque graphique Javascript. Comme nous
 			l'avons vu dans la partie précédente, les graphiques sont
-			générés par le navigateur de l'utilisateur. Ce dernier reçois un ensemble
+			générés par le navigateur de l'utilisateur. Ce dernier reçoit un ensemble
 			de script Javascript qu'il sait interpréter. Certains de ces scripts
 			permettrons d'afficher les graphiques. Pour cela nous avons besoin d'une
 			bibliothèque Javascript spécifique, c'est-à-dire un ensemble de fonctions
-			précrites permettant la génération de graphiques.
+			pré-écrites permettant la génération de graphiques.
 			Il en existe de très nombreuses et certaines sont gratuites. Pour
 			faire notre choix nous partons des contraintes suivantes~:
 			\begin{itemize}
 			  \item La bibliothèque doit être gratuite et son utilisation pour la
 			  création de produits commerciaux doit l'être également
 			  \item Elle doit permettre à minima de générer les types de graphiques
-			  spécifiés dans les fonctionnalités (courbe et historgamme avec plusieurs
+			  spécifiés dans les fonctionnalités (courbe et historgramme avec plusieurs
 			  séries de données, jauge et donut)
 			\end{itemize}
 			% Listing des librairies qui répondent à ces critères
@@ -478,31 +479,31 @@ statistique}
 			\begin{itemize}
 			  \item La qualité et la disponibilité de la documentation et de la
 			  communauté d'utilisateur. Il est important de penser à la suite du projet
-			  et aux améliorations future du module. Une bonne documentation nous
+			  et aux améliorations futures du module. Une bonne documentation nous
 			  permettra d'aller plus vite dans le développement et également à une autre
 			  équipe de s'approprier plus facilement le code pour y
-			  ajouter des graphique ou corriger des bogues
-			  \item L'estétisme et la possibilité de personnalier les graphiques.
+			  ajouter des graphiques ou corriger des bogues
+			  \item L'esthétisme et la possibilité de personnaliser les graphiques.
 			  Certaines bibliothèques proposent des graphiques prêts à l'emplois, ce qui
 			  présente un gain de temps certain pour le développement. Cependant, le module
 			  statistique doit respecter la charte graphique déjà en place dans l'outil,
 			  les graphiques doivent donc être personnalisables au maximum
 			  \item La possibilité de faire de petites animations de transition. Cela
-			  peut être par exemple un petit effet à l'appartion d'une courbe, ou la
-			  possibilité d'afficher une info-bulles lors du passage de la sourie sur un
-			  point de donnée du graphique. Ce animations donnent vie à la visualisation
+			  peut être par exemple un petit effet à l'apparition d'une courbe, ou la
+			  possibilité d'afficher une info-bulle lors du passage de la sourie sur un
+			  point de donnée du graphique. Ces animations donnent vie à la visualisation
 			  et améliorent l'expérience de l'utilisateur
 			  \item La possibilité de pouvoir développer d'autres types de graphiques.
-			  Nous ne pouvons pas prévoir comment évolura le module ni quelles nouvelles
+			  Nous ne pouvons pas prévoir comment évoluera le module ni quelles nouvelles
 			  données seront rendu accessibles par Cloverleaf dans l'avenir. Nous devons
-			  choisir une bibliothèque nous laissant suffisament de possibilités pour
+			  choisir une bibliothèque nous laissant suffisamment de possibilités pour
 			  pouvoir créer d'autres types de visualisations
 			\end{itemize}
 			Tous ces critères ne sont pas égaux, certain sont plus important que
 			d'autres. C'est pourquoi nous allons les pondérer à l'aide d'une note sur
 			dix. Nous notons ensuite les six bibliothèques retenues sur chacun de ces
-			critère, puis nous appliquons la pondération à chaque note. La note globale
-			de chaque bibliothèque est le total des notes pondérées pour cahque critère.
+			critères, puis nous appliquons la pondération à chaque note. La note globale
+			de chaque bibliothèque est le total des notes pondérées pour chaque critère.
 			Le tableau \ref{choix_bib_js} présente le résultat de cette pondération.
 			\begin{table}[H]
 				\centering
@@ -515,7 +516,7 @@ statistique}
 						&\thead{Documentation}
 						&\thead{Simplicité d'utilisation}
 						&\thead{Esthétisme}
-						&\thead{Annimations}
+						&\thead{Animations}
 						&\thead{Autres graphiques possibles}
 						&\thead{Total}
 						\\
@@ -546,35 +547,35 @@ statistique}
 			
 	\section{Une gestion de projet en mode agile}
 		\paragraph{}
-		La phase de conception est maintenant terminée et les choix technique
+		La phase de conception est maintenant terminée et les choix techniques
 		réalisés. Nous pouvons à présent passer à l'implémentation à proprement
 		parler, c'est à dire à la production du code.
 		
-		\subsection{Une méthode de développement ittérative}
+		\subsection{Une méthode de développement itérative}
 			\paragraph{}% C'est quoi l'agilité et pourquoi ce choix
-			Pour cette dernière phase nous nous inspirons des méthodes agiles, notemment
-			de la méthode Scrum. La méthode Scrum est basée sur des ittérations
-			successives que l'on appel les Sprints. A chaque ittération, une petite
+			Pour cette dernière phase nous nous inspirons des méthodes agiles, notamment
+			de la méthode Scrum. La méthode Scrum est basée sur des itérations
+			successives que l'on appelle les Sprints. A chaque itération, une petite
 			partie de l'application est développée et présentée au commanditaire, dans
 			notre cas Xperis.
 			Ceci permet d'obtenir un produit final plus proche des attentes
 			du commanditaire puisque celui-ci devient un acteur à part entière du
-			projet. A chaque itération il peut donner son avi sur ce qui a été
+			projet. A chaque itération il peut donner son avis sur ce qui a été
 			développé et demander des améliorations ou changer ce qui avait été
-			initalement prévu pour le sprint suivant.
+			initialement prévu pour le sprint suivant.
 			
 			\paragraph{}% Le backlog et les US
 			Le développement d'une application en sprints implique d'être en mesure de
 			produire quelque chose de présentable à l'issue de chaque itération.
-			Il est utile pour cela de ségmenter l'application en petites parties que
+			Il est utile pour cela de segmenter l'application en petites parties que
 			l'on pourra développer indépendament les unes des autres : les user stories.
-			Une user story correspond à un petit sénario d'utilisation de
+			Une user story correspond à un petit scénario d'utilisation de
 			l'application, c'est une petite partie de l'expérience de l'utilisateur.
-			Voici quelques exemples d'user stories pour notre projet :
+			Voici quelques exemples d'user stories pour notre projet~:
 			\begin{itemize}
 			  \item En tant qu'administrateur, lors de la création d'un utilisateur, je
 			  souhaite que ce dernier puisse visualiser par défaut le graphique de
-			  l'historique des message pour tous les flux
+			  l'historique des messages pour tous les flux
 			  \item En tant qu'utilisateur, je souhaite pouvoir visualiser le temps moyen
 			  de transfert d'un message dans le flux de façon littérale en seconde
 			  \item En tant qu'utilisateur, je souhaite pouvoir visualiser le temps
@@ -586,31 +587,32 @@ statistique}
 			\end{itemize}
 			
 			\paragraph{}% Les sprints
-			Nous choisissons des sprints d'une durée de deux semaines.Chaque sprint se
-			déroule selon les étapes suivantes :
+			Nous choisissons des sprints d'une durée de deux semaines. Chaque sprint se
+			déroule selon les étapes suivantes~:
 			\begin{itemize}
-			  \item[1) La plannification du sprint :] Cette étape intervient au début de
+			  \item[1) La planification du sprint~:] Cette étape intervient au début de
 			  chaque sprint. On y détermine la liste des user stories qui devront être
 			  développées durant l'itération
-			  \item[2) Le développement et le refactoring :] C'est la production du code
-			  à proprement parler. Les user sotroies sont développées les unes après les
+			  \item[2) Le développement et le refactoring~:] C'est la production du code
+			  à proprement parler. Les user stories sont développées les unes après les
 			  autres. Dans le temps restant à la fin du sprint il est possible de
 			  retravailler le code (c'est le refactoring) pour le rendre plus lisible ou
 			  pour l'optimiser
-			  \item[3) La revue de code :] Cette étape se passe en fin de sprint, après
+			  \item[3) La revue de code~:] Cette étape se passe en fin de sprint, après
 			  le développement. La revue du code s'effectue avec d'autre développeurs. Le
 			  but est de discuter des améliorations qu'il est possible de faire pour
 			  rendre le code plus propre et plus optimal
-			  \item[4) La revue de sprint :] A la fin du sprint, on présente les users
+			  \item[4) La revue de sprint~:] A la fin du sprint, on présente les user
 			  stories développées au reste de l'équipe et au commanditaire. Le but est de
-			  reçevoir les avis de ce dernier sur ce qui a été développé. Le
-			  commanditaire peut également faire des suggestion sur ce qu'il reste à
+			  recevoir les avis de ce dernier sur ce qui a été développé. Le
+			  commanditaire peut également faire des suggestions sur ce qu'il reste à
 			  développer ou demander des modifications sur ce qui a déjà été fait. Cette
 			  étape permet d'adapter au mieux l'application à ce que son commanditaire en
 			  attend
-			  \item[5) Mise à jour de la liste des users stories :] Enfin, une fois les
-			  avis du commanditaires recueillis, nous mettons a jour la liste des user
-			  stories en conséquence en nous recommencons ce cycle pour le sprint suivant
+			  \item[5) Mise à jour de la liste des user stories~:] Enfin, une fois les
+			  avis du commanditaires recueillis, nous mettons à jour la liste des user
+			  stories en conséquence en nous recommençerons ce cycle pour le sprint
+			  suivant
 			\end{itemize}
 		
 		\subsection{Élaboration du backlog}
@@ -618,16 +620,16 @@ statistique}
 			Le backlog est la liste des user stories. C'est à la fois un document de
 			travail et de spécification.
 			\begin{description}
-				\item[Un document de spécification :] Le backlog est la liste exhaustive de
+				\item[Un document de spécification~:] Le backlog est la liste exhaustive de
 				tout ce que l'application est capable de faire. Une user story offre un
 				niveau de détail plus fin qu'une fonctionnalité
-				\item[Un document de travail :] Le backlog est l'outil central dans la
-				gestion d'un projet agile. C'est lui qui est utilisé pour la plannification
-				des sprints, il est mis à jour en fin d'itération après la revue de spint et
-				il permet de suivre l'avancement du projet
+				\item[Un document de travail~:] Le backlog est l'outil central dans la
+				gestion d'un projet agile. C'est lui qui est utilisé pour la planification
+				des sprints, il est mis à jour en fin d'itération après la revue de sprint
+				et il permet de suivre l'avancement du projet
 			\end{description}
-			Pour construire notre backlog, nous devont d'abord établir une liste de user
-			sotries.
+			Pour construire notre backlog, nous devons d'abord établir une liste d'user
+			stories.
 			De la même manière que nous avons établi le lien entre les besoins et
 			les fonctionnalités, il est possible de relier ces dernières aux user
 			stories.
@@ -646,19 +648,19 @@ statistique}
 			rendu possible par la priorisation des éléments qui le compose. Le but de
 			cette hiérarchisation est de développer en premier les user stories qui
 			apportent le plus de valeur à l'utilisateur. Pour cela nous donnerons
-			une note à chaque élément du backlog, note qui doit tenire compte de :
+			une note à chaque élément du backlog, note qui doit tenir compte de~:
 			\begin{itemize}
-			  \item L'importance pour l'utilisateur de la user story, que nous
+			  \item L'importance pour l'utilisateur de l'user story, que nous
 			  récupérerons en nous basant sur la note de la fonctionnalité correspondante
-			  \item La difficulté de réalisation de la user story. Les users stories les
+			  \item La difficulté de réalisation de l'user story. Les user stories les
 			  plus importantes sont celles qui apportent un maximum de valeur à
 			  l'utilisateur tout en étant rapides à développer
 			\end{itemize}
 			Pour estimer la difficulté intrinsèque de chaque user story,
-			nous emploirons la technique dite du planing poker. Nous utiliserons comme
+			nous emploierons la technique dite du planning poker. Nous utiliserons comme
 			base les premiers éléments de la suite de Fibonacci (1, 2, 3, 5, 8, 13, 21,
-			34,\ldots). Nous attriburons une note médianne à une user story que nous
-			évaluerons de difficulté moyenne. En l'occurence nous attribuons la note de
+			34\ldots). Nous attribuerons une note médianne à une user story que nous
+			évaluerons de difficulté moyenne. En l'occurrence nous attribuons la note de
 			13 à la user story <<En tant qu'utilisateur, je souhaite voir la date et
 			l'heure à laquelle le dernier message a été écrit sur ce flux>>. 
 			Puis nous noterons les autres user stories relativement à la première en
@@ -668,7 +670,7 @@ statistique}
 			montre la formule \ref{note_us}.
 			\begin{equation}
 				\label{note_us}
-				Note\ de\ la\ user\ story=Note\ de\ la\ fonctionnalite \times Note\ d'effort
+				Note\ de\ l\ user\ story=Note\ de\ la\ fonctionnalite \times Note\ d\ effort
 			\end{equation}
 			L'annexe 9 présente l'intégralité du backlog à la date du 4 septembre 2017.
 	
@@ -680,7 +682,7 @@ statistique}
 		\subsection{Les fonctionnalités implémentées}
 			\paragraph{}% Bilan quantitatif de ce qui a été fait et reste à faire
 			A ce stade du projet, trois sprints de deux semaines ont été complétés. Ils
-			ont essentiellement portés sur le développement des deux premiers widgets :
+			ont essentiellement porté sur le développement des deux premiers widgets :
 			l'historique des messages et le temps de transfert moyen. Un total de 11 user
 			stories ont été terminées, ce qui représente en tout 140 points d'effort
 			(soit 16\% de la somme de tous les points d'effort du backlog). La somme des
@@ -705,21 +707,21 @@ statistique}
 			
 			\paragraph{Valeur moyenne du temps de transfert d'un message dans le flux~: }
 			L'utilisateur peut consulter le temps moyen de transfert d'un message dans
-			l'EAI pour un flux donnée. Ce temps est donné en seconde ((a) sur la figure
-			\ref{vue_trensfer}), il est calculé sur la base de tous les messages ayant
-			transités par l'EAI sur une période donnée. L'utilisateur peut spécifier cette période graçce à un formulaire
-			(b).
+			l'EAI pour un flux donné. Ce temps est donné en seconde ((a) sur la figure
+			\ref{vue_transfer}), il est calculé sur la base de tous les messages ayant
+			transités par l'EAI sur une période donnée. L'utilisateur peut spécifier
+			cette période grâce à un formulaire (b).
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=12cm]{../img/part3/vue_trensfer.png}
-				\caption{\label{vue_trensfer} Vue du widget temps de transfert à ce stade
+				\includegraphics[width=12cm]{../img/part3/vue_transfer.png}
+				\caption{\label{vue_transfer} Vue du widget temps de transfert à ce stade
 				du projet.}
 			\end{figure}
 		
 		\subsection{Les limites du projet}
 			\paragraph{}% présentation
-			Tout au long de ce prjet nous avons été amené à faire un certain nombre de
-			choix, parfois de manière très arbitraire. Revenous ici sur les principales
+			Tout au long de ce projet nous avons été amenés à faire un certain nombre de
+			choix, parfois de manière très arbitraire. Revenons ici sur les principales
 			limites de la méthodologie globale du projet visant à améliorer TrackCIS et
 			voyons comment nous pouvons en tirer les leçons pour préparer la suite du
 			projet.
@@ -728,39 +730,69 @@ statistique}
 			Nous avons choisi de nous concentrer sur le développement d'un module
 			d'affichage de statistiques. Rappelons que ce choix est arbitraire et est lié
 			à une volonté de l'entreprise. Notre étude du besoin fait effectivement
-			ressortir l'intéret des utilisateurs pour ce type de module, l'utilisation
-			des statistique étant une pratique déjà existante pour tous les utilisateurs
+			ressortir l'intérêt des utilisateurs pour ce type de module, l'utilisation
+			des statistiques étant une pratique déjà existante pour tous les utilisateurs
 			de Cloverleaf. Cependant cette même étude à fait ressortir d'autres besoins.
 			Voici les besoins les plus importants n'ayant pas attrait aux statistiques :
 			\begin{itemize}
 			  \item Ouvrir l'utilisation des consoles de supervision aux personnes métier
 			  \item Avoir accès à des informations sur le flux, à une documentation
 			  \item Pouvoir superviser l'intégration des messages dans les applications
-			  \item Pouvoir remonter directement à l'utlisateur à l'origine d'une erreur
+			  \item Pouvoir remonter directement à l'utilisateur à l'origine d'une erreur
 			  de saisie
 			\end{itemize}
 			
 			\paragraph{}% La priorisation (besoins, fonctios et US) sont aussi
 			% arbitraires
-			D'autre part, les méthodes que nous avons choisi pour priorier les besoins,
-			les fonctionnalités et les user stories sont également arbitraires. La
-			priorisation des besoin à impacté la liste des fonctionnalité de laquelle
+			D'autre part, les méthodes que nous avons choisies pour prioriser les
+			besoins, les fonctionnalités et les user stories sont également arbitraires. La
+			priorisation des besoins à impacté la liste des fonctionnalités de laquelle
 			découle le backlog. La priorisation des user stories n'impacte que l'ordre
 			dans lequel le module est développé.
 			
 		\subsection{Les suites possibles du projet pour Xperis}
 			\paragraph{}% Les gros modules a développer à partir de l'ADB
-			Les besoins que nous avons listé ci-dessus sont une bonne base pour des
+			Les besoins que nous avons listés ci-dessus sont une bonne base pour des
 			améliorationsfutures de l'outil.
 			\begin{description}
 				\item[Pouvoir superviser l'intégration des messages dans les applications~:]
+				TrackCIS, à l'instar de la plupart des consoles de supervision, ne peut
+				superviser les flux de message qu'entre l'entrée dans l'EAI et la sortie. Or
+				une cause d'erreur possible est la non intégration d'un message dans
+				l'application destinatrice, erreur qui n'est pas détectable dans TrackCIS.
+				La réponse à se besoins, quoique difficile techniquement, apporterait à
+				l'outil un avantage concurentiel significatif sur les autres consoles de
+				supervision
 				\item[Ouvrir l'utilisation des consoles de supervision aux personnes
-				métier~:]
-				\item[Avoir accès à des informations sur le flux, à une documentation~:]
-				\item[Pouvoir remonter directement à l'utlisateur à l'origine d'une erreur
-			  	de saisie~:]
+				métier~:] Le module que nous avons développé répond en partie à ce besoin.
+				Mais la démocratisation de TrackCIS auprès des utilisateurs métier n'est pas
+				seulement une question de fonctionnalité, mais aussi une problématique de
+				changement des pratiques et de l'organisation autour de la supervision dans
+				les hôpitaux
+				\item[Avoir accès à des informations sur le flux, à une documentation~:] Le
+				fonctionnement d'un flux est souvent obscur pour un utilisateur non averti.
+				Il serait possible d'accéder depuis TrackCIS à de la documentation sur
+				chaque flux. Cependant, ce type de documentation ne serait pas intéressante
+				pour un utilisateur métier car trop technique
+				\item[Pouvoir remonter directement à l'utilisateur à l'origine d'une erreur
+			  	de saisie~:] De nombreuses erreurs sont dues à des erreurs de saisies
+			  	dans l'application d'origine. Il peut être utile pour les personnes en
+			  	charge de la supervision de pouvoir identifier rapidement la personne à
+			  	l'origine de l'erreur pour lui demander de corriger sa saisie
 			\end{description}
 			
 			\paragraph{}% Les <<petites>> amélioration à faires
-			
+			La liste des besoins a également permi d'identifier de <<petites>>
+			améliorations sur des fonctionnalités existantes telles que :
+			\begin{itemize}
+			  \item A l'ouverture de l'outil, arriver directement sur la liste des
+			  messages du jour
+			  \item Voir le nombre de messages en ARL+ sur le nombre de messages total
+			  \item Pouvoir consulter les scripts de transformation
+			  \item Pouvoir superviser les flux internes et externes sur la même
+			  interface
+			  \item Pouvoir éventuellement créer différents profils d'utilisateurs
+			  \item Dans la liste des messages, pouvoir connaître la plage de numéro des
+			  messages de la page en cours
+			\end{itemize}
 			
