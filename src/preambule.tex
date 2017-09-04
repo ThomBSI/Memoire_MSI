@@ -18,13 +18,13 @@
 % Tableaux
 \usepackage{array}
 \newcommand{\comment}[1]{}
-\newcommand*{\thead}[1]{
+\newcommand*{\thead}[1]{%
 	% Entête des tableaux
 	\centering\bfseries\arraybackslash #1
 }
 
 % Page de garde
-\usepackage{fullpage}
+%\usepackage{fullpage}
 \title{Mémoire d'ingénieur}
 
 % Titres des parties 
@@ -48,17 +48,16 @@
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 
+% Gestion des différentes parties du document
 \makeatletter
 	\newcommand\frontmatter{%
 	  \cleardoublepage
 	  \thispagestyle{empty}
 	}
-	
 	\newcommand\mainmatter{%
 	  \cleardoublepage
 	  \pagenumbering{arabic}
 	}
-	
 	\newcommand\backmatter{%
 	  \pagenumbering{roman}
 	  \if@openright
