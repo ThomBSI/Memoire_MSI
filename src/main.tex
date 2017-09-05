@@ -4,7 +4,7 @@
 \input{preambule.tex}
 
 \begin{document}
-	
+	\bibliographystyle{abbrvnat}
 	\input{garde.tex}
 	
 	% Page de garde
@@ -18,6 +18,10 @@
 	
 	\frontmatter
 	\tableofcontents
+	\newpage
+	\input{glossaire.tex}
+	\newpage
+	\input{abrevs.tex}
 	\newpage
 	\listoftables
 	\newpage
@@ -38,7 +42,8 @@
 	\backmatter
 	
 	
-\bibliographystyle{plain}
+
+\nocite{*}
 \bibliography{../biblio/biblio}
 
 \appendix
