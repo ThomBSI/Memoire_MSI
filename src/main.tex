@@ -5,29 +5,40 @@
 
 \begin{document}
 	\bibliographystyle{abbrvnat}
-	\input{garde.tex}
-	
-	% Page de garde
-	%\begin{titlepage}
-	%	\enlargethispage{2cm}
-	%	\makebox[7cm]{Ministère de l'Agriculture, de l'Agronomie et de la Forêt}
-	%	\makebox[7cm]{Ecole Nationale Supérieure des Sciences }
-	%\end{titlepage}
+	%\input{garde.tex}
+	\begin{titlepage}
+	\vfill
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=17cm]{../img/pageDeGarde.png}
+	\end{figure}
+	\vfill
+	\end{titlepage}
 	
 	\newpage
 	
 	\frontmatter
-	\tableofcontents
+	
+	\thispagestyle{empty}
+	\tableofcontents\thispagestyle{empty}
 	\newpage
-	\input{glossaire.tex}
+	
+	\thispagestyle{empty}
+	\listoffigures\thispagestyle{empty}
+	\newpage	
+	
+	\thispagestyle{empty}
+	\listoftables\thispagestyle{empty}
+	\newpage	
+	
+	\thispagestyle{empty}
+	\input{abrevs.tex}\thispagestyle{empty}
 	\newpage
-	\input{abrevs.tex}
-	\newpage
-	\listoftables
-	\newpage
-	\listoffigures
-	\newpage
-	  
+	
+	\thispagestyle{empty}
+	\input{glossaire.tex}\thispagestyle{empty}
+	 \newpage
+	 
 	\mainmatter
 	\input{introduction.tex}
 	
@@ -39,16 +50,25 @@
 	\input{conclusion.tex}
 
   \newpage
+  \bibliography{../biblio/biblio}
 	\backmatter
 	
 	
 
-\nocite{*}
-\bibliography{../biblio/biblio}
-
-\appendix
-\input{a1.tex}
-
-\input{4deCouv.tex}
+	\nocite{*}
+	
+	
+	%\appendix
+	\begin{appendix}
+		\input{a1.tex}
+		\input{a2.tex}
+		\input{a3.tex}
+		\input{a4.tex}
+		\input{a5.tex}
+	\end{appendix}
+	
+	\newpage
+	\thispagestyle{empty}
+	\input{4deCouv.tex}
 
 \end{document}

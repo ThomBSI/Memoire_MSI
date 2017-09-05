@@ -113,18 +113,39 @@ hospitalières}
  			Il existe un vocabulaire pour désigner les transferts de données entre
  			applications. Dans la suite, nous parlerons de~:
  			\begin{description}
- 				\item[Flux] Les flux sont tout simplement les routes permettant de
+ 				\item[Flux~:] Les flux sont tout simplement les routes permettant de
  				connecter une application à une autre. Dans un système d'information hospitalier
  				(SIH), il y a donc autant de flux que de couple d'application. Il est
  				possible - et même courant - qu'une application soit reliée à plusieurs
  				autres.
- 				\item[Message] Les données qui passent le long des flux, d'une application
- 				à une autre, sont appelées messages. Les messages se présentent en général
+ 				\item[Message~:] Les données qui passent le long des flux, d'une
+ 				application à une autre, sont appelées messages. Les messages se présentent en général
  				sous la forme de texte hautement standardisé. Les messages sont émis par les
  				applicatifs métier dans un format donné. Il existe de nombreux formats
  				dont certains sont spécifiques au monde hospitalier.
+ 				\item[Thread~:] Un \textit{thread} désigne la brique logiciel qui permet de
+ 				connecter une application à l'EAI. Un flux possède généralement un
+ 				\textit{thread} d'entré et un \textit{thread} de sortie, comme le montre
+ 				la figure \ref{eai_tech}.
+ 				Il existe des flux pouvant avoir des \textit{threads} intermédiaires ou des flux composé
+ 				que d'un unique thread.
+ 				\item[Process~:] Un process est un ensemble de \textit{threads}
+ 				fonctionnant ensemble.
+ 				\item[base de donnée SMAT (ou \textit{SMAT database})~:] SMAT signifi outil
+ 				d'administration des messages sauvegardés (\textit{Saved message administration tool}). Il
+ 				s'agit de bases de données ou de fichiers sur lesquelles sont sauvegardés
+ 				les messages qui transitent par l'EAI.
+ 				\item[Base de données d'erreur (ou \textit{error database})~:] C'est la
+ 				base de données sur laquelle est sauvegardée tous les messages qui tombent
+ 				en erreur.
  			\end{description}
-
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=15cm]{../img/eai_technique.png}
+				\caption{\label{eai_tech} Un flux classique avec un thread d'entré et un
+				thread de sortie}
+			\end{figure}
+			
 		\subsection{Les flux de messages doivent être surveillés}
 			\paragraph{}% Importance fonctionnelle de la supervision
 			L'EAI est un outil complexe et dont le bon fonctionnement est essentiel. En
@@ -286,7 +307,7 @@ hospitalières}
 			tous ces acteurs.
 			\begin{figure}[H]% Position d'Xperis dans le secteur de la santé
 				\centering
-				\includegraphics[width=16cm]{../img/xperis_secteur.png}
+				\includegraphics[width=17cm]{../img/xperis_secteur.png}
 				\caption{\label{xperis_secteur} Xperis est l'intermédiaire entre Info et
 				les éditeurs français.}
 			\end{figure}
@@ -307,7 +328,7 @@ hospitalières}
 			contribue à cela puisqu'il s'agit d'un outil développé en interne et
 			distribué directement aux hôpitaux.
 			
-		\subsection{Un outil qui se vend mal et qui est peu utilisé}
+		\subsection{Un outil encore peu démocratisé}
 			\paragraph{}% L'objectif initial du projet TrackCIS
 			Comparativement aux autres consoles de supervision, TrackCIS se veut plus
 			simple et plus ergonomique. Initialement, le public visé était les
@@ -326,12 +347,12 @@ hospitalières}
 			\paragraph{}% Le problème actuel avec cet outil
 			Mais le projet TrackCIS n'a pas pris et même si quelques consoles ont été
 			vendues, peu de CH l'utilise pleinement. Les raisons à cela peuvent être
-			multiples et relativement méconnues d'Xperis. L'une d'elles est que la
+			multiples et sont relativement méconnues d'Xperis. L'une d'elles est que la
 			console n'est pas vendue pré-paramétrée et que c'est au CH de faire ce
 			paramétrage.
-			Celui-ci peut représenter une charge assez lourde. Une autre raison serait
-			que les référents métiers ne soient pas encore mis en place dans les
-			hôpitaux.
+			Celui-ci peut représenter une charge de travail assez lourde. Une autre
+			raison serait que les référents métiers ne soient pas encore mis en place
+			dans les hôpitaux.
 			
 	% Résumé de la partie 1.2
 	\paragraph{}

@@ -1,7 +1,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 %\usepackage[francais]{babel}
-\usepackage[top=3cm, bottom=3cm, right=2.5cm, left=2.5cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, right=2.5cm, left=2.5cm]{geometry}
 
 % Figures et légendes
 \usepackage{graphicx}
@@ -35,9 +35,9 @@
 
 % Espacements
 \renewcommand{\baselinestretch}{1.15}
-\setlength{\parskip}{0.2cm}
+\setlength{\parskip}{0.1cm}
 \usepackage{titlesec}
-\titlespacing\chapter{0pt}{*-300pt}{0pt}
+%\titlespacing\chapter{0pt}{*-300pt}{0pt}
 
 % Maths
 \usepackage{amsmath}
@@ -46,6 +46,11 @@
 % Ajoute un niveau de détail de titre à la table des matières
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
+
+% Annexes
+\usepackage{appendix}
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
 % Gestion des différentes parties du document
 \makeatletter

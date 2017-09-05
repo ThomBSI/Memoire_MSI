@@ -36,7 +36,7 @@ statistique}
 			des événements lorsque l'utilisateur clic sur un bouton\ldots).
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=10cm]{../img/part3/client_serveur.png}
+				\includegraphics[width=14cm]{../img/part3/client_serveur.png}
 				\caption{\label{client_serveur} Le serveur génère dynamiquement la page
 				HTML qui sera affichée sur le poste client}
 			\end{figure}
@@ -87,7 +87,7 @@ statistique}
 			sein de l'établissement hospitalier d'un serveur.
 			\begin{figure}[H]% Architecture globale de l'application
 				\centering
-				\includegraphics[width=10cm]{../img/part3/archi_trackcis.png}
+				\includegraphics[width=14cm]{../img/part3/archi_trackcis.png}
 				\caption{\label{archi_trackcis} TrackCIS est composés de deux éléments
 				distincts pouvant se trouver sur deux serveurs différents.}
 			\end{figure}
@@ -138,10 +138,10 @@ statistique}
 			de l'API. C'est le contrôleur qui met les données à disposition de la JSP.
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=10cm]{../img/part3/archi_actuelle_front.png}
+				\includegraphics[width=15cm]{../img/part3/archi_actuelle_front.png}
 				\caption{\label{archi_actuelle_front} Architecture simplifiée du Frontal
 				de TrackCIS. Les flèches continues représentent les dépendances entre les
-				éléments.}
+				éléments}
 			\end{figure}
 			
 		\subsection{L'API permet de communiquer avec Cloverleaf}
@@ -168,9 +168,9 @@ statistique}
 			contrôleur de construire la réponse.
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=9cm]{../img/part3/archi_actuelle_api.png}
+				\includegraphics[width=12cm]{../img/part3/archi_actuelle_api.png}
 				\caption{\label{archi_actuelle_api} Architecture simplifiée de l'API de
-				TrackCIS.}
+				TrackCIS}
 			\end{figure}
 	
 	\section{L'analyse technique permet d'implémenter le nouveau module sur la base
@@ -308,8 +308,6 @@ statistique}
 				\end{tabular}
 			\end{table}
 		
-% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-		
 		\subsection{Nouvelle architecture de l'application}
 			\paragraph{}% Une archi dessinée à partir des contraintes fonctionnelles
 			La conception du module statistique de TrackCIS doit respecter les
@@ -343,13 +341,13 @@ statistique}
 			Ainsi le modèle de données actuel de TrackCIS se verra enrichir de deux
 			tables~:
 			\begin{itemize}
-			  \item[-- La table stats\_types~:] Elle contient la liste des tous les
+			  \item[-- La table stats\_types~:] Elle contient la liste de tous les
 			  grands types de statistiques que TrackCIS est capable d'afficher. Dans la
 			  version du module statistique présenté ici, cette table contiendrait
 			  six enregistrements correspondant aux noms des six widgets (Historique,
-			  Transfert, Disponibilité, Serveur, Disque, Denier message).
+			  Transfert, Disponibilité, Serveur, Disque, Dernier message).
 			  \item[-- La table config\_stats~:] Chaque enregistrement est
-			  spécifique d'un utilisateur, d'un flux et d'un type de statistique. Il
+			  spécifique d'un utilisateur, d'un flux et d'un type de statistiques. Il
 			  s'agit de la table qui stock les préférences d'affichage.
 			\end{itemize}
 			La figure \ref{modele_donnee} présente la partie du modèle de donnée de
@@ -361,30 +359,30 @@ statistique}
 			  \item[-- La table user~:] Nous y ajoutons le champ <<~LastPage~>> qui
 			  sauvegarde la dernière page consultée par l'utilisateur
 			  \item[-- La table config\_user\_flux\_permission~:] Nous y ajoutons le
-			  champs StatPermissions. Cette table est spécifique à un utilisateur et à un flux.
-			  Le champs StatPermissions contient les informations sur ls statistiques
-			  d'un utilisateur donné peut voir pour un flux donnée
+			  champ StatPermissions. Cette table est spécifique à un utilisateur et à un flux.
+			  Le champs StatPermissions contient les informations sur les statistiques
+			  d'un utilisateur donné peut voir pour un flux donné
 			  \item[-- La table config\_flux~:] Nous y ajoutons les champs
-			  ThresholdTimeMin et ThresholdTimeMax qui sont spécifique du widget Temps de transfert.
-			  Celui-ci permettant d'afficher le temps de transfert sur une jauge, ces
-			  deux champs correspondent aux valeurs minimal et maximale de la jauge.
+			  ThresholdTimeMin et ThresholdTimeMax qui sont spécifiques du widget Temps
+			  de transfert.
+			  Ce dernier permettant d'afficher le temps de transfert sur une jauge, ces
+			  deux champs correspondent aux valeurs minimales et maximales de la jauge
 			\end{itemize}
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=16cm]{../img/part3/modele_donnee.png}
-				\caption{\label{modele_donnee} Le nouveau modèle de donnée de TrackCIS au
+				\caption{\label{modele_donnee} Le nouveau modèle de données de TrackCIS au
 				niveau du Frontal, les tables user, config\_user\_flux\_permission et
-				config\_flux existent déjà dans la version actuelle de TrackCIS.}
+				config\_flux existent déjà dans la version actuelle de TrackCIS}
 			\end{figure}
 			
 			\paragraph{L'architecture du module au niveau du Frontal et de l'API~:}
-			Nous nous basons sur l'architecture existante et nous contentons d'ajouter
-			des classes spécifiques aux statistiques dans les groupes de classes
-			existant. La figure \ref{archi_stats} repend les deux schémas présentés
+			Nous nous basons sur l'architecture existante et nous nous contentons
+			d'ajouter des classes spécifiques aux statistiques dans les groupes de classes
+			existants. La figure \ref{archi_stats} reprend les deux schémas présentés
 			précédemment (les figures \ref{archi_actuelle_front} et
 			\ref{archi_actuelle_api}) et montre bien que l'architecture du module
-			statistique ne modifie pas les groupes de classes existantes. Le diagramme
-			des classes détaillé du module statistique est disponible en annexe 9.
+			statistique ne modifie pas les groupes de classes existantes.
 			\begin{description}
 				\item[Contrôleur~:] Nous ajoutons une nouvelle classe de contrôleur au
 				niveau du Frontal (point (a) sur la figure \ref{archi_stats}), elle sera
@@ -393,18 +391,18 @@ statistique}
 				méthode dédiée au module (b)
 				\item[Services~:] Les classes de services sont spécifiques de chaque widget.
 				Elles effectuent des traitements sur les données brutes renvoyées par
-				Cloverleaf pour les rendre affichable et lisibles pour l'utilisateur. Pour
+				Cloverleaf pour les rendre affichables et lisibles pour l'utilisateur. Pour
 				ajouter un widget il suffit d'ajouter une classe de service au niveau de
 				l'API et du Frontal ((c) et (d))
 				\item[Données~:] De la même manière que les classes de services, nous créons
-				une classe de donnée par widget (au niveau de
+				une classe de données par widget (au niveau de
 				l'API (e) et du Frontal(f)). D'autres classes de données sont communes
 				à tous les widgets, c'est le cas de la classe stockant les données de
 				préférences d'affichage (date de début, date de fin, données à
 				afficher\ldots)
 				\item[Répertoires~:] Nous ajoutons ici (g) deux classes : l'une permettant
 				de récupérer et de mettre à jour les préférences d'affichage, l'autre
-				permettant de récupérer et mettre à jour les droit de visualisation (géré
+				permettant de récupérer et mettre à jour les droits de visualisation (géré
 				par le champ StatPermissions de la table config\_user\_flux\_permission)
 				\item[Vue~:] Enfin, nous créons une page JSP dédiée à l'affichage des
 				statistiques (h)
@@ -433,14 +431,14 @@ statistique}
 			\begin{itemize}
 			  \item L'API est déployée sur le même serveur que Cloverleaf. Pour nuire le
 			  moins possible à son fonctionnement, le moins de traitements possibles
-			  doivent avoir lieux à ce niveau. L'API ne doit servir qu'à extraire les
+			  doit avoir lieux à ce niveau. L'API ne doit servir qu'à extraire les
 			  données brutes sur la période de temps voulue et à les renvoyer au Frontal
 			  \item Le Frontal est déployé sur un serveur dont la puissance peut être
-			  très variables d'un établissement à l'autre. Tous les traitements ne
-			  peuvent donc avoir lieux à ce niveau, ils devront être réparti entre le
+			  très variable d'un établissement à l'autre. Tous les traitements ne
+			  peuvent donc avoir lieu à ce niveau, ils devront être répartis entre le
 			  Frontal et le client
 			\end{itemize}
-			Ce sont donc les scripts Javascript interprété au niveau du client qui vont
+			Ce sont donc les scripts Javascript interprétés au niveau du client qui vont
 			être en charge d'une grande partie des traitements ainsi que de l'affichage
 			des données sous forme de graphiques. Ceci est rendu possible grâce à une
 			bibliothèque graphique Javascript.
@@ -448,11 +446,11 @@ statistique}
 		\subsection{Réalisation des choix techniques}
 			\paragraph{}% Liste des choix
 			Le développement de ce projet implique l'utilisation d'un certain nombre de
-			technologies. Certaines d'entre elles n'ont pas été utilisée dans la version
+			technologies. Certaines d'entre elles n'ont pas été utilisées dans la version
 			actuelle de TrackCIS.
 			
 			\paragraph{}% Méthodo des choix
-			Nous n'allons pas ici détailler tous les choix techniques qui ont été fait.
+			Nous n'allons pas ici détailler tous les choix techniques qui ont été faits.
 			Nous mettrons en avant dans cette partie la méthodologie avec laquelle ces
 			différents choix ont été effectués en l'illustrant d'un exemple, en
 			l'occurrence le choix de la bibliothèque graphique Javascript. Comme nous
@@ -474,32 +472,32 @@ statistique}
 			% Listing des librairies qui répondent à ces critères
 			Nous retenons une liste de six bibliothèques qui respectent ces deux
 			critères.
-			Pour n'en retenir qu'une nous les comparons à l'aides d'autres critères qui
+			Pour n'en retenir qu'une, nous les comparons à l'aide d'autres critères qui
 			sont~:
 			\begin{itemize}
 			  \item La qualité et la disponibilité de la documentation et de la
-			  communauté d'utilisateur. Il est important de penser à la suite du projet
+			  communauté d'utilisateurs. Il est important de penser à la suite du projet
 			  et aux améliorations futures du module. Une bonne documentation nous
 			  permettra d'aller plus vite dans le développement et également à une autre
 			  équipe de s'approprier plus facilement le code pour y
 			  ajouter des graphiques ou corriger des bogues
 			  \item L'esthétisme et la possibilité de personnaliser les graphiques.
-			  Certaines bibliothèques proposent des graphiques prêts à l'emplois, ce qui
+			  Certaines bibliothèques proposent des graphiques prêts à l'emploi, ce qui
 			  présente un gain de temps certain pour le développement. Cependant, le module
 			  statistique doit respecter la charte graphique déjà en place dans l'outil,
 			  les graphiques doivent donc être personnalisables au maximum
 			  \item La possibilité de faire de petites animations de transition. Cela
 			  peut être par exemple un petit effet à l'apparition d'une courbe, ou la
-			  possibilité d'afficher une info-bulle lors du passage de la sourie sur un
+			  possibilité d'afficher une info-bulle lors du passage de la souris sur un
 			  point de donnée du graphique. Ces animations donnent vie à la visualisation
 			  et améliorent l'expérience de l'utilisateur
 			  \item La possibilité de pouvoir développer d'autres types de graphiques.
 			  Nous ne pouvons pas prévoir comment évoluera le module ni quelles nouvelles
-			  données seront rendu accessibles par Cloverleaf dans l'avenir. Nous devons
-			  choisir une bibliothèque nous laissant suffisamment de possibilités pour
+			  données seront rendues accessibles par Cloverleaf dans l'avenir. Nous
+			  devons choisir une bibliothèque nous laissant suffisamment de possibilités pour
 			  pouvoir créer d'autres types de visualisations
 			\end{itemize}
-			Tous ces critères ne sont pas égaux, certain sont plus important que
+			Tous ces critères ne sont pas égaux, certains sont plus importants que
 			d'autres. C'est pourquoi nous allons les pondérer à l'aide d'une note sur
 			dix. Nous notons ensuite les six bibliothèques retenues sur chacun de ces
 			critères, puis nous appliquons la pondération à chaque note. La note globale
@@ -568,7 +566,7 @@ statistique}
 			Le développement d'une application en sprints implique d'être en mesure de
 			produire quelque chose de présentable à l'issue de chaque itération.
 			Il est utile pour cela de segmenter l'application en petites parties que
-			l'on pourra développer indépendament les unes des autres : les user stories
+			l'on pourra développer indépendemment les unes des autres : les user stories
 			(US) \citep{aubry_scrum_2015}.
 			Une US correspond à un petit scénario d'utilisation de
 			l'application, c'est une petite partie de l'expérience de l'utilisateur.
@@ -580,7 +578,7 @@ statistique}
 			  \item En tant qu'utilisateur, je souhaite pouvoir visualiser le temps moyen
 			  de transfert d'un message dans le flux de façon littérale en seconde
 			  \item En tant qu'utilisateur, je souhaite pouvoir visualiser le temps
-			  moyen de transfert d'un message dans le flux sur une gauge entre une
+			  moyen de transfert d'un message dans le flux sur une jauge entre une
 			  valeur minimum et une valeur maximum
 			  \item En tant qu'utilisateur, je souhaite pouvoir consulter l'historique du
 			  nombre de messages à la sortie du flux au cours du temps sous la forme
@@ -600,20 +598,19 @@ statistique}
 			  retravailler le code (c'est le refactoring) pour le rendre plus lisible ou
 			  pour l'optimiser
 			  \item[3) La revue de code~:] Cette étape se passe en fin de sprint, après
-			  le développement. La revue du code s'effectue avec d'autre développeurs. Le
-			  but est de discuter des améliorations qu'il est possible de faire pour
+			  le développement. La revue du code s'effectue avec d'autres développeurs.
+			  Le but est de discuter des améliorations qu'il est possible de faire pour
 			  rendre le code plus propre et plus optimal
-			  \item[4) La revue de sprint~:] A la fin du sprint, on présente les user
-			  stories développées au reste de l'équipe et au commanditaire. Le but est de
+			  \item[4) La revue de sprint~:] A la fin du \textit{sprint}, on présente les
+			  user stories développées au reste de l'équipe et au commanditaire. Le but est de
 			  recevoir les avis de ce dernier sur ce qui a été développé. Le
 			  commanditaire peut également faire des suggestions sur ce qu'il reste à
 			  développer ou demander des modifications sur ce qui a déjà été fait. Cette
 			  étape permet d'adapter au mieux l'application à ce que son commanditaire en
 			  attend
 			  \item[5) Mise à jour de la liste des US~:] Enfin, une fois les
-			  avis du commanditaires recueillis, nous mettons à jour la liste des user
-			  stories en conséquence en nous recommençerons ce cycle pour le sprint
-			  suivant
+			  avis du commanditaire recueillis, nous mettons à jour la liste des US en
+			  conséquence et nous recommencerons ce cycle pour le \textit{sprint} suivant
 			\end{itemize}
 		
 		\subsection{Élaboration du backlog}
@@ -621,11 +618,11 @@ statistique}
 			Le backlog est la liste des US. C'est à la fois un document de
 			travail et de spécification.
 			\begin{description}
-				\item[Un document de spécification~:] Le backlog est la liste exhaustive de
-				tout ce que l'application est capable de faire. Une US offre un
+				\item[Un document de spécification~:] Le \textit{backlog} est la liste
+				exhaustive de tout ce que l'application est capable de faire. Une US offre un
 				niveau de détail plus fin qu'une fonctionnalité
-				\item[Un document de travail~:] Le backlog est l'outil central dans la
-				gestion d'un projet agile. C'est lui qui est utilisé pour la planification
+				\item[Un document de travail~:] Le \textit{backlog} est l'outil central dans
+				la gestion d'un projet agile. C'est lui qui est utilisé pour la planification
 				des sprints, il est mis à jour en fin d'itération après la revue de sprint
 				et il permet de suivre l'avancement du projet
 			\end{description}
@@ -639,9 +636,9 @@ statistique}
 			liée qu'à une seule fonctionnalité.
 			\begin{figure}[H]% Mapping fonctionnalités -> US
 				\centering
-				\includegraphics[width=7cm]{../img/part3/mapping_fonctios_us.png}
+				\includegraphics[width=10cm]{../img/part3/mapping_fonctios_us.png}
 				\caption{\label{mapping_fonctios_us} Chaque fonctionnalité est redécoupée
-				en une ou plusieurs US.}
+				en une ou plusieurs US}
 			\end{figure}
 			
 			\paragraph{}% Priorisations des US
@@ -662,19 +659,19 @@ statistique}
 			\citep{aubry_scrum_2015}. Nous utiliserons comme base les premiers éléments
 			de la suite de Fibonacci (1, 2, 3, 5, 8, 13, 21, 34\ldots). Nous
 			attribuerons une note médianne à une US que nous évaluerons de
-			difficulté moyenne. En l'occurrence nous attribuons la note de 13 à la user
-			story <<~En tant qu'utilisateur, je souhaite voir la date et l'heure à
-			laquelle le dernier message a été écrit sur ce flux~>>.
+			difficulté moyenne. En l'occurrence nous attribuons la note de 13 à la US
+			<<~En tant qu'utilisateur, je souhaite voir la date et l'heure à laquelle le
+			dernier message a été écrit sur ce flux~>>.
 			Puis nous noterons les autres US relativement à la première en
 			n'utilisant que des éléments de la suite de Fibonacci.\newline
-			Pour obtenir la note finale de chaque US, nous divisons simplment la
+			Pour obtenir la note finale de chaque US, nous divisons simplement la
 			note de la fonctionnalité correspondante par la note d'effort, comme le
 			montre la formule \ref{note_us}.
 			\begin{equation}
 				\label{note_us}
 				Note\ de\ l\ user\ story=Note\ de\ la\ fonctionnalite \times Note\ d\ effort
 			\end{equation}
-			L'annexe 9 présente l'intégralité du backlog à la date du 4 septembre 2017.
+			L'annexe E présente l'intégralité du backlog à la date du 4 septembre 2017.
 	
 	\section{Bilan de la phase de développement et suite du projet}
 		\paragraph{}
@@ -694,15 +691,15 @@ statistique}
 			\paragraph{Historique de nombre de messages par flux~: }
 			L'utilisateur peut consulter pour chaque flux l'historique du nombre de
 			message en entrée ((a) sur la figure \ref{vue_history}) et en sortie (b) du
-			flux. Il peut consulter ces informations sur un graphique. Il s'agit d'une courbe avec des points de données sur
-			lequel l'utilisateur peut passer le pointeur de sa sourie pour consulter des
-			information détaillées (c). De plus, il peut choisir la période d'affichage
-			grâce à un formulaire (d) et peut choisir de masquer l'une ou l'autre des
-			séries de donnée grâce à deux boutons (e). Le pas de temps avec lequel les
-			données sont agrégées et le jour.
+			flux. Il peut consulter ces informations sur un graphique. Il s'agit d'une
+			courbe avec des points de données sur laquelle l'utilisateur peut passer le
+			pointeur de sa souris pour consulter des informations détaillées (c). De
+			plus, il peut choisir la période d'affichage grâce à un formulaire (d) et
+			peut choisir de masquer l'une ou l'autre des séries de données grâce à deux
+			boutons (e). Le pas de temps avec lequel les données sont agrégées et le jour.
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=12cm]{../img/part3/vue_history.png}
+				\includegraphics[width=16cm]{../img/part3/vue_history.png}
 				\caption{\label{vue_history} Vue du widget historique du nombre de messages
 				à ce stade du projet.}
 			\end{figure}
@@ -715,29 +712,28 @@ statistique}
 			cette période grâce à un formulaire (b).
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=12cm]{../img/part3/vue_transfer.png}
+				\includegraphics[width=16cm]{../img/part3/vue_transfer.png}
 				\caption{\label{vue_transfer} Vue du widget temps de transfert à ce stade
 				du projet.}
 			\end{figure}
 		
 		\subsection{Les limites du projet}
-			\paragraph{}% présentation
-			Tout au long de ce projet nous avons été amenés à faire un certain nombre de
-			choix, parfois de manière très arbitraire. Revenons ici sur les principales
+			\paragraph{}% présentationRevenons ici sur les principales
 			limites de la méthodologie globale du projet visant à améliorer TrackCIS et
 			voyons comment nous pouvons en tirer les leçons pour préparer la suite du
 			projet.
 		
 			\paragraph{}% Le choix de développer le module statistique est arbitraire
 			Nous avons choisi de nous concentrer sur le développement d'un module
-			d'affichage de statistiques. Rappelons que ce choix est arbitraire et est lié
+			d'affichage de statistiques. Rappelons que ce choix est lié avant tout
 			à une volonté de l'entreprise. Notre étude du besoin fait effectivement
 			ressortir l'intérêt des utilisateurs pour ce type de module, l'utilisation
 			des statistiques étant une pratique déjà existante pour tous les utilisateurs
 			de Cloverleaf. Cependant cette même étude à fait ressortir d'autres besoins.
 			Voici les besoins les plus importants n'ayant pas attrait aux statistiques :
 			\begin{itemize}
-			  \item Ouvrir l'utilisation des consoles de supervision aux personnes métier
+			  \item Ouvrir l'utilisation des consoles de supervision aux personnes
+			  métiers
 			  \item Avoir accès à des informations sur le flux, à une documentation
 			  \item Pouvoir superviser l'intégration des messages dans les applications
 			  \item Pouvoir remonter directement à l'utilisateur à l'origine d'une erreur
@@ -748,7 +744,7 @@ statistique}
 			% arbitraires
 			D'autre part, les méthodes que nous avons choisies pour prioriser les
 			besoins, les fonctionnalités et les US sont également arbitraires. La
-			priorisation des besoins à impacté la liste des fonctionnalités de laquelle
+			priorisation des besoins a impacté la liste des fonctionnalités de laquelle
 			découle le backlog. La priorisation des US n'impacte que l'ordre
 			dans lequel le module est développé.
 			
@@ -759,22 +755,22 @@ statistique}
 			\begin{description}
 				\item[Pouvoir superviser l'intégration des messages dans les applications~:]
 				TrackCIS, à l'instar de la plupart des consoles de supervision, ne peut
-				superviser les flux de message qu'entre l'entrée dans l'EAI et la sortie. Or
-				une cause d'erreur possible est la non intégration d'un message dans
+				superviser les flux de messages qu'entre l'entrée dans l'EAI et la sortie.
+				Or une cause d'erreur possible est la non intégration d'un message dans
 				l'application destinatrice, erreur qui n'est pas détectable dans TrackCIS.
-				La réponse à se besoins, quoique difficile techniquement, apporterait à
+				La réponse à ce besoin, quoique difficile techniquement, apporterait à
 				l'outil un avantage concurentiel significatif sur les autres consoles de
 				supervision
 				\item[Ouvrir l'utilisation des consoles de supervision aux personnes
-				métier~:] Le module que nous avons développé répond en partie à ce besoin.
-				Mais la démocratisation de TrackCIS auprès des utilisateurs métier n'est pas
-				seulement une question de fonctionnalité, mais aussi une problématique de
+				métiers~:] Le module que nous avons développé répond en partie à ce besoin.
+				Mais la démocratisation de TrackCIS auprès des utilisateurs métiers n'est
+				pas seulement une question de fonctionnalité, mais aussi une problématique de
 				changement des pratiques et de l'organisation autour de la supervision dans
 				les hôpitaux
 				\item[Avoir accès à des informations sur le flux, à une documentation~:] Le
 				fonctionnement d'un flux est souvent obscur pour un utilisateur non averti.
 				Il serait possible d'accéder depuis TrackCIS à de la documentation sur
-				chaque flux. Cependant, ce type de documentation ne serait pas intéressante
+				chaque flux. Cependant, ce type de documentation ne serait pas intéressant
 				pour un utilisateur métier car trop technique
 				\item[Pouvoir remonter directement à l'utilisateur à l'origine d'une erreur
 			  	de saisie~:] De nombreuses erreurs sont dues à des erreurs de saisies
@@ -784,7 +780,7 @@ statistique}
 			\end{description}
 			
 			\paragraph{}% Les <<petites>> amélioration à faires
-			La liste des besoins a également permi d'identifier de <<petites>>
+			La liste des besoins a également permis d'identifier de <<~petites~>>
 			améliorations sur des fonctionnalités existantes telles que :
 			\begin{itemize}
 			  \item A l'ouverture de l'outil, arriver directement sur la liste des
