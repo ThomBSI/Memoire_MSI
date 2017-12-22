@@ -40,7 +40,7 @@
 			possibles \citep{alami_les_2009}. Les entretiens sont basés sur des questions
 			ouvertes et durent en général plus longtemps que dans pour les enquêtes
 			quantitatives, une trentaine de minutes dans notre cas.
-			L'objetcif est de faire ressortir la diversité des comportements, des
+			L'objetcif est de faire ressortir la diversité des comportements et des
 			pratiques.\newline
 			Les entretiens sont conduits de manière semi-directive par téléphone ou en
 			face à face quand cela est possible.
@@ -126,7 +126,7 @@
 			
 			\paragraph{}% Méthodes d'analyse des résultat
 			A l'issue des entretiens, après une rapide relecture de tous les comptes
-			rendus d'entretien, nous établissons une liste des grands thèmes qui ont été
+			rendus, nous établissons une liste des grands thèmes qui ont été
 			abordés durant les discussions \citep{alami_les_2009}.
 			On classe ensuite chaque information collectée dans l'un de ces
 			thèmes.\newline Les grands thèmes en question sont les suivants~:
@@ -156,12 +156,12 @@
 			  \item Un pôle exploitation
 			\end{itemize}
 			\textbf{Le pôle intégration} prend en charge la mise en place de nouveaux
-			flux et du bon fonctionnement de l’EAI en général. Son niveau de compétence sur
-			Cloverleaf est élevé. Ce pôle existe dans des établissements
-			relativement autonomes vis-à-vis des éditeurs de logiciels. Le pôle
+			flux et le bon fonctionnement de l’EAI en général. Son niveau de compétence
+			sur Cloverleaf est élevé. Ce pôle existe dans des établissements
+			relativement autonomes vis-à-vis des éditeurs de logiciel. Le pôle
 			intégration se compose généralement de deux ou trois personnes. Les outils
-			utilisés sont principalement l’IDE, et des consoles de supervision telles que EAI
-			Supervision ou Global Monitor.\newline
+			utilisés sont principalement l’IDE, et des consoles de supervision telles
+			que EAI Supervision ou Global Monitor.\newline
 			\textbf{Le pôle exploitation} a en charge la supervision des flux. Le niveau
 			de maîtrise de Cloverleaf y est plus faible. Les outils utilisés sont en
 			général, les différentes consoles de supervision,
@@ -175,20 +175,28 @@
 			exemple le cas du CH de Châtellerault.\newline
 			Il y a différents niveaux de gestion de l’interopérabilité au sein d’un
 			hôpital.
-			Les niveaux correspondent au degré de responsabilité vis à vis de
+			Les niveaux correspondent aux degrés de responsabilités vis à vis de
 			l'interopérabilité. Plus un niveau est élevé, plus les impacts des
 			décisions prises à ce niveau seront forts sur le SI. Un pôle exploitation se
 			situe au niveau le plus bas tandis qu’un pôle intégration peut se situer au
-			niveau deux ou trois. Le niveau le plus haut est en général assuré par un
-			département urbanisation, en charge de la définition de la politique de tout le SI.
+			niveau deux ou trois \ref{niveaux_orga_interop}. Le niveau le plus haut est
+			en général assuré par un département urbanisation, en charge de la définition de la politique de tout
+			le SI.
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=10cm]{../img/si_1.png}
+				\caption{\label{niveaux_orga_interop} Les différentes niveaux de gestion de
+				l'interopérabilité}
+			\end{figure}
 			
 			\paragraph{}% Diversité des pratiques
 			L’ensemble des outils liés à Cloverleaf (IDE et consoles)
 			peut être utilisé pour la supervision des flux. Les utilisateurs les plus
 			aguerris sur Cloverleaf utilisent l’IDE, notamment une fonctionnalité,
 			nommée \textit{status} qui donne accès à des données statistiques sur un
-			thread ou un process à un instant t. Pour détecter les problèmes,
-			l’utilisateur se fie principalement à la date et à l'heure de dernière
+			\textit{thread} ou un \textit{process} à un instant t. Pour détecter les
+			problèmes, l’utilisateur se fie principalement à la date et à l'heure de dernière
 			écriture d’un message sur le flux. Si rien n’a été écrit depuis un certain temps, c’est que
 			le flux est bloqué et que les messages ne passent plus. Ce type d’utilisateur
 			fait généralement partie du pôle intégration et est en charge de la
@@ -199,27 +207,27 @@
 			pour remonter à l’origine de l’erreur.\newline
 			Du côté des consoles de supervision, les principaux usages sont~:
 			\begin{itemize}
-			  \item Visualiser l’état des flux, c'est-à-dire vérifier que les threads et
-			  process fonctionnent correctement,
-			  \item Affichage sur écran géant,
+			  \item Visualiser l’état des flux, c'est-à-dire vérifier que les
+			  \textit{threads} et \textit{process} fonctionnent correctement
+			  \item Affichage sur écran géant
 			  \item Rechercher un message en particulier, ou un certain type de
 			  message. Par exemple, tous les messages concernant un patient donné ou
-			  qui sont passés à une date donnée,
-			  \item Visualiser les messages qui sont en erreur,
+			  qui sont passés à une date donnée
+			  \item Visualiser les messages qui sont en erreur
 			  \item Supervision en mode lecture seule~: permet de faire remonter les
-			  erreurs aux personnes ayant les compétences pour les résoudre,
-			  \item Lire le contenu d'un message pour diagnostiquer une erreur,
+			  erreurs aux personnes ayant les compétences pour les résoudre
+			  \item Lire le contenu d'un message pour diagnostiquer une erreur
 			  \item L'éditer pour corriger l'erreur quand celle-ci est causée par le
-			  message, puis rejouer le message,
+			  message, puis rejouer le message
 			  \item Réaliser des tests lors de la mise en place de flux (usage repéré
-			  uniquement au CHU de Toulouse),
+			  uniquement au CHU de Toulouse)
 			  \item Pour les flux entre les applications de l'éditeur Maincare
-			  uniquement, s’assurer que les messages soient bien intégrés dans les
-			  applications destinatrices,
+			  uniquement, s’assurer que les messages sont bien intégrés dans les
+			  applications destinatrices
 			  \item Restreindre l’utilisation de certaines fonctionnalités pour par
-			  exemple confier les outils à des personnes d’astreintes ou à des personnes
-			  métiers,
-			  \item Comparer le contenu d’un message à l'entrée et à la sortie d'un flux.
+			  exemple confier les outils à des personnes d’astreinte ou à des personnes
+			  métier
+			  \item Comparer le contenu d’un message à l'entrée et à la sortie d'un flux
 			  \item Paramétrer l’outil~: création de colonnes, attribution des droits…
 			\end{itemize}
 			\paragraph{}
@@ -230,7 +238,7 @@
 			regarder le contenu du message pour en repérer les anomalies, ou bien faire
 			des recherches plus complexes.
 			Une fois le diagnostic fait, il faut corriger le problème. Ceci peut se
-			faire par édition du contenu du message puis par rejoue, dans les cas les
+			faire par édition du contenu du message puis par rejoue dans les cas les
 			plus simples.\newline
 			Les utilisateurs les plus
 			avertis ont en charge l’administration de la console, c’est-à-dire son
@@ -250,14 +258,14 @@
 			  \item Pouvoir détecter en un coup d’œil la présence d’anomalies telles que
 			 ~:
 			  	\begin{itemize}
-			  	  \item Des erreurs,
-			  	  \item Des ralentissements,
+			  	  \item Des erreurs
+			  	  \item Des ralentissements
 			  	  \item Des blocages
 		  	    \end{itemize}
-			  \item Pouvoir expliquer, même partiellement ces anomalies,
+			  \item Pouvoir expliquer, même partiellement ces anomalies
 			  \item Et éventuellement pouvoir agir dessus dans le but de les corriger.
 			  Cependant, selon deux des cinq personnes interrogées le but premier d'une
-			  console n'est pas la correction mais seulement la détection des anomalies. 
+			  console n'est pas la correction mais seulement la détection des anomalies
 			\end{itemize}
 			
 		\subsection{Une grande diversité des utilisateurs des consoles de
@@ -265,7 +273,7 @@
 			\paragraph{}% Les utilisateurs
 			Nous pouvons établir une typologie des utilisateurs des consoles de
 			supervision en nous aidant du schéma d’organisation
-			des services informatiques (figure \ref{orga_interop}). On retrouve les
+			des services informatiques (figure \ref{niveaux_orga_interop}). On retrouve les
 			deux niveaux que sont l’intégration et l’exploitation, auxquelles on peut
 			ajouter le niveau métier, les référents applicatifs et les personnes
 			d'astreintes.\newline
@@ -322,7 +330,7 @@
 						Des consoles de supervision simples d'utilisation telles que TrackCIS.
 						&
 						Surveiller les flux concernant une application dont ils ont la charge. Les
-						référents applicatifs existent déjà dans les hôpitaux, mais ils ne
+						référents applicatif existent déjà dans les hôpitaux, mais ils ne
 						s'occupent pas de l'interopérabilité.
 						\\
 					\hline
@@ -341,7 +349,7 @@
 					\hline
 				\end{tabular}
 			\end{table}
-			Ces différents acteurs coopèrent ensemble pour la résolution de problèmes,
+			Ces différents acteurs coopèrent ensemble pour la résolution des problèmes,
 			comme le montre la figure \ref{resolution_pbs}. Ce processus fait intervenir
 			beaucoup d’intermédiaires ce qui pose problème à la fois aux utilisateurs métiers,
 			car cela prend du temps, et aux services informatiques
@@ -354,7 +362,7 @@
 				\centering
 				\includegraphics[width=15cm]{../img/user_1.png}
 				\caption{\label{resolution_pbs} Processus de résolution d'un problème dans
-				Cloverleaf.}
+				Cloverleaf}
 			\end{figure}
 			
 		\subsection{L'enquête permet de dresser la liste des besoins}
@@ -378,7 +386,7 @@
 			Les utilisateurs au profil informaticien ne sont pas spécialement sensibles
 			à l’ergonomie des outils de supervision, mais sont plus soucieux de leurs
 			fonctionnalités. Cependant le design et de la facilité de prise en main
-			seraient des atouts plus importants pour des utilisateurs métiers.
+			seraient des atouts plus importants pour des utilisateurs métier.
 			
 			\paragraph{}% C'est quoi une bonne console
 			En résumé, une bonne console est un outil donnant la vision la plus générale
@@ -390,7 +398,7 @@
 			\paragraph{}% La lise des besoins, classification
 			En plus des informations que nous avons décrites jusque-là, les entretiens
 			nous ont permis d'identifier les besoins des utilisateurs. Ceux-ci ont été
-			exprimés explicitement ou non, et concerne généralement des manques. Voici
+			exprimés explicitement ou non, et concernent généralement des manques. Voici
 			quelques exemples de besoins, la liste complète se trouvant en annexe C~:
 			\begin{itemize}
 			  \item Pouvoir trouver facilement la cause des erreurs
@@ -400,7 +408,7 @@
 			  \item Visualiser l'état des flux en temps réel
 			  \item Pouvoir afficher la console sur un écran géant
 			\end{itemize}
-			Un total de 57 besoins a été ainsi identifiés. Ceux-ci ne sont pas
+			Un total de 57 besoins a été ainsi identifié. Ceux-ci ne sont pas
 			spécifiquement liés à un outil, ils concernent la supervision
 			en général. Certains de ces besoins sont déjà satisfaits dans
 			TrackCIS, c'est par exemple le cas pour~: <<~Pouvoir rejouer les
@@ -423,7 +431,7 @@
 			compréhension, ce qui nous permettra d'imaginer plus aisément les
 			fonctionnalités qui y répondront. Tous les éléments de cette
 			liste ne sont pas égaux, certains besoins comptent d'avantage aux yeux des
-			personnes interrogée que d'autre et certains ont été cités plus
+			personnes interrogée que d'autres et certains ont été cités plus
 			souvent.\newline
 			De façon à noter l'importance de chaque besoin pour les utilisateurs, nous
 			proposons de nous baser sur le barème présenté dans le tableau
@@ -520,13 +528,13 @@
 			complète en annexe D) à partir des 33 besoins que l'on a retenus. Nous
 			regroupons en 8 grands ensembles \label{ensembles_fonctios}~:
 			\begin{itemize}
-			  \item Visualisation du niveau de disponibilité du flux.
-			  \item Visualisation de la date et et de l'heure du dernier message passé.
-			  \item Visualisation de l’historique des messages.
-			  \item Visualisation des ressources serveur.
-			  \item Administration des statistiques.
-			  \item Exporter les données statistiques.
-			  \item Facilitation de l’utilisation.
+			  \item Visualisation du niveau de disponibilité du flux
+			  \item Visualisation de la date et et de l'heure du dernier message passé
+			  \item Visualisation de l’historique des messages
+			  \item Visualisation des ressources serveur
+			  \item Administration des statistiques
+			  \item Exporter les données statistiques
+			  \item Facilitation de l’utilisation
 			\end{itemize}
 			
 		\subsection{Priorisation des fonctionnalités liées aux statistiques}
@@ -625,8 +633,8 @@
 			plus problématiques. Cette valeur serait calculée sur une période de temps
 			définie par l'utilisateur.
 			
-			\paragraph{Visualisation de la date et heure du dernier message passé.}
-			Il s'agit d'une fonctionnalité toute simple mais que l'étude du besoin a fait
+			\paragraph{Visualisation de la date et de l'heure de passage du dernier
+			message.} Il s'agit d'une fonctionnalité toute simple mais que l'étude du besoin a fait
 			ressortir comme importante. Il s'agit d'un petit widget indiquant avec
 			précision la date et l'heure à laquelle un message est correctement passé
 			pour la dernière fois sur ce flux. Ceci est un bon indicateur du bon
@@ -641,13 +649,13 @@
 			période qu'il veut visualiser ainsi que les types de données. Ce widget
 			permettrait de voir l'évolution au cours du temps des messages ayant
 			correctement transité dans le flux, des messages tombés en erreurs ou en
-			attente ou encore des acquittements reçuent des applications destinataires.
+			attente ou encore des acquittements reçus des applications destinatrices.
 			
 			\paragraph{Visualisation des ressources serveur.}
 			Cette \textit{feature} correspond à deux widgets qui ont tous deux attraits à
 			l'état du serveur sur lequel est installé Cloverleaf. Le premier d'entre eux permet
-			d'avoir des informations sur l'état en temps réel du serveur~: occupation de
-			la mémoire vive et du disque, utilisation du processeur. Le deuxième widget
+			d'avoir des informations sur l'état du serveur en temps réel~:
+			occupation de la mémoire vive et du disque, utilisation du processeur. Le deuxième widget
 			permet de voir l'évolution au cours du temps de l'occupation du disque du
 			serveur. Cette donnée présentée sous la forme d'une courbe, peut permettre
 			d'identifier une augmentation anormale de l'espace occupé, ce qui peut
@@ -697,10 +705,10 @@
 			outil étudié, nous nous attarderons sur~:
 			\begin{itemize}
 			  \item Les données qui sont affichées et leurs rôles respectifs (ce qu'elles
-			  apportent à l'utilisateur),
+			  apportent à l'utilisateur)
 			  \item La manière dont ces données sont représentées (courbe, histogramme,
 			  jauge...), pourquoi elles sont représentées de la sorte et si cela semble
-			  efficace et ergonomique du point de vue de l’utilisateur.
+			  efficace et ergonomique du point de vue de l’utilisateur
 			\end{itemize}
 			Nous analyserons ici 2 outils~: TradeXpress et M12.
 			
@@ -714,6 +722,12 @@
 			de ces fonctionnalités sont axées supervision, ce sont celles qui nous
 			intéressent ici. La figure \ref{trade_xpress} présente la page de monitoring des
 			flux.\newline
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=16cm]{../img/part2/trade_xpress.png}
+				\caption{\label{trade_xpress} Tableau de bord de l'outil Trade Xpress}
+			\end{figure}
+			
 			La vue est divisée en deux parties aux rôles
 			différents~: l'une (à gauche) est consacrée à l’état du système, l'autre (à
 			droite) à la supervision. La première partie montre une vision de l’état
@@ -722,11 +736,11 @@
 			La partie supervision présente deux types d'informations~:
 			\begin{itemize}
 			  \item Une vue au jour à l’aide de jauges montrant le nombre de messages ou
-			  documents transitant par la plateforme. On peut voir juste en-dessous de
-			  l’encadré gris un bouton permettant de choisir la date.
+			  de documents transitant par la plateforme. On peut voir juste en-dessous de
+			  l’encadré gris un bouton permettant de choisir la date
 			  \item Un historique à la semaine du volume de messages passé pour chaque
 			  domaine métier (commandes, factures\ldots). L’utilisateur peut choisir les
-			  données ainsi que la semaine à afficher.
+			  données ainsi que la semaine à afficher
 			\end{itemize}
 			Le design de l’outil est simple et relativement classique. Les informations
 			utiles à l’utilisateur occupent un maximum de place sur la page. Il y a peu
@@ -738,17 +752,18 @@
 			Pour que les jauges soient pertinentes il faut qu’elles soient calibrées avec
 			une valeur minimum et maximum. La documentation disponible en ligne ne précise
 			pas s’il est possible de calibrer ces jauges, ni à qui revient ce rôle.
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=16cm]{../img/part2/trade_xpress.png}
-				\caption{\label{trade_xpress} Tableau de bord de l'outil Trade Xpress.}
-			\end{figure}
 			
 			\paragraph{M12~:}
 			M12 est également une console permettant de surveiller des flux de données
 			\citep{processmview_m12}, principalement des flux basés sur des services web.
 			Elle permet notamment de générer des alertes (par exemple des alertes envoyées par mail) en cas de
 			problème et de rejouer les messages.\newline
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=16cm]{../img/part2/m12.png}
+				\caption{\label{m12} Tableau de bord de l'outil M12}
+			\end{figure}
+			
 			L'interface est présentée par la figure \ref{m12}. Peu d'informations sout
 			librement accessibles sur cet outil, c'est pourquoi nous ne nous attarderons
 			que sur les trois graphiques situés dans la partie gauche de la page.
@@ -758,30 +773,25 @@
 			l'utilisateur.\newline
 			Les informations sont réparties sur la page sous la
 			forme d'encadré contenant chacun un type de données.
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=16cm]{../img/part2/m12.png}
-				\caption{\label{m12} Tableau de bord de l'outil M12.}
-			\end{figure}
 			
 			\paragraph{}
 			A la suite de cet état de l'art, les idées suivantes peuvent être retenues
 			pour TrackCIS~:
 			\begin{itemize}
-			  \item l'utilisation de compteurs ou de jauges est pertinente pour
+			  \item L'utilisation de compteurs ou de jauges est pertinente pour
 			  visualiser des données en temps réel, comme par exemple l'utilisation de
 			  la mémoire vive d'un serveur. Cela nécessite d'avoir une valeur minimum et
 			  une valeur de seuil pour que l'utilisateur puisse interpréter rapidement la
-			  donnée qui lui est présentée.
+			  donnée qui lui est présentée
 			  \item Chaque élément présent dans une visualisation doit contribuer à
-			  apporter une information à l'utilisateur.
+			  apporter une information à l'utilisateur
 			  \item Moins l'utilisateur doit faire de clics pour afficher les
 			  informations qu'il veut, mieux c'est. C'est par exemple le cas d'un tableau
 			  de bord présentant en une seule page de multiples données <<~prêtes à
-			  l'usage~>>.
+			  l'usage~>>
 			  \item Donner trop de libertés à l'utilisateur peut en complexifier
 			  l'expérience. Il peut être judicieux de restreindre, par exemple, le choix
-			  des périodes de temps ou le choix des données à afficher sur un graphique.
+			  des périodes de temps ou le choix des données à afficher sur un graphique
 			\end{itemize}
 			
 		\subsection{Création de scénarios d'utilisation illustrés à l'aide de
@@ -792,6 +802,12 @@
 			maquettes. Pour les présenter, nous utiliserons un scénario d'utilisation.
 			Nous nous placerons dans le cas d'un administrateur souhaitant superviser un
 			flux et autoriser un utilisateur à voir des statistiques pour ce flux.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=16cm]{../img/part2/maquette_user_1.png}
+				\caption{\label{maquette_user} Maquette de l'onglet statistique de
+				TrackCIS}
+			\end{figure}
 			
 			\paragraph{Vue utilisateur~:}
 			L'administrateur se connecte à son compte TrackCIS et se rend sur l'onglet
@@ -810,11 +826,12 @@
 			niveau, l'administrateur a terminé son travail de supervision, il clique sur
 			l'onglet <<~Droits~>> puis sur <<~Statistiques~>> pour gérer les droits des
 			utilisateurs.
+			
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=16cm]{../img/part2/maquette_user_1.png}
-				\caption{\label{maquette_user} Maquette de l'onglet statistique de
-				TrackCIS.}
+				\includegraphics[width=16cm]{../img/part2/maquette_admin_1.png}
+				\caption{\label{maquette_admin} Maquette de l'onglet permettant
+				l'administration des statistiques de TrackCIS}
 			\end{figure}
 			
 			\paragraph{Vue administrateur~:}
@@ -825,10 +842,4 @@
 			flux donné pour l'utilisateur sélectionné (8). C'est donc l'administrateur
 			et lui seul qui peut personnaliser l'affichage des statistiques de tous les
 			utilisateurs de TrackCIS.
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=16cm]{../img/part2/maquette_admin_1.png}
-				\caption{\label{maquette_admin} Maquette de l'onglet permettant
-				l'administration des statistiques de TrackCIS.}
-			\end{figure}
 			

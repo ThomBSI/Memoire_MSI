@@ -23,17 +23,17 @@ statistique}
 			il permet de communiquer avec le serveur. Ce dernier est une machine sur
 			laquelle est déployée l'application web. Le client envoie une requête au
 			serveur qui va la traiter et générer en retour une page web au format HTML
-			(Hypertext markup language) qui est renvoyée au client puis affichée
+			(\textit{Hypertext markup language}) qui est renvoyée au client puis affichée
 			(figure \ref{client_serveur}). La requête utilise le protocole HTTP
-			(Hypertext transfert protocole) qui est le protocole standard des échanges
-			sur le net. La page HTML contient toutes les informations permettant au
+			(\textit{Hypertext transfert protocole}) qui est le protocole standard des
+			échanges sur le net. La page HTML contient toutes les informations permettant au
 			navigateur d'afficher la page. Cette page peut faire appel à d'autres
-			ressources comme des fichiers CSS (Cascading style sheets) ou des script
-			Javascript. CSS est un langage descriptif permettant de mettre en forme le
+			ressources comme des fichiers CSS (\textit{Cascading style sheets}) ou des
+			script Javascript. CSS est un langage descriptif permettant de mettre en forme le
 			contenu de la page HTML.
 			Javascript est un langage qui est interprété par le navigateur et qui
 			permet de gérer les éléments dynamiques de la page web (animations, gestion
-			des événements lorsque l'utilisateur clic sur un bouton\ldots).
+			des événements lorsque l'utilisateur clique sur un bouton\ldots).
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=14cm]{../img/part3/client_serveur.png}
@@ -43,7 +43,7 @@ statistique}
 			
 			\paragraph{}% Modèle AJAX
 			Une variante du modèle client-serveur permet d'en augmenter la rapidité, il
-			s'agit du modèle AJAX (Asynchronous javascript and XML).
+			s'agit du modèle AJAX (\textit{Asynchronous javascript and XML}).
 			Le modèle précédent implique que toute la page doit être renvoyée par le
 			serveur à chaque requête, ce qui n'est pas forcément nécessaire. Cela pose
 			deux problèmes :
@@ -84,7 +84,7 @@ statistique}
 			Xperis. Elles ne sont généralement pas déployées sur le même serveur. L'API
 			est nécessairement installée sur le même serveur que Cloverleaf, le Frontal est
 			quant à lui habituellement installé sur un serveur à part situé au
-			sein de l'établissement hospitalier d'un serveur.
+			sein de l'établissement hospitalier.
 			\begin{figure}[H]% Architecture globale de l'application
 				\centering
 				\includegraphics[width=14cm]{../img/part3/archi_trackcis.png}
@@ -98,7 +98,7 @@ statistique}
 			Java entreprise édition, que nous désignerons par J2EE, est une
 			plateforme basée sur le langage Java et destinée au développement web. Il
 			s'agit d'un ensemble de bibliothèques Java mettant à disposition des
-			développeurs, les éléments nécessaires au développement d'une application
+			développeurs les éléments nécessaires au développement d'une application
 			web.
 			
 			\paragraph{}
@@ -112,13 +112,13 @@ statistique}
 			respecte l'architecture dite MVC (Modèle, contrôle, vue) qui permet de
 			diviser le code selon trois grands rôles : les traitements (Modèle) la
 			génération de la page HTML (la Vue) et des classes faisant office
-			d'intermédiaire entre Modèle et Vue (les Contrôleur). (1) La requête HTTP
+			d'intermédiaire entre Modèle et Vue (les Contrôleurs). (1) La requête HTTP
 			envoyée par le client et reçue au niveau des classes dites <<~contrôleur~>>.
 			Ces classes n'effectuent presque pas de traitement et ne se contentent que de
 			faire appel aux classes de services.
 			Celles-ci effectuent les opérations les plus complexes (2). Les classes de
-			répertoire (ou repositories) permettent de communiquer avec la base de
-			données (3).
+			répertoire (ou \textit{repositories}) permettent de communiquer avec la base
+			de données (3).
 			Cette dernière permet de stocker les préférences des utilisateurs ainsi que
 			d'autres données de paramétrage (adresse du serveur de
 			Cloverleaf, port utilisé\ldots). Les classes de répertoire permettent
@@ -131,8 +131,9 @@ statistique}
 			permettent d'envoyer des requêtes HTTP à l'API et d'en recevoir la réponse.
 			Cette réponse contient les données demandées par l'utilisateur qui sont
 			ensuite stockées dans une classe de données. Enfin, la vue (7), c'est-à-dire
-			la page HTML, est générée grâce à la technologie JSP (Java server pages). Il
-			s'agit d'un langage proche du langage HTML permettant de générer
+			la page HTML, est générée grâce à la technologie JSP (\textit{Java server
+			pages}).
+			Il s'agit d'un langage proche du langage HTML permettant de générer
 			dynamiquement une page HTML.
 			Les pages JSP permettent de mettre en forme et d'afficher les données reçues
 			de l'API. C'est le contrôleur qui met les données à disposition de la JSP.
@@ -147,12 +148,12 @@ statistique}
 		\subsection{L'API permet de communiquer avec Cloverleaf}
 			\paragraph{}% Les grandes lignes de l'archi de l'API
 			L'API est développée grâce à la plateforme standard de Java ou Java SE
-			(Standard édition) qui n'est pas destinée au développement web. En effet
-			l'API n'est pas une application web, il s'agit d'un petit programme Java qui
+			(\textit{Standard édition}) qui n'est pas destinée au développement web. En
+			effet l'API n'est pas une application web, il s'agit d'un petit programme Java qui
 			s'execute sur le même serveur que Cloverleaf et qui permet d'intéragir avec
 			l'EAI. L'API est capable de recevoir et d'interpréter des requêtes
 			HTTP, ce qui est rendu possible grâce à la technologie Vertx. Il s'agit
-			d'un ensemble de bibliothèques mettant à disposition aux
+			d'un ensemble de bibliothèques mettant à disposition des
 			développeurs, des outils pour gérer la réception de requêtes HTTP.
 			
 			\paragraph{}
@@ -222,23 +223,24 @@ statistique}
 			  enregistrement) qui décrit le site correspondant à la base de données : nom
 			  du site, nom de l'hôte sur lequel il est installé
 			  \item[Process~:] Cette table contient des données enregistrées à
-			  intervalles réguliers et qui renseigne sur le bon fonctionnement du process
-			  (c'est-à-dire du bon fonctionnement de l'ensemble des Threads qui le
-			  compose). On y trouve deux informations : l'état du process (arrêté, en
-			  marche, en erreur\ldots) et la liste des threads qui le compose (sous la
-			  forme d'une chaine de caractères)
+			  intervalles réguliers et qui renseigne sur le bon fonctionnement du
+			  \textit{process} (c'est-à-dire du bon fonctionnement de l'ensemble des
+			  \textit{threads} qui le compose). On y trouve deux informations : l'état du
+			  process (arrêté, en marche, en erreur\ldots) et la liste des
+			  \textit{threads} qui le compose (sous la forme d'une chaine de caractères)
 			  \item[Thread~:] La table Thread est celle qui nous intéresse le plus dans
 			  ce projet puisqu'elle contient un grand nombre d'informations sur chaque
-			  thread de l'ensemble du site. A la suite de l'analyse fonctionnelle nous
-			  avons déterminé un certain nombre de statistiques qu'il serait intéressant
+			  \textit{thread} de l'ensemble du site. A la suite de l'analyse
+			  fonctionnelle nous avons déterminé un certain nombre de statistiques qu'il serait intéressant
 			  d'afficher à l'utilisateur de TrackCIS. Le tableau \ref{donnees_threads}
 			  présente, pour chaque type de statistiques, les données dont nous avons
 			  besoin et qui se trouvent dans la table Thread.
 			  \item[Interthread~:] Cette dernière table contient des informations
-			  concernant chaque paire de thread. A chaque sauvegarde des statistiques par
-			  Cloverleaf, autant d'enregistrement (autrement dit de lignes) sont crées
-			  dans cette table que de paire de thread possible pour ce site. Cette table
-			  ne nous sera pas utile pour les statistiques que nous souhaitons afficher.
+			  concernant chaque paire de threads. A chaque sauvegarde des statistiques
+			  par Cloverleaf, autant d'enregistrement (autrement dit de lignes) sont crées
+			  dans cette table que de paires de threads possibles pour ce site. Cette
+			  table ne nous sera pas utile pour les statistiques que nous souhaitons
+			  afficher.
 			\end{description}
 			Dans la plupart des tables (c'est-à-dire toutes sauf la table Site), il
 			existe une colonne qui contient la date et l'heure d'enregistrement.
@@ -257,7 +259,7 @@ statistique}
 						&
 						Données issues de la table Thread :
 						\begin{itemize}
-						  \item Nombre de messages entrant et sortant de chaque thread
+						  \item Nombre de messages entrant et sortant de chaque \textit{thread}
 						  \item Nombre de messages en attente
 						  \item Nombre de messages en erreur
 						\end{itemize}
@@ -313,23 +315,23 @@ statistique}
 			La conception du module statistique de TrackCIS doit respecter les
 			contraintes suivantes~:
 			\begin{itemize}% Liste des contraintes
-			  \item être basée sur l'architecture déjà en place. Il n'est pas question
+			  \item Etre basée sur l'architecture déjà en place. Il n'est pas question
 			  dans ce projet de faire des modifications de l'existant. Ceci est
 			  valable aussi bien pour le code lui-même que pour la structure de la base
-			  de données.
-			  \item être fermée à la modification et ouverte à l'extension. C'est-à-dire
+			  de données
+			  \item Etre fermé à la modification et ouvert à l'extension. C'est-à-dire
 			  qu'il doit être possible, pour une équipe de développement ultérieur,
 			  d'ajouter des fonctionnalités au module sans avoir à modifier le code
-			  existant (simplement en ajoutant des classes).
-			  \item ne pas perturber le fonctionnement de Cloverleaf. Pour afficher des
+			  existant (simplement en ajoutant des classes)
+			  \item Ne pas perturber le fonctionnement de Cloverleaf. Pour afficher des
 			  données pertinentes pour l'utilisateur, certains traitements seront
 			  nécessaires sur les données brutes. Ceux-ci peuvent cependant ralentir ou
 			  perturber le fonctionnement de Cloverleaf. Il est nécessaire pour cela que
 			  ces traitements ne soient pas faits sur le serveur de l'EAI, donc pas au
-			  niveau de l'API.
-			  \item ne pas surcharger le serveur sur lequel est déployé le Frontal. Le
+			  niveau de l'API
+			  \item Ne pas surcharger le serveur sur lequel est déployé le Frontal. Le
 			  serveur servant à héberger le frontal n'est pas forcément une machine très
-			  puissante, bien que cela varie en fonction des établissements.
+			  puissante, bien que cela varie en fonction des établissements
 			\end{itemize}
 			
 			\paragraph{Changements au niveau du modèle de donnée~:}
@@ -350,6 +352,14 @@ statistique}
 			  spécifique d'un utilisateur, d'un flux et d'un type de statistiques. Il
 			  s'agit de la table qui stock les préférences d'affichage.
 			\end{itemize}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=16cm]{../img/part3/modele_donnee.png}
+				\caption{\label{modele_donnee} Le nouveau modèle de données de TrackCIS au
+				niveau du Frontal, les tables user, config\_user\_flux\_permission et
+				config\_flux existent déjà dans la version actuelle de TrackCIS}
+			\end{figure}
+			
 			La figure \ref{modele_donnee} présente la partie du modèle de donnée de
 			TrackCIS spécifique au module statistique. Il ne représente pas
 			l'ensemble des tables existantes dans la base de données de TrackCIS,
@@ -359,21 +369,22 @@ statistique}
 			  \item[-- La table user~:] Nous y ajoutons le champ <<~LastPage~>> qui
 			  sauvegarde la dernière page consultée par l'utilisateur
 			  \item[-- La table config\_user\_flux\_permission~:] Nous y ajoutons le
-			  champ StatPermissions. Cette table est spécifique à un utilisateur et à un flux.
+			  champ StatPermissions. Cette table est spécifique à un utilisateur et à un
+			  flux.
 			  Le champs StatPermissions contient les informations sur les statistiques
-			  d'un utilisateur donné peut voir pour un flux donné
+			  qu'un utilisateur donné peut voir pour un flux donné
 			  \item[-- La table config\_flux~:] Nous y ajoutons les champs
 			  ThresholdTimeMin et ThresholdTimeMax qui sont spécifiques du widget Temps
 			  de transfert.
 			  Ce dernier permettant d'afficher le temps de transfert sur une jauge, ces
 			  deux champs correspondent aux valeurs minimales et maximales de la jauge
 			\end{itemize}
+			
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=16cm]{../img/part3/modele_donnee.png}
-				\caption{\label{modele_donnee} Le nouveau modèle de données de TrackCIS au
-				niveau du Frontal, les tables user, config\_user\_flux\_permission et
-				config\_flux existent déjà dans la version actuelle de TrackCIS}
+				\includegraphics[width=16cm]{../img/part3/archi_stats.png}
+				\caption{\label{archi_stats} La nouvelle architecture du Frontal et de
+				l'API ne modifie pas l'existant}
 			\end{figure}
 			
 			\paragraph{L'architecture du module au niveau du Frontal et de l'API~:}
@@ -388,38 +399,32 @@ statistique}
 				niveau du Frontal (point (a) sur la figure \ref{archi_stats}), elle sera
 				spécifiquement dédiée aux statistiques. Pour l'API, nous utilisons la
 				classe de contrôleur existante et nous nous contentons d'y ajouter une
-				méthode dédiée au module (b)
-				\item[Services~:] Les classes de services sont spécifiques de chaque widget.
+				méthode dédiée au module (b).
+				\item[Services~:] Les classes de services sont spécifiques à chaque widget.
 				Elles effectuent des traitements sur les données brutes renvoyées par
 				Cloverleaf pour les rendre affichables et lisibles pour l'utilisateur. Pour
 				ajouter un widget il suffit d'ajouter une classe de service au niveau de
-				l'API et du Frontal ((c) et (d))
+				l'API et du Frontal ((c) et (d)).
 				\item[Données~:] De la même manière que les classes de services, nous créons
 				une classe de données par widget (au niveau de
 				l'API (e) et du Frontal(f)). D'autres classes de données sont communes
 				à tous les widgets, c'est le cas de la classe stockant les données de
 				préférences d'affichage (date de début, date de fin, données à
-				afficher\ldots)
+				afficher\ldots).
 				\item[Répertoires~:] Nous ajoutons ici (g) deux classes : l'une permettant
 				de récupérer et de mettre à jour les préférences d'affichage, l'autre
 				permettant de récupérer et mettre à jour les droits de visualisation (géré
-				par le champ StatPermissions de la table config\_user\_flux\_permission)
+				par le champ StatPermissions de la table config\_user\_flux\_permission).
 				\item[Vue~:] Enfin, nous créons une page JSP dédiée à l'affichage des
-				statistiques (h)
+				statistiques (h).
 			\end{description}
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=16cm]{../img/part3/archi_stats.png}
-				\caption{\label{archi_stats} La nouvelle architecture du Frontal et de
-				l'API ne modifie pas l'existant.}
-			\end{figure}
 			
 			\paragraph{La répartition des traitements~:}
 			Pour afficher des données lisibles et intéressantes pour les utilisateurs, il
 			est nécessaire de faire des traitements sur les données brutes, comme par
 			exemple~:
 			\begin{itemize}
-			  \item Agréger les données sur un pas de temps donné (par jour, par heure\ldots)
+			  \item Agréger les données sur un pas de temps (par jour, par heure\ldots)
 			  \item Faire des conversions de formats de données, ce qui est notamment
 			  utile pour les formats de dates
 			  \item Faire des calculs de moyennes (par exemple calculer le temps moyen de
@@ -431,7 +436,7 @@ statistique}
 			\begin{itemize}
 			  \item L'API est déployée sur le même serveur que Cloverleaf. Pour nuire le
 			  moins possible à son fonctionnement, le moins de traitements possibles
-			  doit avoir lieux à ce niveau. L'API ne doit servir qu'à extraire les
+			  doivent avoir lieux à ce niveau. L'API ne doit servir qu'à extraire les
 			  données brutes sur la période de temps voulue et à les renvoyer au Frontal
 			  \item Le Frontal est déployé sur un serveur dont la puissance peut être
 			  très variable d'un établissement à l'autre. Tous les traitements ne
@@ -539,7 +544,7 @@ statistique}
 					\hline
 				\end{tabular}
 			\end{table}
-			La bibliothèque retenue est D3 (Data driven document), 
+			La bibliothèque retenue est D3 (\textit{Data driven document}), 
 			open source et gratuite, elle permet de construire n'importe quel type de
 			visualisation de données.
 			
@@ -566,7 +571,7 @@ statistique}
 			Le développement d'une application en sprints implique d'être en mesure de
 			produire quelque chose de présentable à l'issue de chaque itération.
 			Il est utile pour cela de segmenter l'application en petites parties que
-			l'on pourra développer indépendemment les unes des autres : les user stories
+			l'on pourra développer indépendemment les unes des autres~: les user stories
 			(US) \citep{aubry_scrum_2015}.
 			Une US correspond à un petit scénario d'utilisation de
 			l'application, c'est une petite partie de l'expérience de l'utilisateur.
@@ -592,17 +597,17 @@ statistique}
 			  \item[1) La planification du sprint~:] Cette étape intervient au début de
 			  chaque sprint. On y détermine la liste des US qui devront être
 			  développées durant l'itération
-			  \item[2) Le développement et le refactoring~:] C'est la production du code
-			  à proprement parler. Les US sont développées les unes après les
+			  \item[2) Le développement et le \textit{refactoring}~:] C'est la production
+			  du code à proprement parler. Les US sont développées les unes après les
 			  autres. Dans le temps restant à la fin du sprint il est possible de
-			  retravailler le code (c'est le refactoring) pour le rendre plus lisible ou
-			  pour l'optimiser
+			  retravailler le code (c'est le \textit{refactoring}) pour le rendre plus
+			  lisible ou pour l'optimiser
 			  \item[3) La revue de code~:] Cette étape se passe en fin de sprint, après
 			  le développement. La revue du code s'effectue avec d'autres développeurs.
 			  Le but est de discuter des améliorations qu'il est possible de faire pour
 			  rendre le code plus propre et plus optimal
 			  \item[4) La revue de sprint~:] A la fin du \textit{sprint}, on présente les
-			  user stories développées au reste de l'équipe et au commanditaire. Le but est de
+			  US développées au reste de l'équipe et au commanditaire. Le but est de
 			  recevoir les avis de ce dernier sur ce qui a été développé. Le
 			  commanditaire peut également faire des suggestions sur ce qu'il reste à
 			  développer ou demander des modifications sur ce qui a déjà été fait. Cette
@@ -615,22 +620,22 @@ statistique}
 		
 		\subsection{Élaboration du backlog}
 			\paragraph{}% Passage des fonctionnalités aux US
-			Le backlog est la liste des US. C'est à la fois un document de
+			Le \textit{backlog} est la liste des US. C'est à la fois un document de
 			travail et de spécification.
 			\begin{description}
 				\item[Un document de spécification~:] Le \textit{backlog} est la liste
 				exhaustive de tout ce que l'application est capable de faire. Une US offre un
 				niveau de détail plus fin qu'une fonctionnalité
-				\item[Un document de travail~:] Le \textit{backlog} est l'outil central dans
-				la gestion d'un projet agile. C'est lui qui est utilisé pour la planification
-				des sprints, il est mis à jour en fin d'itération après la revue de sprint
-				et il permet de suivre l'avancement du projet
+				\item[Un document de travail~:] Le \textit{backlog} est l'outil central
+				dans la gestion d'un projet agile. C'est lui qui est utilisé pour la
+				planification des \textit{sprints}, il est mis à jour en fin d'itération
+				après la revue de \textit{sprint} et il permet de suivre l'avancement du
+				projet
 			\end{description}
-			Pour construire notre backlog, nous devons d'abord établir une liste d'user
-			stories.
+			Pour construire notre \textit{backlog}, nous devons d'abord établir une liste
+			d'US.
 			De la même manière que nous avons établi le lien entre les besoins et
-			les fonctionnalités, il est possible de relier ces dernières aux user
-			stories.
+			les fonctionnalités, il est possible de relier ces dernières aux US.
 			Une fonctionnalité peut être subdivisée en plusieurs US, comme le
 			montre la figure \ref{mapping_fonctios_us}. Une US n'est quant à elle
 			liée qu'à une seule fonctionnalité.
@@ -680,8 +685,10 @@ statistique}
 		
 		\subsection{Les fonctionnalités implémentées}
 			\paragraph{}% Bilan quantitatif de ce qui a été fait et reste à faire
-			A ce stade du projet, trois sprints de deux semaines ont été complétés. Ils
-			ont essentiellement porté sur le développement des deux premiers widgets :
+			A ce stade du projet, trois \textit{sprints} de deux semaines ont été
+			complétés.
+			Ils ont essentiellement porté sur le développement des deux premiers
+			\textit{widgets}~:
 			l'historique des messages et le temps de transfert moyen. Un total de 11 user
 			stories ont été terminées, ce qui représente en tout 140 points d'effort
 			(soit 16\% de la somme de tous les points d'effort du backlog). La somme des
@@ -718,10 +725,10 @@ statistique}
 			\end{figure}
 		
 		\subsection{Les limites du projet}
-			\paragraph{}% présentationRevenons ici sur les principales
-			limites de la méthodologie globale du projet visant à améliorer TrackCIS et
-			voyons comment nous pouvons en tirer les leçons pour préparer la suite du
-			projet.
+			\paragraph{}% présentation
+			Revenons ici sur les principales limites de la méthodologie globale du
+			projet et voyons comment nous pouvons en tirer
+			les leçons pour préparer la suite.
 		
 			\paragraph{}% Le choix de développer le module statistique est arbitraire
 			Nous avons choisi de nous concentrer sur le développement d'un module
@@ -733,7 +740,7 @@ statistique}
 			Voici les besoins les plus importants n'ayant pas attrait aux statistiques :
 			\begin{itemize}
 			  \item Ouvrir l'utilisation des consoles de supervision aux personnes
-			  métiers
+			  métier
 			  \item Avoir accès à des informations sur le flux, à une documentation
 			  \item Pouvoir superviser l'intégration des messages dans les applications
 			  \item Pouvoir remonter directement à l'utilisateur à l'origine d'une erreur
@@ -762,8 +769,8 @@ statistique}
 				l'outil un avantage concurentiel significatif sur les autres consoles de
 				supervision
 				\item[Ouvrir l'utilisation des consoles de supervision aux personnes
-				métiers~:] Le module que nous avons développé répond en partie à ce besoin.
-				Mais la démocratisation de TrackCIS auprès des utilisateurs métiers n'est
+				métier~:] Le module que nous avons développé répond en partie à ce besoin.
+				Mais la démocratisation de TrackCIS auprès des utilisateurs métier n'est
 				pas seulement une question de fonctionnalité, mais aussi une problématique de
 				changement des pratiques et de l'organisation autour de la supervision dans
 				les hôpitaux
